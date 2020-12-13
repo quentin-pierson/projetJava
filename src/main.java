@@ -1,4 +1,6 @@
 import Models.ClassType;
+import Models.MonsterType;
+import Models.Monsters;
 import Models.Players;
 
 import java.util.Scanner;
@@ -8,6 +10,9 @@ public class main {
 
         Players player = createPlayer();
         System.out.println("Nom: "+ player.getName() + "\nClasse: " + player.getClassType());
+
+        Monsters skeleton = new Monsters(300,50,10,50,0,0,0, MonsterType.Skeleton,ClassType.Healer);
+        System.out.println(skeleton.toString());
     }
 
     private static Players createPlayer(){
@@ -41,7 +46,7 @@ public class main {
             }
         }while(exit == 0);
 
-        Players player = new Players(100,10,1,10,10,0,12,name,0,classType);
+        Players player = new Players(100,10,1,10,10,0,12,name,0,classType,100);
 
         return player;
     }
