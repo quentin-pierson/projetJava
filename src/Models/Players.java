@@ -12,4 +12,12 @@ public class Players extends Attributes{
         this.experience = experience;
         this.classType = classType;
     }
+
+    public String getName(){
+        return name;
+    }
+
+    public ClassType getClassType(){
+        return classType;
+    }
 }
