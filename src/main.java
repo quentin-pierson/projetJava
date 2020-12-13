@@ -1,11 +1,15 @@
 import Models.*;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         DifficultyType difficultyType = chooseDifficulty();
         System.out.println("Difficultée:" + difficultyType);
+
+        clearScreen();
+
         Players player = createPlayer();
         System.out.println("Nom: "+ player.getName() + "\nClasse: " + player.getClassType());
 
@@ -82,4 +86,10 @@ public class main {
 
         return player;
     }
+
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
 }
