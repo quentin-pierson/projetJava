@@ -20,4 +20,8 @@ public class Attributes {
         this.mana = mana;
         this.dodge = dodge;
     }
+
+    public int getHealth() {
+        return health;
+    }
 }

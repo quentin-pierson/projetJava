@@ -82,7 +82,7 @@ public class main {
             }
         }while(exit == 0);
 
-        Players player = new Players(100,10,1,10,10,0,12,name,0,classType,100);
+        Players player = new Players(100,10,1,10,10,0,12,name,0,classType,100,1);
 
         return player;
     }
