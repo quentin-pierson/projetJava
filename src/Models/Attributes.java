@@ -24,4 +24,28 @@ public class Attributes {
     public int getHealth() {
         return health;
     }
+
+    public int getArmor() {
+        return armor;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public int getLucky() {
+        return lucky;
+    }
+
+    public int getMana() {
+        return mana;
+    }
+
+    public int getDodge() {
+        return dodge;
+    }
 }

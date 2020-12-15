@@ -23,6 +23,13 @@ public class Weapons extends Attributes{
                 "weaponType=" + weaponType +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
+                ", health='" + getHealth() +
+                ", armor='" + getArmor() +
+                ", level='" + getLevel() +
+                ", attack='" + getAttack() +
+                ", lucky='" + getLucky() +
+                ", mana='" + getMana() +
+                ", dodge='" + getDodge() +
                 ", price=" + price +
                 '}';
     }

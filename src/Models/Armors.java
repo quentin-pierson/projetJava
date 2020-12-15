@@ -24,6 +24,13 @@ public class Armors extends Attributes{
                 "ArmorType=" + armorType +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
+                ", health='" + getHealth() +
+                ", armor='" + getArmor() +
+                ", level='" + getLevel() +
+                ", attack='" + getAttack() +
+                ", lucky='" + getLucky() +
+                ", mana='" + getMana() +
+                ", dodge='" + getDodge() +
                 ", durability=" + durability +
                 ", price=" + price +
                 '}';
