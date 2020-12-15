@@ -1,0 +1,3 @@
+100;0;0;100;10;0;10;Sword;Epee du mal;epee legendaire;200
+100;0;0;100;10;0;10;Axe;Hache X;Meilleur hache du royaume;200
+100;0;0;100;10;0;10;Bow;L'arc du destin;Cupidon;200

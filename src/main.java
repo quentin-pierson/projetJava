@@ -1,10 +1,25 @@
 import Models.*;
+import Services.CSVServices;
+import Services.FileServices;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) throws IOException {
+
+        //Test
+        FileServices f = new FileServices();
+        String data = f.fileOpen("/Data/WeaponData.txt");
+
+        CSVServices csv = new CSVServices();
+        ArrayList<Weapons> wrp = csv.csvParse(data, Weapons.class);
+
+        for (Weapons w: wrp){
+            System.out.println(w.toString());
+        }
+
         DifficultyType difficultyType = chooseDifficulty();
         System.out.println("Difficultée:" + difficultyType);
 
