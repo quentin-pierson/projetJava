@@ -12,25 +12,25 @@ import java.util.ArrayList;
 
 public class CSVServices<E, V> {
 
-    public ArrayList<E> csvParse(String csvFile, Class<E> ob){
+    public ArrayList<E> csvParse(String csvFile, Class<E> genericClass){
         String[] listObj = csvFile.split("\n");
         ArrayList<E> objectList = new ArrayList<E>();
         try {
-            Constructor[] constructorParams = ob.getConstructors();
+            Constructor[] constructorParams = genericClass.getConstructors();
             for (int j = 0; j < constructorParams.length; j+=1){
                 try {
-                    Constructor<E> ctr = ob.getConstructor(constructorParams[j].getParameterTypes());
+                    Constructor<E> ctr = genericClass.getConstructor(constructorParams[j].getParameterTypes());
 
                     for(int i = 0; i < listObj.length; i+=1){
                         Type[] types = constructorParams[j].getParameterTypes();
                         String[] values = listObj[i].split(";");
 
-                        ArrayList<Serializable> obk = new ArrayList<Serializable>();
+                        ArrayList<Serializable> serializableList = new ArrayList<Serializable>();
                         for (int k = 0; k < values.length; k+=1){
                             System.out.println(types[k]);
-                            obk.add(convertStringToType(types[k], values[k]));
+                            serializableList.add(convertStringToType(types[k], values[k]));
                         }
-                        objectList.add(ctr.newInstance(obk.toArray()));
+                        objectList.add(ctr.newInstance(serializableList.toArray()));
                     }
                 }catch (Exception e){
                     e.printStackTrace();
