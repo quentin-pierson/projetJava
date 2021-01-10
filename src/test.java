@@ -33,7 +33,7 @@ public class test {
 
          */
 
-        Monster skeleton = new Monster(300,50,10,50,0,0,0, MonsterType.Skeleton, ClassType.Healer);
+        Monster skeleton = new Monster(300,50,10,50,0,0,0, 0,"Skeleton", MonsterType.Skeleton, ClassType.Healer);
         System.out.println(skeleton.toString());
     }
 

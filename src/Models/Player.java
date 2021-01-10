@@ -36,31 +36,44 @@ public class Player extends Abilities {
         this.life += life;
     }
 
-    public void gameOver(int pointOpen){
-        if(pointOpen==0){
-            System.out.println("GAME OVER");
+    private void gameOver(){
+        System.out.println("GAME OVER");
+    }
+
+    private void dead() {
+        System.out.println("You died...");
+        life -= 1;
+        if (life == -1) {
+            gameOver();
         }
     }
 
-    public void dead(Player player) {
-        if (player.getHealth() == 0) {
-            System.out.println("Vous êtes mort");
-            player.AddLife(-1);
-        }
-        if (player.getLife() == -1) {
-            gameOver(0);
-        }
-    }
-
-    public void attack(Monster monster){
+    public void fight(Monster monster){
         Random rnd = new Random();
         int diceAttack = rnd.nextInt(100);
 
         if(diceAttack <= this.getAttack()) {
-            if(diceAttack <= 5) System.out.println("Critical success ");
-            else System.out.println("Success ");
+            if(diceAttack <= 5){
+                System.out.println("Critical success!");
+                monster.takeDamage(damage + 10,monster.getName());
+            }
+            else{
+                System.out.println("Success!");
+                monster.takeDamage(damage,monster.getName());
+            }
         }else{
-            System.out.print("You missed your attack");
+            if(diceAttack >= 95){
+                System.out.println("Critical failure!");
+            }
+            else{
+                System.out.println("Failure!");
+            }
+        }
+    }
+    public void takeDamage(int damage, String name){
+        health = health - damage;
+        if(health <= 0){
+            dead();
         }
     }
 }

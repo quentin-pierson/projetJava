@@ -40,7 +40,7 @@ public class Game {
             }
         }while(exit == 0);
 
-        Player player = new Player(100,10,1,10,10,0,12,name,0,classType,100,1);
+        Player player = new Player(100,10,1,10,10,10,0,12,name,0,classType,100,1);
 
         System.out.println("Name: "+ player.getName()+" | "+"Type class: "+player.getClassType()+"\n");
         return player;

@@ -2,15 +2,15 @@ package Models;
 
 public class Abilities {
 
-    private int health;
-    private int armor;
-    private int level;
+    protected int health;
+    protected int armor;
+    protected int level;
 
-    private int attack;
-    private int damage;
-    private int lucky;
-    private int mana;
-    private int dodge;
+    protected int attack;
+    protected int damage;
+    protected int lucky;
+    protected int mana;
+    protected int dodge;
 
     public Abilities(int health, int armor, int level, int attack, int damage, int lucky, int mana, int dodge) {
         this.health = health;
@@ -52,4 +52,8 @@ public class Abilities {
     public int getDodge() {
         return dodge;
     }
+
+    public void setHealth(int health){ this.health = health; }
+
+    public void setMana(int mana){ this.mana = mana; }
 }
