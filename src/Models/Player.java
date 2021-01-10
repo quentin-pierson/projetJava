@@ -11,6 +11,8 @@ public class Player extends Abilities {
     private int life; // point Open
     private Weapon weapons;
 
+    private boolean isDefend;
+
     public Player(int health, int armor, int level, int attack, int damage, int lucky, int mana, int dodge, String name, float experience, ClassType classType, int gold, int life) {
         super(health, armor, level, attack, damage, lucky, mana, dodge);
         this.name = name;
@@ -50,6 +52,7 @@ public class Player extends Abilities {
 
     public void fight(Monster monster){
         Random rnd = new Random();
+
         int diceAttack = rnd.nextInt(100);
 
         if(diceAttack <= this.getAttack()) {
@@ -70,6 +73,11 @@ public class Player extends Abilities {
             }
         }
     }
+
+    public void defence () {
+        isDefend = true;
+    }
+
     public void takeDamage(int damage, String name){
         health = health - damage;
         if(health <= 0){
