@@ -1,5 +1,7 @@
 package Models;
 
+import java.util.Random;
+
 public class Player extends Abilities {
 
     private String name;
@@ -9,8 +11,8 @@ public class Player extends Abilities {
     private int life; // point Open
     private Weapon weapons;
 
-    public Player(int health, int armor, int level, int damage, int lucky, int mana, int dodge, String name, float experience, ClassType classType, int gold, int life) {
-        super(health, armor, level, damage, lucky, mana, dodge);
+    public Player(int health, int armor, int level, int attack, int damage, int lucky, int mana, int dodge, String name, float experience, ClassType classType, int gold, int life) {
+        super(health, armor, level, attack, damage, lucky, mana, dodge);
         this.name = name;
         this.experience = experience;
         this.classType = classType;
@@ -51,6 +53,14 @@ public class Player extends Abilities {
     }
 
     public void attack(Monster monster){
+        Random rnd = new Random();
+        int diceAttack = rnd.nextInt(100);
 
+        if(diceAttack <= this.getAttack()) {
+            if(diceAttack <= 5) System.out.println("Critical success ");
+            else System.out.println("Success ");
+        }else{
+            System.out.print("You missed your attack");
+        }
     }
 }
