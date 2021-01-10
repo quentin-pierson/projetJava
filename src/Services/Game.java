@@ -7,7 +7,47 @@ import java.util.Scanner;
 
 public class Game {
 
-    public static DifficultyType chooseDifficulty() {
+    public Player createPlayer(){
+        Scanner myObj = new Scanner(System.in);
+        String name;
+        int classTypeInt;
+        ClassType classType = ClassType.Warrior;
+        // Enter username and press Enter
+        System.out.println("Enter your game name:");
+        name = myObj.nextLine();
+
+        System.out.println("Hello "+name+" nice to meet you. I'm Idony Miracle your playmaker and you will help in the quest of your grale"+"\n");
+
+        int exit = 0;
+        do {
+            exit = 1;
+            System.out.println("Choose your class:\n-1: Warrior\n-2: Archer\n-3: Wizard\n");
+            classTypeInt = myObj.nextInt();
+
+            switch (classTypeInt) {
+                case 1:
+                    classType = ClassType.Warrior;
+                    break;
+                case 2:
+                    classType = ClassType.Archer;
+                    break;
+                case 3:
+                    classType = ClassType.Wizard;
+                    break;
+                default:
+                    exit = 0;
+                    break;
+            }
+        }while(exit == 0);
+
+        Player player = new Player(100,10,1,10,10,10,0,12,name,0,classType,100,1);
+
+        System.out.println("Name: "+ player.getName()+" | "+"Type class: "+player.getClassType()+"\n");
+        return player;
+
+    }
+
+    public DifficultyType chooseDifficulty() {
         Scanner myObj = new Scanner(System.in);
         int difficultyname;
         DifficultyType difficultyType = DifficultyType.Easy;
@@ -15,7 +55,7 @@ public class Game {
         int exit = 0;
         do {
             exit = 1;
-            System.out.println("Choisissez votre difficulté:\n-1: Facile\n-2: Normal\n-3: Difficile\n-4: Extrème\n");
+            System.out.println("Choose your difficulty:\n-1: Easy\n-2: Medium\n-3: Hard\n-4: Hardcore\n");
             difficultyname = myObj.nextInt();
 
             switch (difficultyname) {
@@ -37,73 +77,13 @@ public class Game {
             }
         }while(exit == 0);
 
+        System.out.println("Difficulty chosen: "+difficultyType);
         return difficultyType;
 
     }
 
-    private static Player createPlayer(){
-        Scanner myObj = new Scanner(System.in);
-        String name;
-        int classTypeInt;
-        ClassType classType = ClassType.Warrior;
-        // Enter username and press Enter
-        System.out.println("Entrer votre nom:");
-        name = myObj.nextLine();
-
-        int exit = 0;
-        do {
-            exit = 1;
-            System.out.println("Choisissez votre classe:\n-1: Guerrier\n-2: Archer\n-3: Mage\n");
-            classTypeInt = myObj.nextInt();
-
-            switch (classTypeInt) {
-                case 1:
-                    classType = ClassType.Warrior;
-                    break;
-                case 2:
-                    classType = ClassType.Archer;
-                    break;
-                case 3:
-                    classType = ClassType.Wizard;
-                    break;
-                default:
-                    exit = 0;
-                    break;
-            }
-        }while(exit == 0);
-
-        Player player = new Player(100,10,1,10,10,0,12,name,0,classType,100,1);
-
-        return player;
-    }
-
-    public static void clearScreen() {
+    public void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
-    }
-
-    public static void main(String[] args) {
-
-        //Test
-        FileServices f = new FileServices();
-        String data = f.fileOpen("/Data/WeaponData.txt");
-
-        CSVServices csv = new CSVServices();
-        ArrayList<Weapon> wrp = csv.csvParse(data, Weapon.class);
-
-        for (Weapon w: wrp){
-            System.out.println(w.toString());
-        }
-
-        DifficultyType difficultyType = chooseDifficulty();
-        System.out.println("Difficultée:" + difficultyType);
-
-        clearScreen();
-
-        Player player = createPlayer();
-        System.out.println("Nom: "+ player.getName() + "\nClasse: " + player.getClassType());
-
-        Monster skeleton = new Monster(300,50,10,50,0,0,0, MonsterType.Skeleton,ClassType.Healer);
-        System.out.println(skeleton.toString());
     }
 }

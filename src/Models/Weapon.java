@@ -9,8 +9,8 @@ public class Weapon extends Abilities {
     private int price;
 
 
-    public Weapon(int health, int armor, int level, int attack, int lucky, int mana, int dodge, WeaponType weaponType, String name, String description, int price) {
-        super(health, armor, level, attack, lucky, mana, dodge);
+    public Weapon(int health, int armor, int level, int attack, int damage, int lucky, int mana, int dodge, WeaponType weaponType, String name, String description, int price) {
+        super(health, armor, level, attack, damage, lucky, mana, dodge);
         this.weaponType = weaponType;
         this.name = name;
         this.description = description;
