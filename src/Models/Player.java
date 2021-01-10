@@ -34,6 +34,14 @@ public class Player extends Abilities {
         return classType;
     }
 
+    public int getGold(){ return gold;}
+
+    public void addGold(int gold){ this.gold += gold;}
+
+    public void addItem(Item item){
+        inventory.add(item);
+    }
+
     public int getLife() {
         return life;
     }
