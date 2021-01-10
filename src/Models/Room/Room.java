@@ -3,18 +3,19 @@ package Models.Room;
 import java.util.ArrayList;
 
 public class Room {
-    private String name;
-    private String description;
-    private ArrayList<Room> roomNeighbours;
+    protected String name;
+    protected String description;
+    protected int order;
 
-    private boolean isLocked;
-    private boolean playerPresent;
+    protected boolean isLocked;
+    protected boolean playerPresent;
 
-    public Room(String name, String description, ArrayList<Room> roomNeighbours, boolean isLocked, boolean playerPresent) {
+    public Room(String name, String description, int order, boolean isLocked) {
         this.name = name;
         this.description = description;
-        this.roomNeighbours = roomNeighbours;
+        this.order = order;
         this.isLocked = isLocked;
-        this.playerPresent = playerPresent;
     }
+
+
 }
