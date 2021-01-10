@@ -1,5 +1,8 @@
 package Models;
 
+import Models.Items.Item;
+
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Player extends Abilities {
@@ -10,7 +13,7 @@ public class Player extends Abilities {
     private int gold;
     private int life; // point Open
     private Weapon weapons;
-
+    private ArrayList<Item> inventory;
     private boolean isDefend;
 
     public Player(int health, int armor, int level, int attack, int damage, int lucky, int mana, int dodge, String name, float experience, ClassType classType, int gold, int life) {
@@ -20,6 +23,7 @@ public class Player extends Abilities {
         this.classType = classType;
         this.gold = gold;
         this.life = life;
+        inventory = new ArrayList<Item>() ;
     }
 
     public String getName(){

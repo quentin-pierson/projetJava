@@ -55,5 +55,5 @@ public class Abilities {
 
     public void setHealth(int health){ this.health = health; }
 
-    public void setMana(int mana){ this.mana = mana; }
+    public void setMana(int mana){ this.mana += mana; }
 }
