@@ -2,16 +2,20 @@ package Services;
 
 import java.util.Scanner;
 
+
 public class Menu {
 
-    public static void menu(){
+
+    public void menu(){
+        System.out.println("-------WELCOME TO DUNGEON CRAWLER-------"+"\n");
+
         int choice;
         do {
             System.out.println("--------Menu-------- \n"+
                     "1: Play \n"+
                     "2: Settings\n"+
                     "3. Exit \n"+
-                    "Entre ton choix! "
+                    "Choosing your choice :"
             );
 
             Scanner scanner = new Scanner(System.in);
@@ -20,12 +24,15 @@ public class Menu {
             switch (choice) {
                 case 1:
                     // Play
-                    System.out.println("coucou je suis la");
+                    Game game = new Game();
+                    game.createPlayer();
+                    game.clearScreen();
+                    game.chooseDifficulty();
                     choice=3;
                     break;
                 case 2:
                     // Change settings
-                    System.out.println("coucou je suis la dans le binks");
+                    System.out.println("Settings");
                     choice=3;
                     break;
                 case 3:
