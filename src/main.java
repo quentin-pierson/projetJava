@@ -14,9 +14,9 @@ public class main {
         String data = f.fileOpen("/Data/WeaponData.txt");
 
         CSVServices csv = new CSVServices();
-        ArrayList<Weapons> wrp = csv.csvParse(data, Weapons.class);
+        ArrayList<Weapon> wrp = csv.csvParse(data, Weapon.class);
 
-        for (Weapons w: wrp){
+        for (Weapon w: wrp){
             System.out.println(w.toString());
         }
 
@@ -25,10 +25,10 @@ public class main {
 
         clearScreen();
 
-        Players player = createPlayer();
+        Player player = createPlayer();
         System.out.println("Nom: "+ player.getName() + "\nClasse: " + player.getClassType());
 
-        Monsters skeleton = new Monsters(300,50,10,50,0,0,0, MonsterType.Skeleton,ClassType.Healer);
+        Monster skeleton = new Monster(300,50,10,50,0,0,0, MonsterType.Skeleton,ClassType.Healer);
         System.out.println(skeleton.toString());
     }
 
@@ -66,7 +66,7 @@ public class main {
 
     }
 
-    private static Players createPlayer(){
+    private static Player createPlayer(){
         Scanner myObj = new Scanner(System.in);
         String name;
         int classTypeInt;
@@ -97,7 +97,7 @@ public class main {
             }
         }while(exit == 0);
 
-        Players player = new Players(100,10,1,10,10,0,12,name,0,classType,100,1);
+        Player player = new Player(100,10,1,10,10,0,12,name,0,classType,100,1);
 
         return player;
     }

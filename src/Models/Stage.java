@@ -4,9 +4,9 @@ import Models.Room.Room;
 
 import java.util.ArrayList;
 
-public class Stages {
+public class Stage {
     private int difficulty;
     private int numberRoom;
     private ArrayList<Room> rooms;
-    private Stages nextStage;
+    private Stage nextStage;
 }

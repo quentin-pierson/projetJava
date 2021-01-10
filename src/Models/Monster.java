@@ -1,10 +1,10 @@
 package Models;
 
-public class Monsters extends Abilities {
+public class Monster extends Abilities {
     private MonsterType monsterType;
     private ClassType classType;
 
-    public Monsters(int health, int armor, int level, int attack, int lucky, int mana, int dodge, MonsterType monsterType, ClassType classType) {
+    public Monster(int health, int armor, int level, int attack, int lucky, int mana, int dodge, MonsterType monsterType, ClassType classType) {
         super(health, armor, level, attack, lucky, mana, dodge);
         this.monsterType = monsterType;
         this.classType = classType;

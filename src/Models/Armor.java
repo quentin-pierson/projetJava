@@ -1,6 +1,6 @@
 package Models;
 
-public class Armors extends Abilities {
+public class Armor extends Abilities {
     private ArmorType armorType;
 
     private String name;
@@ -9,7 +9,7 @@ public class Armors extends Abilities {
     private int durability;
     private int price;
 
-    public Armors(int health, int armor, int level, int attack, int lucky, int mana, int dodge, ArmorType armorType, String name, String description, int durability, int price, int damage, int levelUse) {
+    public Armor(int health, int armor, int level, int attack, int lucky, int mana, int dodge, ArmorType armorType, String name, String description, int durability, int price, int damage, int levelUse) {
         super(health, armor, level, attack, lucky, mana, dodge);
         this.armorType = armorType;
         this.name = name;
