@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Menu {
 
     public static void menu(){
+
         int choice;
         do {
             System.out.println("--------Menu-------- \n"+
@@ -20,7 +21,7 @@ public class Menu {
             switch (choice) {
                 case 1:
                     // Play
-                    System.out.println("coucou je suis la");
+
                     choice=3;
                     break;
                 case 2:
