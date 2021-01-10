@@ -24,7 +24,10 @@ public class Stage {
     }
     public void attributRoom(){
         RoomTransition startRoom = new RoomTransition("Start room", "Empty room, it has no interest..", 1, false);
+        rooms.add(startRoom);
+
         RoomTransition endRoom = new RoomTransition("End room", "Empty room, it has a stairs..", numberRoom, false);
+        rooms.add(endRoom);
 
         int previousValue = -1;
         for (int i = 2; i < numberRoom-1; i++) {
@@ -39,26 +42,32 @@ public class Stage {
             if (typeOfRoomGeneration <= 5){
                 // Room Treasure
                 RoomTreasure roomTreasure = new RoomTreasure("Room Treasure", "A room with a chest in its center", i, false);
+                rooms.add(roomTreasure);
 
             } else if ((typeOfRoomGeneration > 5)&&(typeOfRoomGeneration <= 15)){
                 // Room Trader
                 RoomTrader roomTrader = new RoomTrader("Room Trader", "A room with a trader in its center", i, false);
+                rooms.add(roomTrader);
 
             } else if ((typeOfRoomGeneration > 15)&&(typeOfRoomGeneration <= 25)){
                 // Room Trap
                 RoomTrap roomTrap = new RoomTrap("Room Trap", "Ouch, you get trap..", i, false);
+                rooms.add(roomTrap);
 
             } else if ((typeOfRoomGeneration > 25)&&(typeOfRoomGeneration <= 35)){
                 // Room Enigma
                 RoomEnigma roomEnigma = new RoomEnigma("Room Enigma", "Hum, there are symbols on the walls of this room", i, false);
+                rooms.add(roomEnigma);
 
             } else if ((typeOfRoomGeneration > 35)&&(typeOfRoomGeneration <= 65)){
                 // Room Transition
                 RoomTransition roomTransition = new RoomTransition("Room Transition", "Hum, there are symbols on the walls of this room", i, false);
+                rooms.add(roomTransition);
 
             } else if ((typeOfRoomGeneration > 65)&&(typeOfRoomGeneration <= 100)){
                 // Room Fight
                 RoomFight roomFight = new RoomFight("Room Transition", "Oups, there are a lot of enemies in this room.", i, false);
+                rooms.add(roomFight);
 
             } else {
                 System.out.println("Probabilty of room failed");
