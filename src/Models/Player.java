@@ -16,8 +16,8 @@ public class Player extends Abilities {
     private ArrayList<Item> inventory;
     private boolean isDefend;
 
-    public Player(int health, int armor, int level, int attack, int damage, int lucky, int mana, int dodge, String name, float experience, ClassType classType, int gold, int life) {
-        super(health, armor, level, attack, damage, lucky, mana, dodge);
+    public Player(int health, int armor, int level, int rateAttack, int damage, int lucky, int mana, int dodge, String name, float experience, ClassType classType, int gold, int life) {
+        super(health, armor, level, rateAttack, damage, lucky, mana, dodge);
         this.name = name;
         this.experience = experience;
         this.classType = classType;
@@ -59,7 +59,7 @@ public class Player extends Abilities {
 
         int diceAttack = rnd.nextInt(100);
 
-        if(diceAttack <= this.getAttack()) {
+        if(diceAttack <= this.getRateattack()) {
             if(diceAttack <= 5){
                 System.out.println("Critical success!");
                 monster.takeDamage(damage + 10,monster.getName());

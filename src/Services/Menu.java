@@ -1,5 +1,9 @@
 package Services;
 
+import Models.ClassType;
+import Models.Monster;
+import Models.MonsterType;
+
 import java.util.Scanner;
 
 
@@ -45,5 +49,25 @@ public class Menu {
                     break;
             }
         }while (choice!=3);
+    }
+
+    public void fight(){
+        int choice;
+        Monster monster = new Monster(100,0,1,10,20,0,0,0,"zeubis", MonsterType.Skeleton, ClassType.Healer);
+        do{
+            System.out.println("+--------------------------+\n" +
+                    "|Your choice:              |\n" +
+                    "|1: Attack          2: Bag |\n" +
+                    "+--------------------------+");
+            Scanner scanner = new Scanner(System.in);
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1: // Attack
+                    break;
+                case 2: // Bag
+                    break;
+            }
+        }while (monster.getHealth() !=0);
     }
 }

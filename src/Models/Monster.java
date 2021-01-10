@@ -7,8 +7,8 @@ public class Monster extends Abilities {
     private MonsterType monsterType;
     private ClassType classType;
 
-    public Monster(int health, int armor, int level, int attack, int damage, int lucky, int mana, int dodge,String name, MonsterType monsterType, ClassType classType) {
-        super(health, armor, level, attack, damage, lucky, mana, dodge);
+    public Monster(int health, int armor, int level, int rateAttack, int damage, int lucky, int mana, int dodge,String name, MonsterType monsterType, ClassType classType) {
+        super(health, armor, level, rateAttack, damage, lucky, mana, dodge);
         this.name = name;
         this.monsterType = monsterType;
         this.classType = classType;
@@ -36,7 +36,7 @@ public class Monster extends Abilities {
         Random rnd = new Random();
         int diceAttack = rnd.nextInt(100);
 
-        if(diceAttack <= this.getAttack()) {
+        if(diceAttack <= this.getRateattack()) {
             if(diceAttack <= 5){
                 System.out.println("Critical success!");
                 player.takeDamage(damage + 10,player.getName());

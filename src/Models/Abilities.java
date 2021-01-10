@@ -6,17 +6,17 @@ public class Abilities {
     protected int armor;
     protected int level;
 
-    protected int attack;
+    protected int rateAttack;
     protected int damage;
     protected int lucky;
     protected int mana;
     protected int dodge;
 
-    public Abilities(int health, int armor, int level, int attack, int damage, int lucky, int mana, int dodge) {
+    public Abilities(int health, int armor, int level, int rateAttack, int damage, int lucky, int mana, int dodge) {
         this.health = health;
         this.armor = armor;
         this.level = level;
-        this.attack = attack;
+        this.rateAttack = rateAttack;
         this.damage = damage;
         this.lucky = lucky;
         this.mana = mana;
@@ -35,8 +35,8 @@ public class Abilities {
         return level;
     }
 
-    public int getAttack() {
-        return attack;
+    public int getRateattack() {
+        return rateAttack;
     }
 
     public int getDamage() { return damage; }
