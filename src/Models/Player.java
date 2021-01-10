@@ -9,8 +9,8 @@ public class Player extends Abilities {
     private int life; // point Open
     private Weapon weapons;
 
-    public Player(int health, int armor, int level, int attack, int lucky, int mana, int dodge, String name, float experience, ClassType classType, int gold, int life) {
-        super(health, armor, level, attack, lucky, mana, dodge);
+    public Player(int health, int armor, int level, int damage, int lucky, int mana, int dodge, String name, float experience, ClassType classType, int gold, int life) {
+        super(health, armor, level, damage, lucky, mana, dodge);
         this.name = name;
         this.experience = experience;
         this.classType = classType;
@@ -48,5 +48,9 @@ public class Player extends Abilities {
         if (player.getLife() == -1) {
             gameOver(0);
         }
+    }
+
+    public void attack(Monster monster){
+
     }
 }

@@ -4,8 +4,8 @@ public class Monster extends Abilities {
     private MonsterType monsterType;
     private ClassType classType;
 
-    public Monster(int health, int armor, int level, int attack, int lucky, int mana, int dodge, MonsterType monsterType, ClassType classType) {
-        super(health, armor, level, attack, lucky, mana, dodge);
+    public Monster(int health, int armor, int level, int damage, int lucky, int mana, int dodge, MonsterType monsterType, ClassType classType) {
+        super(health, armor, level, damage, lucky, mana, dodge);
         this.monsterType = monsterType;
         this.classType = classType;
     }

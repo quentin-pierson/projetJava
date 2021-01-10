@@ -35,7 +35,7 @@ public class Weapon extends Abilities {
                 ", health=" + getHealth() +
                 ", armor=" + getArmor() +
                 ", level=" + getLevel() +
-                ", attack=" + getAttack() +
+                ", attack=" + getDamage() +
                 ", lucky=" + getLucky() +
                 ", mana=" + getMana() +
                 ", dodge=" + getDodge() +
