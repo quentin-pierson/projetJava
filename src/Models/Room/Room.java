@@ -1,19 +1,17 @@
-package Models;
+package Models.Room;
 
 import java.util.ArrayList;
 
-public class Rooms {
+public class Room {
     private String name;
-    private RoomType roomType;
     private String description;
-    private ArrayList<Rooms> roomNeighbours;
+    private ArrayList<Room> roomNeighbours;
 
     private boolean isLocked;
     private boolean playerPresent;
 
-    public Rooms(String name, RoomType roomType, String description, ArrayList<Rooms> roomNeighbours, boolean isLocked, boolean playerPresent) {
+    public Room(String name, String description, ArrayList<Room> roomNeighbours, boolean isLocked, boolean playerPresent) {
         this.name = name;
-        this.roomType = roomType;
         this.description = description;
         this.roomNeighbours = roomNeighbours;
         this.isLocked = isLocked;

@@ -1,12 +1,9 @@
 package Services;
 
-import Models.ClassType;
 import Models.MonsterType;
-import Models.Monsters;
+import Models.WeaponType;
 
-import java.io.Serializable;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
@@ -25,10 +22,13 @@ public class CSVServices<E, V> {
                         Type[] types = constructorParams[j].getParameterTypes();
                         String[] values = listObj[i].split(";");
 
-                        ArrayList<Serializable> serializableList = new ArrayList<Serializable>();
+                        ArrayList<Object> serializableList = new ArrayList<Object>();
+
                         for (int k = 0; k < values.length; k+=1){
                             System.out.println(types[k]);
                             serializableList.add(convertStringToType(types[k], values[k]));
+
+                            //serializableList.add(values[k]);
                         }
                         objectList.add(ctr.newInstance(serializableList.toArray()));
                     }
@@ -43,7 +43,7 @@ public class CSVServices<E, V> {
         return objectList;
     }
 
-    private Serializable convertStringToType(Type type, String value){
+    private Object convertStringToType(Type type, String value){
         switch (type.toString()){
             case "double":
                 return Double.parseDouble(value);
@@ -56,11 +56,11 @@ public class CSVServices<E, V> {
             case "boolean":
                 return Boolean.parseBoolean(value);
             case "class Models.RoomType":
-                return Models.RoomType.valueOf(value);
+                return RoomType.valueOf(value);
             case "class Models.WeaponType":
-                return Models.WeaponType.valueOf(value);
+                return WeaponType.valueOf(value);
             case "class Models.MonsterType":
-                return Models.MonsterType.valueOf(value);
+                return MonsterType.valueOf(value);
         }
 
         return null;
