@@ -1,6 +1,6 @@
 package Models;
 
-public class Armors extends Attributes{
+public class Armors extends Abilities {
     private ArmorType armorType;
 
     private String name;

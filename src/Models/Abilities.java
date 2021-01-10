@@ -1,6 +1,6 @@
 package Models;
 
-public class Attributes {
+public class Abilities {
 
     private int health;
     private int armor;
@@ -11,7 +11,7 @@ public class Attributes {
     private int mana;
     private int dodge;
 
-    public Attributes(int health, int armor, int level, int attack, int lucky, int mana, int dodge) {
+    public Abilities(int health, int armor, int level, int attack, int lucky, int mana, int dodge) {
         this.health = health;
         this.armor = armor;
         this.level = level;

@@ -1,6 +1,6 @@
 package Models;
 
-public class Weapons extends Attributes{
+public class Weapons extends Abilities {
     private WeaponType weaponType;
 
     private String name;

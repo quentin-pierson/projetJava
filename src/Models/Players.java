@@ -1,6 +1,6 @@
 package Models;
 
-public class Players extends Attributes{
+public class Players extends Abilities {
 
     private String name;
     private float experience;

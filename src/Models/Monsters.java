@@ -1,6 +1,6 @@
 package Models;
 
-public class Monsters extends Attributes{
+public class Monsters extends Abilities {
     private MonsterType monsterType;
     private ClassType classType;
 
