@@ -13,6 +13,7 @@ public class Stage {
     private ArrayList<Room> rooms;
     private Stage nextStage;
     private int typeOfRoomGeneration;
+    private int orderStage;
 
     public Stage(int minRoom, int maxRoom) {
         rooms = new ArrayList<Room>();
@@ -27,6 +28,10 @@ public class Stage {
         System.out.println(numberRoom);
     }
 
+    public int getOrderStage() {
+        return orderStage;
+    }
+
     private void attributRoom(){
         RoomTransition startRoom = new RoomTransition("Start room", "Empty room, it has no interest..", 1, false,RoomType.roomTransition);
         rooms.add(startRoom);
@@ -38,7 +43,6 @@ public class Stage {
                 typeOfRoomGeneration = randomRoomType.nextInt(100);
             } while (typeOfRoomGeneration == previousValue);
             previousValue = typeOfRoomGeneration;
-
 
             if (typeOfRoomGeneration <= 5){
                 // Room Treasure
@@ -77,8 +81,15 @@ public class Stage {
                 System.out.println("Probabilty of room failed");
             }
         }
-        RoomTransition endRoom = new RoomTransition("End room", "Empty room, it has a stairs..", numberRoom, false,RoomType.roomStair);
-        rooms.add(endRoom);
+        if (orderStage % 5 == 0){
+            Character monster = new Character(100,0,1,30,50,0,0,0,"Giant Orc", ClassType.Healer);
+            RoomBoss roomBoss = new RoomBoss("Boss room", "OUH ! There is a giant monster comming your way, prepare yourself..", numberRoom, false,monster,RoomType.roomBoss);
+            rooms.add(roomBoss);
+        } else {
+            RoomStair roomStair = new RoomStair("Room stair", "Empty room, it has a stairs..", numberRoom, false,RoomType.roomStair);
+            rooms.add(roomStair);
+        }
+
     }
 
     public ArrayList<Room> getRooms() {
