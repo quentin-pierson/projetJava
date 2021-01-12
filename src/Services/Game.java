@@ -62,7 +62,7 @@ public class Game {
             }
         }while(exit == 0);
 
-        Character character = new Character(100,10,1,10,10,10,0,12,name,classType);
+        Character character = new Character(100,10,1,99,10,10,0,12,name,classType);
         player = new Player(name,0,100,3,character);
         character.setDeadListener(player);
         stage = new Stage(3,10);
@@ -110,7 +110,7 @@ public class Game {
     public void displayFight(boolean isTrap,Character monster){
         int choice;
         do{
-            if(isTrap){
+            if(!isTrap){
                 do{
                     System.out.println("+--------------------------+\n" +
                             "|Your choice:              |\n" +
@@ -182,7 +182,7 @@ public class Game {
                     break;
                 case roomTrap:
                     RoomTrap roomTrap = (RoomTrap) room;
-                    displayFight(false,roomTrap.getCharacter());
+                    displayFight(true,roomTrap.getCharacter());
                     break;
                 case roomTreasure:
                     break;

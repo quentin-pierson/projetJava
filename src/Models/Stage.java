@@ -37,7 +37,7 @@ public class Stage {
 
             do {
                 typeOfRoomGeneration = randomRoomType.nextInt(100);
-            } while (typeOfRoomGeneration != previousValue);
+            } while (typeOfRoomGeneration == previousValue);
             previousValue = typeOfRoomGeneration;
 
 
@@ -68,10 +68,10 @@ public class Stage {
                 RoomTransition roomTransition = new RoomTransition("Room Transition", "Hum, there are symbols on the walls of this room", i, false, RoomType.roomTransition);
                 rooms.add(roomTransition);
 
-            } else if ((typeOfRoomGeneration > 65)&&(typeOfRoomGeneration <= 100)){
+            } else if ((typeOfRoomGeneration > 65)&&(typeOfRoomGeneration <= 100)){ 
                 // Room Fight
                 Character monster = new Character(100,0,1,10,20,0,0,0,"zeubis", ClassType.Healer);
-                RoomFight roomFight = new RoomFight("Room Transition", "Oups, there are a lot of enemies in this room.", i, false, monster, RoomType.roomFight);
+                RoomFight roomFight = new RoomFight("Room Fight", "Oups, there are a lot of enemies in this room.", i, false, monster, RoomType.roomFight);
                 rooms.add(roomFight);
 
             } else {
