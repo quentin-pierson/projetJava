@@ -7,6 +7,10 @@ import java.util.ArrayList;
 public class Trader {
     public ArrayList<Item> inventory = new ArrayList<Item>();
 
+    public Trader(){
+
+    }
+
     public void addItem(Item item){
         inventory.add(item);
     }

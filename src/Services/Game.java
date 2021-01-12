@@ -7,10 +7,7 @@ import Models.DifficultyType;
 import Models.Items.Item;
 import Models.Items.PotionHealth;
 import Models.Player;
-import Models.Room.Room;
-import Models.Room.RoomBoss;
-import Models.Room.RoomFight;
-import Models.Room.RoomTrap;
+import Models.Room.*;
 import Models.Stage;
 
 import java.util.ArrayList;
@@ -146,7 +143,7 @@ public class Game {
                 choice=0;
                 isTrap = false;
             }
-        }while (monster.getHealth() !=0);
+        }while (monster.getHealth() > 0);
     }
 
 
@@ -204,6 +201,8 @@ public class Game {
                         i++;
                         break;
                     case roomTrader:
+                        RoomTrader roomTrader = (RoomTrader) room;
+                        //player.addGold(roomTrader.getTrader().);
                         break;
                     case roomTransition:
                         break;
@@ -212,6 +211,9 @@ public class Game {
                         displayFight(true,roomTrap.getCharacter());
                         break;
                     case roomTreasure:
+                        RoomTreasure roomTreasure = (RoomTreasure) room;
+                        System.out.println("You get " + roomTreasure.getGold() + "gold");
+                        player.addGold(roomTreasure.getGold());
                         break;
                     default:
                         System.out.println("error");
