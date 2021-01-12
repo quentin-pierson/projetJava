@@ -42,7 +42,7 @@ public class Stage {
 
             if (typeOfRoomGeneration <= 5){
                 // Room Treasure
-                RoomTreasure roomTreasure = new RoomTreasure("Room Treasure", "A room with a chest in its center", i, false);
+                RoomTreasure roomTreasure = new RoomTreasure("Room Treasure", "A room with a chest in its center", i, false,100);
                 rooms.add(roomTreasure);
 
             } else if ((typeOfRoomGeneration > 5)&&(typeOfRoomGeneration <= 15)){
