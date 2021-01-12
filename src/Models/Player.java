@@ -39,6 +39,10 @@ public class Player {
         inventory.add(item);
     }
 
+    public ArrayList<Item> getInventory(){
+        return inventory;
+    }
+
     public int getLife() {
         return life;
     }

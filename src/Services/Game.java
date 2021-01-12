@@ -4,14 +4,16 @@ package Services;
 import Models.Character.Character;
 import Models.ClassType;
 import Models.DifficultyType;
+import Models.Items.Item;
 import Models.Player;
+import Models.Stage;
 
 import java.util.Scanner;
 
 public class Game {
 
     private Player player;
-
+    private Stage stage;
 
     private String title = "\n" +
             "   ___                                           _____                       __           \n" +
@@ -59,6 +61,8 @@ public class Game {
 
         Character character = new Character(100,10,1,10,10,10,0,12,name,classType);
         player = new Player(name,0,100,3,character);
+        stage = new Stage(3,10);
+        stage.attributRoom();
 
         System.out.println("Name: "+ player.getName()+" | "+"Type class: "+player.getCharacter().getClassType()+"\n");
         return player;
@@ -100,9 +104,8 @@ public class Game {
 
     }
 
-    public void displayFight(boolean isTrap){
+    public void displayFight(boolean isTrap,Character monster){
         int choice;
-        Character monster = new Character(100,0,1,10,20,0,0,0,"zeubis", ClassType.Healer);
         do{
             if(isTrap){
                 do{
@@ -120,7 +123,7 @@ public class Game {
                             choice=3;
                             break;
                         case 2: // Bag
-
+                            inventory();
                             break;
                         default:
                             System.out.println(("Wrong Choice. Enter again\n"));
@@ -131,8 +134,8 @@ public class Game {
             }
             else{
                 monster.fight(player.getCharacter());
+                choice=0;
                 isTrap = true;
-
             }
         }while (monster.getHealth() !=0);
     }
@@ -145,6 +148,18 @@ public class Game {
         catch(Exception E)
         {
             System.out.println(E);
+        }
+    }
+
+    public void inventory(){
+        for(Item item : player.getInventory()){
+            System.out.println(item);
+        }
+    }
+
+    public void playerSwitchingRoom(){
+        for (Room room : ) {
+
         }
     }
 }
