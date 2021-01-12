@@ -239,7 +239,6 @@ public class Game {
     public void generateStage(){
         for(int i=1;i<6;i++){
             Stage stage = new Stage(3,10,i);
-            System.out.println(stage.getOrderStage());
             stagesNivel.add(stage);
         }
     }
