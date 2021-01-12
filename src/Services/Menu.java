@@ -1,7 +1,6 @@
 package Services;
 
 import Models.ClassType;
-import Models.Monster;
 import Models.MonsterType;
 
 import java.util.Scanner;

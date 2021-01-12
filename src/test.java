@@ -1,5 +1,5 @@
+import Models.Character.Character;
 import Models.ClassType;
-import Models.Monster;
 import Models.MonsterType;
 import Models.Weapon;
 import Services.CSVServices;
@@ -33,7 +33,7 @@ public class test {
 
          */
 
-        Monster skeleton = new Monster(300,50,10,50,0,0,0, 0,"Skeleton", MonsterType.Skeleton, ClassType.Healer);
+        Character skeleton = new Character(300,50,10,50,0,0,0, 0,"Skeleton", ClassType.Healer);
         System.out.println(skeleton.toString());
     }
 

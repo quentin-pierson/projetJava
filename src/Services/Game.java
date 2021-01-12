@@ -1,8 +1,9 @@
 package Services;
 
 import Models.*;
+import Models.Character.Character;
+import Models.Player;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Game {
@@ -50,9 +51,10 @@ public class Game {
             }
         }while(exit == 0);
 
-        Player player = new Player(100,10,1,10,10,10,0,12,name,0,classType,100,1);
+        Character character = new Character(100,10,1,10,10,10,0,12,name,classType);
+        Player player = new Player(name,0,100,3,character);
 
-        System.out.println("Name: "+ player.getName()+" | "+"Type class: "+player.getClassType()+"\n");
+        System.out.println("Name: "+ player.getName()+" | "+"Type class: "+player.getCharacter().getClassType()+"\n");
         return player;
 
     }
