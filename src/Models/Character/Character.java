@@ -1,8 +1,6 @@
 package Models.Character;
 
 import Models.*;
-
-import java.beans.EventHandler;
 import java.util.Random;
 
 public class Character extends Abilities {
@@ -10,6 +8,7 @@ public class Character extends Abilities {
         private ClassType classType;
         private Weapon weapon;
         private boolean isDefend;
+        private DeadEvent deadEventListener;
 
     public Character(int health, int armor, int level, int rateAttack, int damage, int lucky, int mana, int dodge,String name, ClassType classType) {
             super(health, armor, level, rateAttack, damage, lucky, mana, dodge);
@@ -27,11 +26,14 @@ public class Character extends Abilities {
         public Weapon getWeapon() {
             return weapon;
         }
-
+git pu
         public ClassType getClassType() {
             return classType;
         }
 
+        public void setDeadListener(DeadEvent deadEventListener){
+            this.deadEventListener = deadEventListener;
+        }
 
         public String toString() {
             return "Monsters{" +
@@ -64,6 +66,7 @@ public class Character extends Abilities {
 
         private void dead() {
             System.out.println(name + " is dead");
+            if(deadEventListener != null) deadEventListener.dead();
         }
 
         public void defence () {
