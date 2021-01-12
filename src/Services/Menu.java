@@ -31,6 +31,7 @@ public class Menu {
                     game.createPlayer();
                     game.clearScreen();
                     game.chooseDifficulty();
+                    game.playerSwitchingRoom();
                     choice=3;
                     break;
                 case 2:

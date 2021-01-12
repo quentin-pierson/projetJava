@@ -15,7 +15,9 @@ public class Stage {
     private int typeOfRoomGeneration;
 
     public Stage(int minRoom, int maxRoom) {
+        rooms = new ArrayList<Room>();
         generateRoom(minRoom, maxRoom);
+        attributRoom();
     }
 
     private void generateRoom(int minRoom, int maxRoom){
@@ -24,15 +26,13 @@ public class Stage {
         numberRoom = randomRoom.nextInt(maxRoom - minRoom) + minRoom;
         System.out.println(numberRoom);
     }
-    public void attributRoom(){
+
+    private void attributRoom(){
         RoomTransition startRoom = new RoomTransition("Start room", "Empty room, it has no interest..", 1, false,RoomType.roomTransition);
         rooms.add(startRoom);
-
-        RoomTransition endRoom = new RoomTransition("End room", "Empty room, it has a stairs..", numberRoom, false,RoomType.roomStair);
-        rooms.add(endRoom);
-
+        System.out.println("debug i'm here the boss");
         int previousValue = -1;
-        for (int i = 2; i < numberRoom-1; i++) {
+        for (int i = 1; i < numberRoom; i++) {
             Random randomRoomType = new Random();
 
             do {
@@ -78,6 +78,9 @@ public class Stage {
                 System.out.println("Probabilty of room failed");
             }
         }
+        System.out.println("debug i'm here");
+        RoomTransition endRoom = new RoomTransition("End room", "Empty room, it has a stairs..", numberRoom, false,RoomType.roomStair);
+        rooms.add(endRoom);
     }
 
     public ArrayList<Room> getRooms() {

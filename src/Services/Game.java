@@ -7,6 +7,8 @@ import Models.DifficultyType;
 import Models.Items.Item;
 import Models.Player;
 import Models.Room.Room;
+import Models.Room.RoomFight;
+import Models.Room.RoomTrap;
 import Models.Stage;
 
 import java.util.Scanner;
@@ -64,7 +66,6 @@ public class Game {
         player = new Player(name,0,100,3,character);
         character.setDeadListener(player);
         stage = new Stage(3,10);
-        stage.attributRoom();
 
         System.out.println("Name: "+ player.getName()+" | "+"Type class: "+player.getCharacter().getClassType()+"\n");
         return player;
@@ -160,27 +161,47 @@ public class Game {
     }
 
     public void playerSwitchingRoom(){
+        int choice=0;
+        System.out.println("DEBUG : ");
         for (Room room : stage.getRooms()) {
             System.out.println(room.getName()+" "+room.getDescription());
-
-            switch (room.rommType()){
+            switch (room.getRoomType()){
                 case roomBoss:
-
+                    break;
                 case roomEnigma:
+                    break;
                 case roomFight:
+                    RoomFight roomFight = (RoomFight) room;
+                    displayFight(false,roomFight.getCharacter());
+                    break;
                 case roomStair:
+                    break;
                 case roomTrader:
+                    break;
                 case roomTransition:
+                    break;
                 case roomTrap:
+                    RoomTrap roomTrap = (RoomTrap) room;
+                    displayFight(false,roomTrap.getCharacter());
+                    break;
                 case roomTreasure:
-
-
-
+                    break;
+                default:
+                    System.out.println("error");
+                    break;
             }
-
-
+            do{
+                System.out.println("Press 1 for change room");
+                Scanner scanner = new Scanner(System.in);
+                choice = scanner.nextInt();
+                switch (choice){
+                    case 1:
+                        break;
+                    default:
+                        System.out.println("error");
+                        break;
+                }
+            }while (choice!=1);
         }
     }
-
-
 }
