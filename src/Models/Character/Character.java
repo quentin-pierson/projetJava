@@ -26,7 +26,7 @@ public class Character extends Abilities {
         public Weapon getWeapon() {
             return weapon;
         }
-git pu
+
         public ClassType getClassType() {
             return classType;
         }
