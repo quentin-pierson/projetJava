@@ -58,7 +58,7 @@ public class Stage {
 
             } else if ((typeOfRoomGeneration > 15)&&(typeOfRoomGeneration <= 25)){
                 // Room Trap
-                Character monster = new Character(100,0,1,100,100,0,0,0,"Skeleton", ClassType.Healer);
+                Character monster = new Character(1,0,1,100,1,0,0,0,"Skeleton", ClassType.Healer);
                 RoomTrap roomTrap = new RoomTrap("Room Trap", "Ouch, you get trap..", i, false, monster,RoomType.roomTrap);
                 rooms.add(roomTrap);
 
@@ -74,7 +74,7 @@ public class Stage {
 
             } else if ((typeOfRoomGeneration > 65)&&(typeOfRoomGeneration <= 100)){
                 // Room Fight
-                Character monster = new Character(100,0,1,100,20,0,0,0,"Skeleton", ClassType.Healer);
+                Character monster = new Character(1,0,1,100,2,0,0,0,"Skeleton", ClassType.Healer);
                 RoomFight roomFight = new RoomFight("Room Fight", "Oups, there are a lot of enemies in this room.", i, false, monster, RoomType.roomFight);
                 rooms.add(roomFight);
 
@@ -83,7 +83,7 @@ public class Stage {
             }
         }
         if (orderStage % 5 == 0){
-            Character monster = new Character(100,0,1,30,50,0,0,0,"Giant Orc", ClassType.Healer);
+            Character monster = new Character(20,0,1,30,30,0,0,0,"Giant Orc", ClassType.Healer);
             RoomBoss roomBoss = new RoomBoss("Boss room", "OUH ! There is a giant monster comming your way, prepare yourself..", numberRoom, false,monster,RoomType.roomBoss);
             rooms.add(roomBoss);
         } else {
