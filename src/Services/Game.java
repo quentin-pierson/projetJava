@@ -5,18 +5,21 @@ import Models.Character.Character;
 import Models.ClassType;
 import Models.DifficultyType;
 import Models.Items.Item;
+import Models.Items.PotionHealth;
 import Models.Player;
 import Models.Room.Room;
+import Models.Room.RoomBoss;
 import Models.Room.RoomFight;
 import Models.Room.RoomTrap;
 import Models.Stage;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Game {
 
     private Player player;
-    private Stage stage;
+    private ArrayList<Stage> stagesNivel = new ArrayList<Stage>();
 
     private String title = "\n" +
             "   ___                                           _____                       __           \n" +
@@ -63,9 +66,11 @@ public class Game {
         }while(exit == 0);
 
         Character character = new Character(100,10,1,99,10,10,0,12,name,classType);
+        PotionHealth potionHealth = new PotionHealth("potion health","healt 100 pv",100);
         player = new Player(name,0,100,3,character);
+        player.addItem(potionHealth);
         character.setDeadListener(player);
-        stage = new Stage(3,10);
+        generateStage();
 
         System.out.println("Name: "+ player.getName()+" | "+"Type class: "+player.getCharacter().getClassType()+"\n");
         return player;
@@ -156,52 +161,82 @@ public class Game {
     }
 
     public void inventory(){
+        int choice = 0;
+
         for(Item item : player.getInventory()){
-            System.out.println(item);
+            System.out.println(item.getName()+"->"+item.getDescription());
         }
+
+        System.out.println("Choose your item : ");
+        System.out.println("0 to skip");
+        Scanner scanner = new Scanner(System.in);
+        choice = scanner.nextInt();
+        do{
+            if(choice>0 && player.getInventorySize()>=choice){
+                player.getInventory().get(choice-1).used(player.getCharacter());
+                choice=0;
+            }
+        }while (choice !=0);
+
+
     }
 
     public void playerSwitchingRoom(){
         int choice=0;
-        for (Room room : stage.getRooms()) {
-            System.out.println(room.getName()+" "+room.getDescription());
-            switch (room.getRoomType()){
-                case roomBoss:
-                    break;
-                case roomEnigma:
-                    break;
-                case roomFight:
-                    RoomFight roomFight = (RoomFight) room;
-                    displayFight(false,roomFight.getCharacter());
-                    break;
-                case roomStair:
-                    break;
-                case roomTrader:
-                    break;
-                case roomTransition:
-                    break;
-                case roomTrap:
-                    RoomTrap roomTrap = (RoomTrap) room;
-                    displayFight(true,roomTrap.getCharacter());
-                    break;
-                case roomTreasure:
-                    break;
-                default:
-                    System.out.println("error");
-                    break;
-            }
-            do{
-                System.out.println("Press 1 for change room");
-                Scanner scanner = new Scanner(System.in);
-                choice = scanner.nextInt();
-                switch (choice){
-                    case 1:
+        int i=0;
+        do{
+            for (Room room : stagesNivel.get(i).getRooms()) {
+                System.out.println(room.getName()+" "+room.getDescription());
+                switch (room.getRoomType()){
+                    case roomBoss:
+                        RoomBoss roomBoss = (RoomBoss) room;
+                        displayFight(false,roomBoss.getCharacter());
+                        System.out.println("YOU HAVE WIN");
+                        System.exit(0);
+                        break;
+                    case roomEnigma:
+                        break;
+                    case roomFight:
+                        RoomFight roomFight = (RoomFight) room;
+                        displayFight(false,roomFight.getCharacter());
+                        break;
+                    case roomStair:
+                        i++;
+                        break;
+                    case roomTrader:
+                        break;
+                    case roomTransition:
+                        break;
+                    case roomTrap:
+                        RoomTrap roomTrap = (RoomTrap) room;
+                        displayFight(true,roomTrap.getCharacter());
+                        break;
+                    case roomTreasure:
                         break;
                     default:
                         System.out.println("error");
                         break;
                 }
-            }while (choice!=1);
+                do{
+                    System.out.println("Press 1 for change room");
+                    Scanner scanner = new Scanner(System.in);
+                    choice = scanner.nextInt();
+                    switch (choice){
+                        case 1:
+                            break;
+                        default:
+                            System.out.println("error");
+                            break;
+                    }
+                }while (choice!=1);
+            }
+        }while(i != stagesNivel.size());
+    }
+
+    public void generateStage(){
+        for(int i=1;i<6;i++){
+            Stage stage = new Stage(3,10,i);
+            stagesNivel.add(stage);
         }
     }
 }

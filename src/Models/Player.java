@@ -41,16 +41,16 @@ public class Player implements DeadEvent {
     }
 
     public void addItem(Item item){
-        if(inventoryCapacity < inventory.size()){
+        if(inventoryCapacity > inventory.size()){
             inventory.add(item);
         }
     }
 
-    private int getInventoryCapacity(){
+    public int getInventoryCapacity(){
         return inventoryCapacity;
     }
 
-    private int getInventorySize(){
+    public int getInventorySize(){
         return inventory.size();
     }
 

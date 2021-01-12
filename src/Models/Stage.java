@@ -15,10 +15,11 @@ public class Stage {
     private int typeOfRoomGeneration;
     private int orderStage;
 
-    public Stage(int minRoom, int maxRoom) {
+    public Stage(int minRoom, int maxRoom,int orderStage) {
         rooms = new ArrayList<Room>();
         generateRoom(minRoom, maxRoom);
         attributRoom();
+        this.orderStage = orderStage;
     }
 
     private void generateRoom(int minRoom, int maxRoom){
