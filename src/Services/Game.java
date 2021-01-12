@@ -6,6 +6,16 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Game {
+    private String title = "\n" +
+            "   ___                                           _____                       __           \n" +
+            "  / _ \\ __ __  ___   ___ _ ___  ___   ___       / ___/  ____ ___ _ _    __  / / ___   ____\n" +
+            " / // // // / / _ \\ / _ `// -_)/ _ \\ / _ \\     / /__   / __// _ `/| |/|/ / / / / -_) / __/\n" +
+            "/____/ \\_,_/ /_//_/ \\_, / \\__/ \\___//_//_/     \\___/  /_/   \\_,_/ |__,__/ /_/  \\__/ /_/   \n" +
+            "                   /___/                                                                  \n";
+
+    public String getTitle(){
+        return title;
+    }
 
     public Player createPlayer(){
         Scanner myObj = new Scanner(System.in);
@@ -83,7 +93,12 @@ public class Game {
     }
 
     public void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        try {
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        }
+        catch(Exception E)
+        {
+            System.out.println(E);
+        }
     }
 }

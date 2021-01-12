@@ -11,13 +11,8 @@ public class Menu {
 
 
     public void menu(){
-        System.out.println("\n" +
-                "   ___                                           _____                       __           \n" +
-                "  / _ \\ __ __  ___   ___ _ ___  ___   ___       / ___/  ____ ___ _ _    __  / / ___   ____\n" +
-                " / // // // / / _ \\ / _ `// -_)/ _ \\ / _ \\     / /__   / __// _ `/| |/|/ / / / / -_) / __/\n" +
-                "/____/ \\_,_/ /_//_/ \\_, / \\__/ \\___//_//_/     \\___/  /_/   \\_,_/ |__,__/ /_/  \\__/ /_/   \n" +
-                "                   /___/                                                                  \n");
-
+        Game game = new Game();
+        System.out.println(game.getTitle());
         int choice;
         do {
             System.out.println("--------Menu-------- \n"+
@@ -33,7 +28,6 @@ public class Menu {
             switch (choice) {
                 case 1:
                     // Play
-                    Game game = new Game();
                     game.createPlayer();
                     game.clearScreen();
                     game.chooseDifficulty();
