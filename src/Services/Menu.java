@@ -1,5 +1,6 @@
 package Services;
 
+import Models.Character.Character;
 import Models.ClassType;
 import Models.MonsterType;
 
@@ -51,7 +52,7 @@ public class Menu {
 
     public void fight(){
         int choice;
-        Monster monster = new Monster(100,0,1,10,20,0,0,0,"zeubis", MonsterType.Skeleton, ClassType.Healer);
+        Character monster = new Character(100,0,1,10,20,0,0,0,"zeubis", ClassType.Healer);
         do{
             System.out.println("+--------------------------+\n" +
                     "|Your choice:              |\n" +
