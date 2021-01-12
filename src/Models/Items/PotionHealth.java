@@ -1,6 +1,6 @@
 package Models.Items;
 
-import Models.Player;
+import Models.Character.Character;
 
 public class PotionHealth extends Item{
     private int increasePv;
@@ -11,13 +11,13 @@ public class PotionHealth extends Item{
     }
 
     @Override
-    public void used(Player player){
-        if(player.getHealth() < 100){
-            if(player.getHealth() + increasePv > 100){ // it's ok you can use potion of health
-                player.setHealth(100);
+    public void used(Character character){
+        if(character.getHealth() < 100){
+            if(character.getHealth() + increasePv > 100){ // it's ok you can use potion of health
+                character.setHealth(100);
             }
             else{
-                player.setHealth(player.getHealth()+increasePv);
+                character.setHealth(character.getHealth()+increasePv);
             }
         }
         else{

@@ -1,8 +1,8 @@
 package Models.Items;
 
-import Models.Player;
+import Models.Character.Character;
 
-public class PotionMana extends Item{
+public class PotionMana extends Item {
     private int increaseMana;
 
     public PotionMana(String name, String description,int increaseMana) {
@@ -11,13 +11,13 @@ public class PotionMana extends Item{
     }
 
     @Override
-    public void used(Player player){
-        if(player.getMana() < 100){
-            if(player.getMana() + increaseMana > 100){ // it's ok you can use potion of health
-                player.setMana(100);
+    public void used(Character character){
+        if(character.getMana() < 100){
+            if(character.getMana() + increaseMana > 100){ // it's ok you can use potion of health
+                character.setMana(100);
             }
             else{
-                player.setHealth(player.getMana()+increaseMana);
+                character.setHealth(character.getMana()+increaseMana);
             }
         }
         else{

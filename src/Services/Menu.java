@@ -49,24 +49,4 @@ public class Menu {
             }
         }while (choice!=3);
     }
-
-    public void fight(){
-        int choice;
-        Character monster = new Character(100,0,1,10,20,0,0,0,"zeubis", ClassType.Healer);
-        do{
-            System.out.println("+--------------------------+\n" +
-                    "|Your choice:              |\n" +
-                    "|1: Attack          2: Bag |\n" +
-                    "+--------------------------+");
-            Scanner scanner = new Scanner(System.in);
-            choice = scanner.nextInt();
-
-            switch (choice) {
-                case 1: // Attack
-                    break;
-                case 2: // Bag
-                    break;
-            }
-        }while (monster.getHealth() !=0);
-    }
 }
