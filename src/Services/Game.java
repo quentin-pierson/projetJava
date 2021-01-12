@@ -100,31 +100,40 @@ public class Game {
 
     }
 
-    public void displayFight(){
+    public void displayFight(boolean isTrap){
         int choice;
         Character monster = new Character(100,0,1,10,20,0,0,0,"zeubis", ClassType.Healer);
         do{
-            do{
-                System.out.println("+--------------------------+\n" +
-                        "|Your choice:              |\n" +
-                        "|1: Attack          2: Bag |\n" +
-                        "+--------------------------+");
-                Scanner scanner = new Scanner(System.in);
-                choice = scanner.nextInt();
+            if(isTrap){
+                do{
+                    System.out.println("+--------------------------+\n" +
+                            "|Your choice:              |\n" +
+                            "|1: Attack          2: Bag |\n" +
+                            "+--------------------------+");
+                    Scanner scanner = new Scanner(System.in);
+                    choice = scanner.nextInt();
 
-                switch (choice) {
-                    case 1: // Attack
-                        player.getCharacter().fight(monster);
-                        choice=3;
-                        break;
-                    case 2: // Bag
-                        break;
-                    default:
-                        System.out.println(("Wrong Choice. Enter again\n"));
-                        break;
-                }
-            }while (choice!=3);
+                    switch (choice) {
+                        case 1: // Attack
+                            player.getCharacter().fight(monster);
+                            clearScreen();
+                            choice=3;
+                            break;
+                        case 2: // Bag
 
+                            break;
+                        default:
+                            System.out.println(("Wrong Choice. Enter again\n"));
+                            break;
+                    }
+                }while (choice!=3);
+                isTrap = false;
+            }
+            else{
+                monster.fight(player.getCharacter());
+                isTrap = true;
+
+            }
         }while (monster.getHealth() !=0);
     }
 
