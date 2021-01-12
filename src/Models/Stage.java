@@ -1,5 +1,6 @@
 package Models;
 
+import Models.Character.Character;
 import Models.Room.*;
 import Models.Trader;
 
@@ -53,7 +54,8 @@ public class Stage {
 
             } else if ((typeOfRoomGeneration > 15)&&(typeOfRoomGeneration <= 25)){
                 // Room Trap
-                RoomTrap roomTrap = new RoomTrap("Room Trap", "Ouch, you get trap..", i, false);
+                Character monster = new Character(100,0,1,10,20,0,0,0,"zeubis", ClassType.Healer);
+                RoomTrap roomTrap = new RoomTrap("Room Trap", "Ouch, you get trap..", i, false, monster);
                 rooms.add(roomTrap);
 
             } else if ((typeOfRoomGeneration > 25)&&(typeOfRoomGeneration <= 35)){
@@ -68,7 +70,8 @@ public class Stage {
 
             } else if ((typeOfRoomGeneration > 65)&&(typeOfRoomGeneration <= 100)){
                 // Room Fight
-                RoomFight roomFight = new RoomFight("Room Transition", "Oups, there are a lot of enemies in this room.", i, false);
+                Character monster = new Character(100,0,1,10,20,0,0,0,"zeubis", ClassType.Healer);
+                RoomFight roomFight = new RoomFight("Room Transition", "Oups, there are a lot of enemies in this room.", i, false, monster);
                 rooms.add(roomFight);
 
             } else {

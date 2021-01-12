@@ -8,6 +8,7 @@ public class RoomTrader extends Room{
 
     public RoomTrader(String name, String description, int order, boolean isLocked, Trader trader) {
         super(name, description, order, isLocked);
+        this.trader = trader;
     }
 
     public Trader getTrader(){
