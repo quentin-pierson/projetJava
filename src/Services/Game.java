@@ -202,7 +202,8 @@ public class Game {
                         break;
                     case roomTrader:
                         RoomTrader roomTrader = (RoomTrader) room;
-                        //player.addGold(roomTrader.getTrader().);
+                        //roomTrader.getTrader();
+                        //player.(roomTrader.getTrader().);
                         break;
                     case roomTransition:
                         break;
@@ -238,6 +239,7 @@ public class Game {
     public void generateStage(){
         for(int i=1;i<6;i++){
             Stage stage = new Stage(3,10,i);
+            System.out.println(stage.getOrderStage());
             stagesNivel.add(stage);
         }
     }

@@ -82,7 +82,7 @@ public class Stage {
                 System.out.println("Probabilty of room failed");
             }
         }
-        if (orderStage % 5 == 0){
+        if (orderStage % 5 != 0){
             Character monster = new Character(20,0,1,30,30,0,0,0,"Giant Orc", ClassType.Healer);
             RoomBoss roomBoss = new RoomBoss("Boss room", "OUH ! There is a giant monster comming your way, prepare yourself..", numberRoom, false,monster,RoomType.roomBoss);
             rooms.add(roomBoss);
