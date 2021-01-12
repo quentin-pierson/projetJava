@@ -38,6 +38,7 @@ public class Character extends Abilities {
                     ", classType=" + getClassType() +
                     '}';
         }
+
         public void fight(Character character){
             Random rnd = new Random();
             int diceAttack = rnd.nextInt(100);

@@ -1,12 +1,18 @@
 package Services;
 
-import Models.*;
+
 import Models.Character.Character;
+import Models.ClassType;
+import Models.DifficultyType;
 import Models.Player;
 
 import java.util.Scanner;
 
 public class Game {
+
+    private Player player;
+
+
     private String title = "\n" +
             "   ___                                           _____                       __           \n" +
             "  / _ \\ __ __  ___   ___ _ ___  ___   ___       / ___/  ____ ___ _ _    __  / / ___   ____\n" +
@@ -52,7 +58,7 @@ public class Game {
         }while(exit == 0);
 
         Character character = new Character(100,10,1,10,10,10,0,12,name,classType);
-        Player player = new Player(name,0,100,3,character);
+        player = new Player(name,0,100,3,character);
 
         System.out.println("Name: "+ player.getName()+" | "+"Type class: "+player.getCharacter().getClassType()+"\n");
         return player;
@@ -93,6 +99,44 @@ public class Game {
         return difficultyType;
 
     }
+
+    public void displayFight(boolean isTrap){
+        int choice;
+        Character monster = new Character(100,0,1,10,20,0,0,0,"zeubis", ClassType.Healer);
+        do{
+            if(isTrap){
+                do{
+                    System.out.println("+--------------------------+\n" +
+                            "|Your choice:              |\n" +
+                            "|1: Attack          2: Bag |\n" +
+                            "+--------------------------+");
+                    Scanner scanner = new Scanner(System.in);
+                    choice = scanner.nextInt();
+
+                    switch (choice) {
+                        case 1: // Attack
+                            player.getCharacter().fight(monster);
+                            clearScreen();
+                            choice=3;
+                            break;
+                        case 2: // Bag
+
+                            break;
+                        default:
+                            System.out.println(("Wrong Choice. Enter again\n"));
+                            break;
+                    }
+                }while (choice!=3);
+                isTrap = false;
+            }
+            else{
+                monster.fight(player.getCharacter());
+                isTrap = true;
+
+            }
+        }while (monster.getHealth() !=0);
+    }
+
 
     public void clearScreen() {
         try {
