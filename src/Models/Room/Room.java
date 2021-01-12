@@ -6,7 +6,6 @@ public class Room {
     protected String name;
     protected String description;
     protected int order;
-
     protected boolean isLocked;
     protected boolean playerPresent;
 
@@ -16,6 +15,4 @@ public class Room {
         this.order = order;
         this.isLocked = isLocked;
     }
-
-
 }
