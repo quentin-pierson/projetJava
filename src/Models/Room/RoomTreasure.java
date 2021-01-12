@@ -6,8 +6,8 @@ public class RoomTreasure extends Room{
 
     private int gold;
 
-    public RoomTreasure(String name, String description, int order, boolean isLocked, int gold) {
-        super(name, description, order, isLocked);
+    public RoomTreasure(String name, String description, int order, boolean isLocked, int gold, RoomType roomType) {
+        super(name, description, order, isLocked, roomType);
         this.gold = gold;
     }
 
