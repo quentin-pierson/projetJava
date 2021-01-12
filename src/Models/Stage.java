@@ -30,7 +30,6 @@ public class Stage {
     private void attributRoom(){
         RoomTransition startRoom = new RoomTransition("Start room", "Empty room, it has no interest..", 1, false,RoomType.roomTransition);
         rooms.add(startRoom);
-        System.out.println("debug i'm here the boss");
         int previousValue = -1;
         for (int i = 1; i < numberRoom; i++) {
             Random randomRoomType = new Random();
@@ -54,7 +53,7 @@ public class Stage {
 
             } else if ((typeOfRoomGeneration > 15)&&(typeOfRoomGeneration <= 25)){
                 // Room Trap
-                Character monster = new Character(100,0,1,10,20,0,0,0,"zeubis", ClassType.Healer);
+                Character monster = new Character(100,0,1,100,100,0,0,0,"zeubis", ClassType.Healer);
                 RoomTrap roomTrap = new RoomTrap("Room Trap", "Ouch, you get trap..", i, false, monster,RoomType.roomTrap);
                 rooms.add(roomTrap);
 
@@ -68,9 +67,9 @@ public class Stage {
                 RoomTransition roomTransition = new RoomTransition("Room Transition", "Hum, there are symbols on the walls of this room", i, false, RoomType.roomTransition);
                 rooms.add(roomTransition);
 
-            } else if ((typeOfRoomGeneration > 65)&&(typeOfRoomGeneration <= 100)){ 
+            } else if ((typeOfRoomGeneration > 65)&&(typeOfRoomGeneration <= 100)){
                 // Room Fight
-                Character monster = new Character(100,0,1,10,20,0,0,0,"zeubis", ClassType.Healer);
+                Character monster = new Character(100,0,1,100,20,0,0,0,"zeubis", ClassType.Healer);
                 RoomFight roomFight = new RoomFight("Room Fight", "Oups, there are a lot of enemies in this room.", i, false, monster, RoomType.roomFight);
                 rooms.add(roomFight);
 
@@ -78,7 +77,6 @@ public class Stage {
                 System.out.println("Probabilty of room failed");
             }
         }
-        System.out.println("debug i'm here");
         RoomTransition endRoom = new RoomTransition("End room", "Empty room, it has a stairs..", numberRoom, false,RoomType.roomStair);
         rooms.add(endRoom);
     }

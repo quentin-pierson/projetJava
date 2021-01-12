@@ -116,6 +116,7 @@ public class Game {
                             "|Your choice:              |\n" +
                             "|1: Attack          2: Bag |\n" +
                             "+--------------------------+");
+                    System.out.println("Tell me your choice : ");
                     Scanner scanner = new Scanner(System.in);
                     choice = scanner.nextInt();
 
@@ -133,12 +134,12 @@ public class Game {
                             break;
                     }
                 }while (choice!=3);
-                isTrap = false;
+                isTrap = true;
             }
             else{
                 monster.fight(player.getCharacter());
                 choice=0;
-                isTrap = true;
+                isTrap = false;
             }
         }while (monster.getHealth() !=0);
     }
@@ -162,7 +163,6 @@ public class Game {
 
     public void playerSwitchingRoom(){
         int choice=0;
-        System.out.println("DEBUG : ");
         for (Room room : stage.getRooms()) {
             System.out.println(room.getName()+" "+room.getDescription());
             switch (room.getRoomType()){

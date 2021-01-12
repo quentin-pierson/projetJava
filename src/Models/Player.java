@@ -64,6 +64,7 @@ public class Player implements DeadEvent {
                 "░ ░   ░   ░   ▒   ░      ░      ░      ░ ░ ░ ▒       ░░     ░     ░░   ░ \n" +
                 "      ░       ░  ░       ░      ░  ░       ░ ░        ░     ░  ░   ░     \n" +
                 "                                                     ░                   ");
+        System.exit(0);
     }
 
     public void dead() {
