@@ -1,6 +1,7 @@
 package Models;
 
 import Models.Room.*;
+import Models.Trader;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -46,7 +47,8 @@ public class Stage {
 
             } else if ((typeOfRoomGeneration > 5)&&(typeOfRoomGeneration <= 15)){
                 // Room Trader
-                RoomTrader roomTrader = new RoomTrader("Room Trader", "A room with a trader in its center", i, false);
+                Trader trader = new Trader();
+                RoomTrader roomTrader = new RoomTrader("Room Trader", "A room with a trader in its center", i, false, trader);
                 rooms.add(roomTrader);
 
             } else if ((typeOfRoomGeneration > 15)&&(typeOfRoomGeneration <= 25)){

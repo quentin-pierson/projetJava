@@ -23,4 +23,5 @@ public class Trader {
                 "| Charles David: Hello traveler! |\n" +
                 "+-----------------------------+");
     }
+
 }
