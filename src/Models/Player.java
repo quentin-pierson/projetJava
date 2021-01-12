@@ -15,6 +15,8 @@ public class Player implements DeadEvent {
     private ArrayList<Item> inventory;
     private Character character;
 
+    private int inventoryCapacity;
+
     public Player(String name, float experience, int gold, int life,Character character) {
         this.name = name;
         this.experience = experience;
@@ -22,6 +24,8 @@ public class Player implements DeadEvent {
         this.life = life;
         this.character = character;
         inventory = new ArrayList<Item>();
+
+        inventoryCapacity= 4;
     }
 
     public String getName(){
@@ -37,7 +41,17 @@ public class Player implements DeadEvent {
     }
 
     public void addItem(Item item){
-        inventory.add(item);
+        if(inventoryCapacity < inventory.size()){
+            inventory.add(item);
+        }
+    }
+
+    private int getInventoryCapacity(){
+        return inventoryCapacity;
+    }
+
+    private int getInventorySize(){
+        return inventory.size();
     }
 
     public ArrayList<Item> getInventory(){
