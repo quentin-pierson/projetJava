@@ -17,5 +17,11 @@ public class Room {
         this.isLocked = isLocked;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public String getDescription() {
+        return description;
+    }
 }

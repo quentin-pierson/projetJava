@@ -79,6 +79,10 @@ public class Stage {
             }
         }
     }
+
+    public ArrayList<Room> getRooms() {
+        return rooms;
+    }
 }
 
 

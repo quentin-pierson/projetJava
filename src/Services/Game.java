@@ -6,6 +6,7 @@ import Models.ClassType;
 import Models.DifficultyType;
 import Models.Items.Item;
 import Models.Player;
+import Models.Room.Room;
 import Models.Stage;
 
 import java.util.Scanner;
@@ -61,6 +62,7 @@ public class Game {
 
         Character character = new Character(100,10,1,10,10,10,0,12,name,classType);
         player = new Player(name,0,100,3,character);
+        character.setDeadListener(player);
         stage = new Stage(3,10);
         stage.attributRoom();
 
@@ -158,8 +160,27 @@ public class Game {
     }
 
     public void playerSwitchingRoom(){
-        for (Room room : ) {
+        for (Room room : stage.getRooms()) {
+            System.out.println(room.getName()+" "+room.getDescription());
+
+            switch (room.rommType()){
+                case roomBoss:
+
+                case roomEnigma:
+                case roomFight:
+                case roomStair:
+                case roomTrader:
+                case roomTransition:
+                case roomTrap:
+                case roomTreasure:
+
+
+
+            }
+
 
         }
     }
+
+
 }
