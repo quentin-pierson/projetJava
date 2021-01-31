@@ -1,13 +1,12 @@
 package Models.Room;
 import Models.Trader;
-import java.util.ArrayList;
 
 public class RoomTrader extends Room{
 
     private Trader trader;
 
-    public RoomTrader(String name, String description, int order, boolean isLocked, Trader trader, RoomType roomType) {
-        super(name, description, order, isLocked, roomType);
+    public RoomTrader(String name, String description, int order, boolean isLocked, Trader trader, RoomExisting roomExisting) {
+        super(name, description, order, isLocked, roomExisting);
         this.trader = trader;
     }
 

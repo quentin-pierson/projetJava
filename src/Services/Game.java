@@ -184,7 +184,7 @@ public class Game {
         do{
             for (Room room : stagesNivel.get(i).getRooms()) {
                 System.out.println(room.getName()+" "+room.getDescription());
-                switch (room.getRoomType()){
+                switch (room.getRoomExisting()){
                     case roomBoss:
                         RoomBoss roomBoss = (RoomBoss) room;
                         displayFight(false,roomBoss.getCharacter());

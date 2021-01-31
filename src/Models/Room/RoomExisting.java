@@ -1,6 +1,6 @@
 package Models.Room;
 
-public enum RoomType {
+public enum RoomExisting {
     roomBoss,
     roomEnigma,
     roomFight,
