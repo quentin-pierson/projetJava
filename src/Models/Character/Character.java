@@ -5,15 +5,15 @@ import java.util.Random;
 
 public class Character extends Abilities {
         private String name;
-        private ClassType classType;
+        private ListClassExisting listClassExisting;
         private Weapon weapon;
         private boolean isDefend;
         private DeadEvent deadEventListener;
 
-    public Character(int health, int armor, int level, int rateAttack, int damage, int lucky, int mana, int dodge,String name, ClassType classType) {
+    public Character(int health, int armor, int level, int rateAttack, int damage, int lucky, int mana, int dodge,String name, ListClassExisting listClassExisting) {
             super(health, armor, level, rateAttack, damage, lucky, mana, dodge);
             this.name = name;
-            this.classType = classType;
+            this.listClassExisting = listClassExisting;
         }
         public String getName(){
             return name;
@@ -27,8 +27,8 @@ public class Character extends Abilities {
             return weapon;
         }
 
-        public ClassType getClassType() {
-            return classType;
+        public ListClassExisting getListClassExisting() {
+            return listClassExisting;
         }
 
         public void setDeadListener(DeadEvent deadEventListener){
@@ -37,7 +37,7 @@ public class Character extends Abilities {
 
         public String toString() {
             return "Monsters{" +
-                    ", classType=" + getClassType() +
+                    ", listClassExisting=" + getListClassExisting() +
                     '}';
         }
 

@@ -1,6 +1,6 @@
 package Models;
 
-public enum MonsterType {
+public enum ListMonster {
     Skeleton,
     Orc,
     Bat,

@@ -1,6 +1,6 @@
 package Models;
 
-public enum ClassType {
+public enum ListClassExisting {
     Warrior,
     Archer,
     Wizard,

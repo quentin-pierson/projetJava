@@ -1,6 +1,5 @@
 import Models.Character.Character;
-import Models.ClassType;
-import Models.MonsterType;
+import Models.ListClassExisting;
 import Models.Weapon;
 import Services.CSVServices;
 import Services.FileServices;
@@ -23,17 +22,17 @@ public class test {
         }
 
         /*
-        DifficultyType difficultyType = chooseDifficulty();
+        ChooseDifficulty difficultyType = chooseDifficulty();
         System.out.println("Difficultée:" + difficultyType);
 
         clearScreen();
 
         Player player = createPlayer();
-        System.out.println("Nom: "+ player.getName() + "\nClasse: " + player.getClassType());
+        System.out.println("Nom: "+ player.getName() + "\nClasse: " + player.getListClassExisting());
 
          */
 
-        Character skeleton = new Character(300,50,10,50,0,0,0, 0,"Skeleton", ClassType.Healer);
+        Character skeleton = new Character(300,50,10,50,0,0,0, 0,"Skeleton", ListClassExisting.Healer);
         System.out.println(skeleton.toString());
     }
 

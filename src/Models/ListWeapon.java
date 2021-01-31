@@ -1,6 +1,6 @@
 package Models;
 
-public enum WeaponType {
+public enum ListWeapon {
     Bow,
     Sword,
     Wand,

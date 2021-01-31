@@ -2,8 +2,8 @@ package Services;
 
 
 import Models.Character.Character;
-import Models.ClassType;
-import Models.DifficultyType;
+import Models.ChooseDifficulty;
+import Models.ListClassExisting;
 import Models.Items.Item;
 import Models.Items.PotionHealth;
 import Models.Player;
@@ -33,7 +33,7 @@ public class Game {
         Scanner myObj = new Scanner(System.in);
         String name;
         int classTypeInt;
-        ClassType classType = ClassType.Warrior;
+        ListClassExisting listClassExisting = ListClassExisting.Warrior;
         // Enter username and press Enter
         System.out.println("Enter your game name:");
         name = myObj.nextLine();
@@ -48,13 +48,13 @@ public class Game {
 
             switch (classTypeInt) {
                 case 1:
-                    classType = ClassType.Warrior;
+                    listClassExisting = ListClassExisting.Warrior;
                     break;
                 case 2:
-                    classType = ClassType.Archer;
+                    listClassExisting = ListClassExisting.Archer;
                     break;
                 case 3:
-                    classType = ClassType.Wizard;
+                    listClassExisting = ListClassExisting.Wizard;
                     break;
                 default:
                     exit = 0;
@@ -62,22 +62,22 @@ public class Game {
             }
         }while(exit == 0);
 
-        Character character = new Character(100,10,1,99,10,10,0,12,name,classType);
+        Character character = new Character(100,10,1,99,10,10,0,12,name, listClassExisting);
         PotionHealth potionHealth = new PotionHealth("potion health","healt 100 pv",100);
         player = new Player(name,0,100,3,character);
         player.addItem(potionHealth);
         character.setDeadListener(player);
         generateStage();
 
-        System.out.println("Name: "+ player.getName()+" | "+"Type class: "+player.getCharacter().getClassType()+"\n");
+        System.out.println("Name: "+ player.getName()+" | "+"Type class: "+player.getCharacter().getListClassExisting()+"\n");
         return player;
 
     }
 
-    public DifficultyType chooseDifficulty() {
+    public ChooseDifficulty chooseDifficulty() {
         Scanner myObj = new Scanner(System.in);
         int difficultyname;
-        DifficultyType difficultyType = DifficultyType.Easy;
+        ChooseDifficulty chooseDifficulty = ChooseDifficulty.Easy;
 
         int exit = 0;
         do {
@@ -87,16 +87,16 @@ public class Game {
 
             switch (difficultyname) {
                 case 1:
-                    difficultyType  = DifficultyType.Easy;
+                    chooseDifficulty = ChooseDifficulty.Easy;
                     break;
                 case 2:
-                    difficultyType  = DifficultyType.Medium;
+                    chooseDifficulty = ChooseDifficulty.Medium;
                     break;
                 case 3:
-                    difficultyType  = DifficultyType.Hard;
+                    chooseDifficulty = ChooseDifficulty.Hard;
                     break;
                 case 4:
-                    difficultyType  = DifficultyType.Hardcore;
+                    chooseDifficulty = ChooseDifficulty.Hardcore;
                     break;
                 default:
                     exit = 0;
@@ -104,8 +104,8 @@ public class Game {
             }
         }while(exit == 0);
 
-        System.out.println("Difficulty chosen: "+difficultyType);
-        return difficultyType;
+        System.out.println("Difficulty chosen: "+ chooseDifficulty);
+        return chooseDifficulty;
 
     }
 

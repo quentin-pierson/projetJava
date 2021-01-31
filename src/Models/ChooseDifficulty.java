@@ -1,6 +1,6 @@
 package Models;
 
-public enum DifficultyType {
+public enum ChooseDifficulty {
     Easy,
     Medium,
     Hard,

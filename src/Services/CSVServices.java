@@ -1,7 +1,7 @@
 package Services;
 
-import Models.MonsterType;
-import Models.WeaponType;
+import Models.ListWeapon;
+import Models.ListMonster;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Type;
@@ -55,10 +55,10 @@ public class CSVServices<E, V> {
                 return Float.parseFloat(value);
             case "boolean":
                 return Boolean.parseBoolean(value);
-            case "class Models.WeaponType":
-                return WeaponType.valueOf(value);
-            case "class Models.MonsterType":
-                return MonsterType.valueOf(value);
+            case "class Models.ListWeapon":
+                return ListWeapon.valueOf(value);
+            case "class Models.ListMonster":
+                return ListMonster.valueOf(value);
         }
 
         return null;
