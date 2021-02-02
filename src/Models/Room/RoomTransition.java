@@ -4,8 +4,10 @@ import Models.Player;
 import Services.Game;
 
 public class RoomTransition extends Room{
-    public RoomTransition(String name, String description,int order, boolean isLocked) {
-        super(name, description,order, isLocked);
+    public RoomTransition(int order, boolean isLocked) {
+        super(order, isLocked);
+        setName("Room Transition");
+        setDescription("/Data/Room/RoomTransitionData.txt");
     }
 
     @Override

@@ -8,9 +8,11 @@ public class RoomBoss extends Room{
 
     private Character character;
 
-    public RoomBoss(String name, String description, int order, boolean isLocked, Character character) {
-        super(name, description, order, isLocked);
+    public RoomBoss(int order, boolean isLocked, Character character) {
+        super(order, isLocked);
         this.character = character;
+        setName("Room Boss");
+        setDescription("/Data/Room/RoomBossData.txt");
     }
 
     @Override
@@ -18,4 +20,5 @@ public class RoomBoss extends Room{
         game.displayFight(false, character);
         game.win();
     }
+
 }

@@ -7,9 +7,11 @@ public class RoomTrader extends Room{
 
     private Trader trader;
 
-    public RoomTrader(String name, String description, int order, boolean isLocked, Trader trader) {
-        super(name, description, order, isLocked);
+    public RoomTrader(int order, boolean isLocked, Trader trader) {
+        super(order, isLocked);
         this.trader = trader;
+        setName("Room Trader");
+        setDescription("/Data/Room/RoomTraderData.txt");
     }
 
     public Trader getTrader(){

@@ -7,13 +7,16 @@ public class RoomFight extends Room {
 
     private Character character;
 
-    public RoomFight(String name, String description, int order, boolean isLocked, Character character) {
-        super(name, description, order, isLocked);
+    public RoomFight(int order, boolean isLocked, Character character) {
+        super(order, isLocked);
         this.character = character;
+        setName("Room Fight");
+        setDescription("/Data/Room/RoomFightData.txt");
     }
 
     @Override
     public void enterInRoom(Game game){
         game.displayFight(false,character);
     }
+
 }
