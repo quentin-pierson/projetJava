@@ -1,16 +1,19 @@
 package Models.Room;
 import Models.Character.Character;
+import Models.Player;
+import Services.Game;
 
 public class RoomTrap extends Room{
 
     private Character character;
 
-    public RoomTrap(String name, String description, int order, boolean isLocked, Character character, RoomExisting roomExisting) {
-        super(name, description, order, isLocked, roomExisting);
+    public RoomTrap(String name, String description, int order, boolean isLocked, Character character) {
+        super(name, description, order, isLocked);
         this.character = character;
     }
 
-    public Character getCharacter(){
-        return character;
+    @Override
+    public void enterInRoom(Game game){
+        game.displayFight(true, character);
     }
 }

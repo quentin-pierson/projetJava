@@ -17,6 +17,9 @@ public class Game {
 
     private Player player;
     private ArrayList<Stage> stagesNivel = new ArrayList<Stage>();
+    private int stageCross;
+    public void addStageCross(){ stageCross+=1; }
+    public Player getPlayer(){ return player; }
 
     private String title = "\n" +
             "   ___                                           _____                       __           \n" +
@@ -180,47 +183,11 @@ public class Game {
 
     public void playerSwitchingRoom(){
         int choice=0;
-        int i=0;
+
         do{
-            for (Room room : stagesNivel.get(i).getRooms()) {
+            for (Room room : stagesNivel.get(stageCross).getRooms()) {
                 System.out.println(room.getName()+" "+room.getDescription());
-                switch (room.getRoomExisting()){
-                    case roomBoss:
-                        RoomBoss roomBoss = (RoomBoss) room;
-                        displayFight(false,roomBoss.getCharacter());
-                        //System.out.println("YOU HAVE WIN");
-                        win();
-                        System.exit(0);
-                        break;
-                    case roomEnigma:
-                        break;
-                    case roomFight:
-                        RoomFight roomFight = (RoomFight) room;
-                        displayFight(false,roomFight.getCharacter());
-                        break;
-                    case roomStair:
-                        i++;
-                        break;
-                    case roomTrader:
-                        RoomTrader roomTrader = (RoomTrader) room;
-                        //roomTrader.getTrader();
-                        //player.(roomTrader.getTrader().);
-                        break;
-                    case roomTransition:
-                        break;
-                    case roomTrap:
-                        RoomTrap roomTrap = (RoomTrap) room;
-                        displayFight(true,roomTrap.getCharacter());
-                        break;
-                    case roomTreasure:
-                        RoomTreasure roomTreasure = (RoomTreasure) room;
-                        System.out.println("You get " + roomTreasure.getGold() + "gold");
-                        player.addGold(roomTreasure.getGold());
-                        break;
-                    default:
-                        System.out.println("error");
-                        break;
-                }
+                room.enterInRoom(this);
                 do{
                     System.out.println("Press 1 for change room");
                     Scanner scanner = new Scanner(System.in);
@@ -234,7 +201,7 @@ public class Game {
                     }
                 }while (choice!=1);
             }
-        }while(i != stagesNivel.size());
+        }while(stageCross != stagesNivel.size());
     }
 
     public void generateStage(){
@@ -266,5 +233,8 @@ public class Game {
                 "|:::|:::|    '\\|::::|/                       ¯¯¯'       \\::|:::::::::|:|::|:::|\u0091                          \\::|::::::|::/  |:::::::|::/'\u0082          |:::|::::/ '\u0082  |:::|::::/       ¯¯¯        \n" +
                 " \\::|::/       ¯¯                         \u0091              \\|:::::::::|/\\::|::/   °                         \\|::::::|/    |:::::::|/'\u0082             \\::|::/       \\::|::/                      \n" +
                 "   \\|/'                                                \u0091     ¯¯¯¯¯    \\|/                                 ¯¯¯       ¯¯¯¯                  \\|/           \\|/                        \n");
+        System.exit(0);
     }
+
+
 }
