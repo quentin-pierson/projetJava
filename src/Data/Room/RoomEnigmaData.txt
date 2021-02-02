@@ -1,5 +1,5 @@
-Hum, there are symbols on the walls of this room, perhaps they have a meaning ; 1
-You see a sign with the words: "I finish the night and start tomorrow". ; 4
-You see a sign with the words: "The more it is warm the more it is fresh". ; 3
-There's a lot of lever in this room I wonder what they're for? ; 2
-You see a sign with the words: "Solve : 2x^2 - 9x -5". ; 3
+Hum, there are symbols on the walls of this room, perhaps they have a meaning;1
+You see a sign with the words: "I finish the night and start tomorrow".;4
+You see a sign with the words: "The more it is warm the more it is fresh".;3
+There's a lot of lever in this room I wonder what they're for?;2
+You see a sign with the words: "Solve : 2x^2 - 9x -5".;3

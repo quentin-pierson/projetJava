@@ -20,6 +20,7 @@ public class Game {
     private ArrayList<Stage> stagesNivel = new ArrayList<Stage>();
     private int stageCross;
     private int stageSize;
+    private ChooseDifficulty chooseDifficulty = ChooseDifficulty.Easy;
 
     private String title = "\n" +
             "   ___                                           _____                       __           \n" +
@@ -198,6 +199,7 @@ public class Game {
             for (Room room : stagesNivel.get(stageCross).getRooms()) {
                 System.out.println(room.getName()+" "+room.getDescription());
                 room.enterInRoom(this);
+                clearScreen();
                 do{
                     System.out.println("Press 1 for change room");
                     Scanner scanner = new Scanner(System.in);

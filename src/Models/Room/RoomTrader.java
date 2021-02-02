@@ -14,12 +14,8 @@ public class RoomTrader extends Room{
         setDescription("/Data/Room/RoomTraderData.txt");
     }
 
-    public Trader getTrader(){
-        return trader;
-    }
-
     @Override
     public void enterInRoom(Game game){
-
+        trader.displayInventory(game);
     }
 }

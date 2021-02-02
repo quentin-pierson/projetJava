@@ -10,6 +10,11 @@ public class PotionMana extends Item {
         this.increaseMana = increaseMana;
     }
 
+    public PotionMana(String name, String description,int increaseMana,int price) {
+        super(name, description,price);
+        this.increaseMana = increaseMana;
+    }
+
     @Override
     public void used(Character character){
         if(character.getMana() < 100){

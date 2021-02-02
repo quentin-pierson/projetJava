@@ -10,6 +10,12 @@ public class PotionHealth extends Item{
         this.increasePv = increasePv;
     }
 
+    public PotionHealth(String name, String description,int increasePv,int price) {
+        super(name, description,price);
+        this.increasePv = increasePv;
+
+    }
+
     @Override
     public void used(Character character){
         if(character.getHealth() < 100){
