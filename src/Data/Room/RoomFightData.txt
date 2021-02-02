@@ -1,1 +1,1 @@
-"Oups, there are a lot of enemies in this room."
+Oups, there are a lot of enemies in this room.
