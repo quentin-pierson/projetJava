@@ -19,8 +19,7 @@ public class Game {
     private Player player;
     private ArrayList<Stage> stagesNivel = new ArrayList<Stage>();
     private int stageCross;
-    public void addStageCross(){ stageCross+=1; }
-    public Player getPlayer(){ return player; }
+    private int stageSize;
 
     private String title = "\n" +
             "   ___                                           _____                       __           \n" +
@@ -31,6 +30,16 @@ public class Game {
 
     public String getTitle(){
         return title;
+    }
+
+    public void addStageCross(){
+        stageCross+=1;
+        System.out.println("YOU CHANGE FLOORS \n"+ "YOU ARE IN floor "+stageCross+"/"+stageSize+ " \n");
+
+    }
+
+    public Player getPlayer(){
+        return player;
     }
 
     public Player createPlayer(){
@@ -210,6 +219,7 @@ public class Game {
             Stage stage = new Stage(3,10,i);
             stagesNivel.add(stage);
         }
+        stageSize = stagesNivel.size()-1;
     }
 
     public void win(){
