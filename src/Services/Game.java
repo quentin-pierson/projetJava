@@ -9,6 +9,7 @@ import Models.Items.PotionHealth;
 import Models.Player;
 import Models.Room.*;
 import Models.Stage;
+import Services.ScannerSc;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -166,16 +167,16 @@ public class Game {
 
         System.out.println("Choose your item : ");
         System.out.println("0 to skip");
+
         Scanner scanner = new Scanner(System.in);
         choice = scanner.nextInt();
+
         do{
             if(choice>0 && player.getInventorySize()>=choice){
                 player.getInventory().get(choice-1).used(player.getCharacter());
                 choice=0;
             }
         }while (choice !=0);
-
-
     }
 
     public void playerSwitchingRoom(){
