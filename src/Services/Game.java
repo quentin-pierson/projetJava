@@ -139,7 +139,6 @@ public class Game {
                     switch (choice) {
                         case 1: // Attack
                             player.getCharacter().fight(monster);
-                            clearScreen();
                             choice=3;
                             break;
                         case 2: // Bag
@@ -199,7 +198,6 @@ public class Game {
             for (Room room : stagesNivel.get(stageCross).getRooms()) {
                 System.out.println(room.getName()+" "+room.getDescription());
                 room.enterInRoom(this);
-                clearScreen();
                 do{
                     System.out.println("Press 1 for change room");
                     Scanner scanner = new Scanner(System.in);
@@ -212,6 +210,7 @@ public class Game {
                             break;
                     }
                 }while (choice!=1);
+                clearScreen();
             }
         }while(stageCross != stagesNivel.size());
     }
