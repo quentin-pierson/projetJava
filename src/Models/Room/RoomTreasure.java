@@ -7,9 +7,11 @@ public class RoomTreasure extends Room{
 
     private int gold;
 
-    public RoomTreasure(String name, String description, int order, boolean isLocked, int gold) {
-        super(name, description, order, isLocked);
+    public RoomTreasure(int order, boolean isLocked, int gold) {
+        super(order, isLocked);
         this.gold = gold;
+        setName("Room Treasure");
+        setDescription("/Data/Room/RoomTreasureData.txt");
     }
 
     public int getGold(){
@@ -21,4 +23,5 @@ public class RoomTreasure extends Room{
         System.out.println("You get " + getGold() + "gold");
         game.getPlayer().addGold(getGold());
     }
+
 }

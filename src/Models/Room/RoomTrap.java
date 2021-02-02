@@ -7,13 +7,16 @@ public class RoomTrap extends Room{
 
     private Character character;
 
-    public RoomTrap(String name, String description, int order, boolean isLocked, Character character) {
-        super(name, description, order, isLocked);
+    public RoomTrap(int order, boolean isLocked, Character character) {
+        super(order, isLocked);
         this.character = character;
+        setName("Room Trap");
+        setDescription("/Data/Room/RoomTrapData.txt");
     }
 
     @Override
     public void enterInRoom(Game game){
         game.displayFight(true, character);
     }
+
 }
