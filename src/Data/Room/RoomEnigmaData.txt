@@ -1,5 +1,5 @@
-Hum, what is the name a the trader? \n1) Charles David \n2) JCVD \n3) WAJNEBEURG \n4) You don't care;1
-You see a sign with the words: "I finish the night and start tomorrow". \n1) Some Java project \n2) Courses \n3) The letter W \n4) The letter N;4
-You see a sign with the words: "The more it is warm the more it is fresh". \n1) A dead body \n2) Jam \n3) Bread \n4)  ;3
-There's a lot of lever in this room! Which ones are you going to activate? \n1) Old rusty lever \n2) Lever with a skull pommel \n3) Bright shinny lever \n4) This one is for +18 ;2
-You see a sign with the words: "Solve : 2x^2 - 9x -5". \n1) 1/2 and -5 \n2) Always 42 \n3) -1/2 and 5 \n4) 3.141596 and 1,618033 ;3
+Hum, what is the name a the trader? --n1c) Charles David --n2) JCVD --n3) WAJNEBEURG --n4) You don't care;1
+You see a sign with the words: "I finish the night and start tomorrow". --n1) Some Java project --n2) Courses --n3) The letter W --n4) The letter N;4
+You see a sign with the words: "The more it is warm the more it is fresh". --n1) A dead body --n2) Jam --n3) Bread --n4)  ;3
+There's a lot of lever in this room! Which ones are you going to activate? --n1) Old rusty lever --n2) Lever with a skull pommel --n3) Bright shinny lever --n4) This one is for +18 ;2
+You see a sign with the words: "Solve : 2x^2 - 9x -5". --n1) 1/2 and -5 --n2) Always 42 --n3) -1/2 and 5 --n4) 3.141596 and 1,618033 ;3
