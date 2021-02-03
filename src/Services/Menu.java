@@ -7,7 +7,8 @@ public class Menu {
 
 
     public void menu(){
-        Game game = new Game();
+        Game game = Game.getInstance();
+
         System.out.println(game.getTitle());
         int choice;
         do {
@@ -24,9 +25,9 @@ public class Menu {
             switch (choice) {
                 case 1:
                     // Play
+                    game.setDifficulty();
                     game.createPlayer();
                     game.clearScreen();
-                    game.chooseDifficulty();
                     game.playerSwitchingRoom();
                     choice=3;
                     break;

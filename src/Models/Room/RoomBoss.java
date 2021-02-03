@@ -2,6 +2,7 @@ package Models.Room;
 
 import Models.Character.Character;
 import Models.Player;
+import Services.DataServices;
 import Services.Game;
 
 public class RoomBoss extends Room{
@@ -12,7 +13,7 @@ public class RoomBoss extends Room{
         super(order, isLocked);
         this.character = character;
         setName("Room Boss");
-        setDescription("/Data/Room/RoomBossData.txt");
+        setDescription(DataServices.getInstance().getRoomBoss());
     }
 
     @Override

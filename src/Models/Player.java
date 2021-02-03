@@ -97,5 +97,6 @@ public class Player implements DeadEvent {
         if (life == -1) {
             gameOver();
         }
+        character.setHealth(50);
     }
 }

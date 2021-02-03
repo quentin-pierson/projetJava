@@ -1,6 +1,7 @@
 package Models.Room;
 import Models.Character.Character;
 import Models.Player;
+import Services.DataServices;
 import Services.Game;
 
 public class RoomFight extends Room {
@@ -11,7 +12,7 @@ public class RoomFight extends Room {
         super(order, isLocked);
         this.character = character;
         setName("Room Fight");
-        setDescription("/Data/Room/RoomFightData.txt");
+        setDescription(DataServices.getInstance().getRoomFight());
     }
 
     @Override

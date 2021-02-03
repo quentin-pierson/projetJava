@@ -4,6 +4,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileServices {
+
+    private static FileServices instance;
+
+    public static FileServices getInstance(){
+        if(FileServices.instance == null){
+            FileServices.instance = new FileServices();
+        }
+        return instance;
+    }
+
+
     public String fileOpen(String filePath) {
         //text file, should be opening in default text editor
         File file = new File(getClass().getResource(filePath).getFile());

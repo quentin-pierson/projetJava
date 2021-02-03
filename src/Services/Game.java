@@ -13,6 +13,7 @@ import Models.Room.*;
 import Models.Stage;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
@@ -29,9 +30,7 @@ public class Game {
     private ArrayList<Stage> stagesNivel = new ArrayList<Stage>();
     private int stageCross;
     private int stageSize;
-    private ChooseDifficulty chooseDifficulty = ChooseDifficulty.Easy;
-
-
+    private int difficulty = 1;
 
 
 
@@ -54,6 +53,10 @@ public class Game {
 
     public Player getPlayer(){
         return player;
+    }
+
+    public int getDifficulty() {
+        return difficulty;
     }
 
     public Player createPlayer(){
@@ -91,20 +94,18 @@ public class Game {
         }while(exit == 0);
 
         PotionHealth potionHealth = new PotionHealth("potion health","health 100 pv",100);
-        player = new Player(name,0,100,3,character);
+        player = new Player(name,0,100,3/difficulty,character);
         player.addItem(potionHealth);
         character.setDeadListener(player);
         generateStage();
 
-        System.out.println("Name: "+ player.getName()+" | "+"Type class: "+player.getCharacter().getTypeOfClass()+"\n");
+        System.out.println("Name: "+ player.getName()+" | "+"Type class: "+player.getCharacter().getTypeOfClass()+"\n"+ " Number life "+player.getLife());
         return player;
-
     }
 
-    public ChooseDifficulty chooseDifficulty() {
+    public int setDifficulty() {
         Scanner myObj = new Scanner(System.in);
         int difficultyname;
-        ChooseDifficulty chooseDifficulty = ChooseDifficulty.Easy;
 
         int exit = 0;
         do {
@@ -114,16 +115,16 @@ public class Game {
 
             switch (difficultyname) {
                 case 1:
-                    chooseDifficulty = ChooseDifficulty.Easy;
+                    difficulty = 1; //eazy
                     break;
                 case 2:
-                    chooseDifficulty = ChooseDifficulty.Medium;
+                    difficulty = 2; // medium
                     break;
                 case 3:
-                    chooseDifficulty = ChooseDifficulty.Hard;
+                    difficulty = 3; // Hard
                     break;
                 case 4:
-                    chooseDifficulty = ChooseDifficulty.Hardcore;
+                    difficulty = 4; // hardocre
                     break;
                 default:
                     exit = 0;
@@ -131,9 +132,43 @@ public class Game {
             }
         }while(exit == 0);
 
-        System.out.println("Difficulty chosen: "+ chooseDifficulty);
-        return chooseDifficulty;
+        System.out.println("Difficulty chosen: "+ difficulty);
+        return difficulty;
 
+    }
+
+    public Character createMonster(){
+        int improveDifficulty = 1+(difficulty/10);
+
+        int heath = 100*improveDifficulty;
+        int armor = 50*improveDifficulty;
+        int level = 1;
+        int rateAttack = 50*improveDifficulty;
+        int lucky = 50*improveDifficulty;
+        int mana = 100;
+        int dodge = 50*improveDifficulty;
+
+        String name = DataServices.getInstance().getNameMonster();
+
+        Character monsterCreation = new Character(heath,armor,level,rateAttack,dodge,lucky,mana,dodge,name);
+        return monsterCreation;
+    }
+
+    public Character createBoss(){
+       int improveDifficulty = 1+(difficulty/5);
+
+       int heath = 100*improveDifficulty;
+       int armor = 10*improveDifficulty;
+       int level = 1;
+       int rateAttack = 50*improveDifficulty;
+       int lucky = 50*improveDifficulty;
+       int mana = 100;
+       int dodge = 50*improveDifficulty;
+
+       String name = DataServices.getInstance().getNameBoss();
+
+       Character monsterCreation = new Character(heath,armor,level,rateAttack,dodge,lucky,mana,dodge,name);
+       return monsterCreation;
     }
 
     public void displayFight(boolean isTrap,Character monster){

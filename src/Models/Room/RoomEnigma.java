@@ -1,6 +1,7 @@
 package Models.Room;
 
 import Models.Player;
+import Services.DataServices;
 import Services.Game;
 
 import java.util.Scanner;
@@ -12,7 +13,7 @@ public class RoomEnigma extends Room{
     public RoomEnigma(int order, boolean isLocked) {
         super(order, isLocked);
         setName("Room Enigma");
-        setDescription("/Data/Room/RoomEnigmaData.txt");
+        setDescription(DataServices.getInstance().getRoomEnigma());
         answer = Integer.parseInt(description.split(";")[1]);
         description = description.split(";")[0];
     }

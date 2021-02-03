@@ -1,6 +1,7 @@
 package Models.Room;
 import Models.Player;
 import Models.Trader;
+import Services.DataServices;
 import Services.Game;
 
 public class RoomTrader extends Room{
@@ -11,7 +12,7 @@ public class RoomTrader extends Room{
         super(order, isLocked);
         this.trader = trader;
         setName("Room Trader");
-        setDescription("/Data/Room/RoomTraderData.txt");
+        setDescription(DataServices.getInstance().getRoomTrader());
     }
 
     @Override

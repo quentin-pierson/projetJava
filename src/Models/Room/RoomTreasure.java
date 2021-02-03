@@ -1,6 +1,7 @@
 package Models.Room;
 
 import Models.Player;
+import Services.DataServices;
 import Services.Game;
 
 public class RoomTreasure extends Room{
@@ -11,7 +12,7 @@ public class RoomTreasure extends Room{
         super(order, isLocked);
         this.gold = gold;
         setName("Room Treasure");
-        setDescription("/Data/Room/RoomTreasureData.txt");
+        setDescription(DataServices.getInstance().getRoomTreasure());
     }
 
     public int getGold(){

@@ -36,15 +36,7 @@ public class Room {
         this.name = name;
     }
 
-    protected void setDescription(String descriptionFilePath){
-        FileServices fileServices = new FileServices();
-
-        ArrayList<String> descList = fileServices.fileReader(descriptionFilePath);
-
-        Random random = new Random();
-
-        int desc = random.nextInt(descList.size());
-        description = descList.get(desc);
-        description = description.replace("--n","\n");
+    protected void setDescription(String description){
+       this.description = description.replace("--n","\n");
     }
 }
