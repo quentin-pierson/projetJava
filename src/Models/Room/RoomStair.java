@@ -11,7 +11,8 @@ public class RoomStair extends Room{
     }
 
     @Override
-    public void enterInRoom(Game game){
+    public void enterInRoom(){
+        Game game = Game.getInstance();
         game.addStageCross();
     }
 

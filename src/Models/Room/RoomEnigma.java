@@ -18,7 +18,8 @@ public class RoomEnigma extends Room{
     }
 
     @Override
-    public void enterInRoom(Game game){
+    public void enterInRoom(){
+        Game game = Game.getInstance();
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();
         if(choice == answer){

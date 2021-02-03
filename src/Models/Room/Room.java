@@ -28,7 +28,7 @@ public class Room {
         return description;
     }
 
-    public void enterInRoom(Game game){
+    public void enterInRoom(){
 
     }
 

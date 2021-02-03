@@ -19,7 +19,8 @@ public class RoomTreasure extends Room{
     }
 
     @Override
-    public void enterInRoom(Game game){
+    public void enterInRoom(){
+        Game game = Game.getInstance();
         System.out.println("You get " + getGold() + "gold");
         game.getPlayer().addGold(getGold());
     }

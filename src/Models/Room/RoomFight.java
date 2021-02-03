@@ -15,7 +15,8 @@ public class RoomFight extends Room {
     }
 
     @Override
-    public void enterInRoom(Game game){
+    public void enterInRoom(){
+        Game game = Game.getInstance();
         game.displayFight(false,character);
     }
 

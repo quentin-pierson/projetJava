@@ -15,7 +15,8 @@ public class RoomTrap extends Room{
     }
 
     @Override
-    public void enterInRoom(Game game){
+    public void enterInRoom(){
+        Game game = Game.getInstance();
         game.displayFight(true, character);
     }
 
