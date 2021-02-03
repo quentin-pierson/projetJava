@@ -3,8 +3,8 @@ package Models.Character;
 public class CharacterArcher extends Character{
 
 
-    public CharacterArcher(int health, int armor, int level, int rateAttack, int damage, int lucky, int mana, int dodge, String name) {
-        super(health, armor, level, rateAttack, damage, lucky, mana, dodge, name);
+    public CharacterArcher(String name) {
+        super(100,20 , 1, 90, 30, 40, 100, 10, name);
     }
 
     @Override

@@ -1,8 +1,8 @@
 package Models.Character;
 
 public class CharacterWizard extends Character{
-    public CharacterWizard(int health, int armor, int level, int rateAttack, int damage, int lucky, int mana, int dodge, String name) {
-        super(health, armor, level, rateAttack, damage, lucky, mana, dodge, name);
+    public CharacterWizard(String name) {
+        super(100, 10, 1, 90, 40, 30, 100, 20, name);
     }
 
     @Override

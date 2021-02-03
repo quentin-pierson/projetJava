@@ -1,9 +1,12 @@
 package Models.Character;
 
 public class CharacterWarrior extends Character{
-    public CharacterWarrior(int health, int armor, int level, int rateAttack, int damage, int lucky, int mana, int dodge, String name) {
-        super(health, armor, level, rateAttack, damage, lucky, mana, dodge, name);
+    public CharacterWarrior(String name) {
+        super(100,40 , 1, 90,30, 10, 100, 20, name);
+
     }
+
+
 
     @Override
     public String getTypeOfClass(){

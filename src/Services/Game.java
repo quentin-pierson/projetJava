@@ -62,17 +62,15 @@ public class Game {
             System.out.println("Choose your class:\n-1: Warrior\n-2: Archer\n-3: Wizard\n");
             classTypeInt = myObj.nextInt();
 
-
-
             switch (classTypeInt) {
                 case 1:
-                    character = new CharacterWarrior(100,10,1,99,10,10,0,12,name);
+                    character = new CharacterWarrior(name);
                     break;
                 case 2:
-                    character = new CharacterArcher(100,10,1,99,10,10,0,12,name);
+                    character = new CharacterArcher(name);
                     break;
                 case 3:
-                    character = new CharacterWizard(100,10,1,99,10,10,0,12,name);
+                    character = new CharacterWizard(name);
                     break;
                 default:
                     exit = 0;
@@ -250,6 +248,5 @@ public class Game {
                 "   \\|/'                                                \u0091     ¯¯¯¯¯    \\|/                                 ¯¯¯       ¯¯¯¯                  \\|/           \\|/                        \n");
         System.exit(0);
     }
-
 
 }
