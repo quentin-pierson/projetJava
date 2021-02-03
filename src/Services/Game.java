@@ -11,7 +11,7 @@ import Models.Items.PotionHealth;
 import Models.Player;
 import Models.Room.*;
 import Models.Stage;
-
+import java.lang.Math;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -93,13 +93,18 @@ public class Game {
             }
         }while(exit == 0);
 
+        //double lifeCalcul = Math.ceil((double) 3 / (double) difficulty);
+        //System.out.println(lifeCalcul);
+
+        int life = 4/difficulty;
+
         PotionHealth potionHealth = new PotionHealth("potion health","health 100 pv",100);
-        player = new Player(name,0,100,3/difficulty,character);
+        player = new Player(name,0,100, life,character);
         player.addItem(potionHealth);
         character.setDeadListener(player);
         generateStage();
 
-        System.out.println("Name: "+ player.getName()+" | "+"Type class: "+player.getCharacter().getTypeOfClass()+"\n"+ " Number life "+player.getLife());
+        System.out.println("Name: "+ player.getName()+" | "+"Type class: "+player.getCharacter().getTypeOfClass()+"\n"+ "Number life "+player.getLife());
         return player;
     }
 
