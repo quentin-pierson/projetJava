@@ -144,13 +144,14 @@ public class Game {
         int armor = 50*improveDifficulty;
         int level = 1;
         int rateAttack = 50*improveDifficulty;
+        int damage = 50*improveDifficulty;
         int lucky = 50*improveDifficulty;
         int mana = 100;
         int dodge = 50*improveDifficulty;
 
         String name = DataServices.getInstance().getNameMonster();
 
-        Character monsterCreation = new Character(heath,armor,level,rateAttack,dodge,lucky,mana,dodge,name);
+        Character monsterCreation = new Character(heath,armor,level,rateAttack,damage,lucky,mana,dodge,name);
         return monsterCreation;
     }
 
@@ -161,13 +162,14 @@ public class Game {
        int armor = 10*improveDifficulty;
        int level = 1;
        int rateAttack = 50*improveDifficulty;
+       int damage = 50*improveDifficulty;
        int lucky = 50*improveDifficulty;
        int mana = 100;
        int dodge = 50*improveDifficulty;
 
        String name = DataServices.getInstance().getNameBoss();
 
-       Character monsterCreation = new Character(heath,armor,level,rateAttack,dodge,lucky,mana,dodge,name);
+       Character monsterCreation = new Character(heath,armor,level,rateAttack,damage,lucky,mana,dodge,name);
        return monsterCreation;
     }
 
