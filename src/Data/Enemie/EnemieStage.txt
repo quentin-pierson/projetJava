@@ -1,0 +1,6 @@
+Skeleton
+Spider
+Undead
+Wolf
+Goblins
+
