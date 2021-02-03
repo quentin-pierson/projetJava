@@ -2,14 +2,15 @@ package Services;
 
 
 import Models.Character.Character;
+import Models.Character.CharacterArcher;
+import Models.Character.CharacterWarrior;
+import Models.Character.CharacterWizard;
 import Models.ChooseDifficulty;
-import Models.ListClassExisting;
 import Models.Items.Item;
 import Models.Items.PotionHealth;
 import Models.Player;
 import Models.Room.*;
 import Models.Stage;
-import Services.ScannerSc;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -47,28 +48,31 @@ public class Game {
         Scanner myObj = new Scanner(System.in);
         String name;
         int classTypeInt;
-        ListClassExisting listClassExisting = ListClassExisting.Warrior;
         // Enter username and press Enter
         System.out.println("Enter your game name:");
         name = myObj.nextLine();
 
-        System.out.println("Hello "+name+" nice to meet you. I'm Idony Miracle your playmaker and you will help in the quest of your grale"+"\n");
+        System.out.println("Hello "+name+" nice to meet you. I'm Idony Miracle your playmaker and you will help in the quest of your gradle"+"\n");
 
         int exit = 0;
+        Character character = new Character();
+
         do {
             exit = 1;
             System.out.println("Choose your class:\n-1: Warrior\n-2: Archer\n-3: Wizard\n");
             classTypeInt = myObj.nextInt();
 
+
+
             switch (classTypeInt) {
                 case 1:
-                    listClassExisting = ListClassExisting.Warrior;
+                    character = new CharacterWarrior(100,10,1,99,10,10,0,12,name);
                     break;
                 case 2:
-                    listClassExisting = ListClassExisting.Archer;
+                    character = new CharacterArcher(100,10,1,99,10,10,0,12,name);
                     break;
                 case 3:
-                    listClassExisting = ListClassExisting.Wizard;
+                    character = new CharacterWizard(100,10,1,99,10,10,0,12,name);
                     break;
                 default:
                     exit = 0;
@@ -76,14 +80,13 @@ public class Game {
             }
         }while(exit == 0);
 
-        Character character = new Character(100,10,1,99,10,10,0,12,name, listClassExisting);
-        PotionHealth potionHealth = new PotionHealth("potion health","healt 100 pv",100);
+        PotionHealth potionHealth = new PotionHealth("potion health","health 100 pv",100);
         player = new Player(name,0,100,3,character);
         player.addItem(potionHealth);
         character.setDeadListener(player);
         generateStage();
 
-        System.out.println("Name: "+ player.getName()+" | "+"Type class: "+player.getCharacter().getListClassExisting()+"\n");
+        System.out.println("Name: "+ player.getName()+" | "+"Type class: "+player.getCharacter().getTypeOfClass()+"\n");
         return player;
 
     }

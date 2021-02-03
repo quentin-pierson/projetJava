@@ -1,5 +1,4 @@
 import Models.Character.Character;
-import Models.ListClassExisting;
 import Models.Weapon;
 import Services.CSVServices;
 import Services.FileServices;
@@ -32,7 +31,7 @@ public class test {
 
          */
 
-        Character skeleton = new Character(300,50,10,50,0,0,0, 0,"Skeleton", ListClassExisting.Healer);
+        Character skeleton = new Character(300,50,10,50,0,0,0, 0,"Skeleton");
         System.out.println(skeleton.toString());
     }
 

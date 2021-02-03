@@ -4,21 +4,22 @@ import Models.*;
 import java.util.Random;
 
 public class Character extends Abilities {
-        private String name;
-        private ListClassExisting listClassExisting;
-        private Weapon weapon;
-        private boolean isDefend;
-        private DeadEvent deadEventListener;
+    private String name;
+    private Weapon weapon;
+    private boolean isDefend;
+    private DeadEvent deadEventListener;
 
-    public Character(int health, int armor, int level, int rateAttack, int damage, int lucky, int mana, int dodge,String name, ListClassExisting listClassExisting) {
-            super(health, armor, level, rateAttack, damage, lucky, mana, dodge);
-            this.name = name;
-            this.listClassExisting = listClassExisting;
-        }
-        public String getName(){
+    public Character(){
+        super(0,0,0,0,0,0,0,0);
+    }
+
+    public Character(int health, int armor, int level, int rateAttack, int damage, int lucky, int mana, int dodge,String name) {
+        super(health, armor, level, rateAttack, damage, lucky, mana, dodge);
+        this.name = name;
+    }
+    public String getName(){
             return name;
         }
-
         public void setWeapon(Weapon weapon) {
             this.weapon= weapon;
         }
@@ -27,18 +28,8 @@ public class Character extends Abilities {
             return weapon;
         }
 
-        public ListClassExisting getListClassExisting() {
-            return listClassExisting;
-        }
-
         public void setDeadListener(DeadEvent deadEventListener){
             this.deadEventListener = deadEventListener;
-        }
-
-        public String toString() {
-            return "Monsters{" +
-                    ", listClassExisting=" + getListClassExisting() +
-                    '}';
         }
 
         public void fight(Character character){
@@ -81,5 +72,17 @@ public class Character extends Abilities {
             }
         }
 
+        public String getTypeOfClass(){
+            return "";
+        }
+        public void firstSpell(){
 
+        }
+
+        public void secondSpell(){
+
+        }
+        public void thirdSpell(){
+
+        }
 }
