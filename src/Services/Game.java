@@ -52,7 +52,7 @@ public class Game {
         System.out.println("Enter your game name:");
         name = myObj.nextLine();
 
-        System.out.println("Hello "+name+" nice to meet you. I'm Idony Miracle your playmaker and you will help in the quest of your gradle"+"\n");
+        System.out.println("Hello "+name+" nice to meet you. I'm Idony Miracle your playmaker and I will help you to find the holy graal"+"\n");
 
         int exit = 0;
         Character character = new Character();
@@ -225,7 +225,7 @@ public class Game {
     }
 
     public void win(){
-        System.out.println("  _.+._\n" +
+        System.out.println("      _.+._\n" +
                 "     (^\\/^\\/^)\n" +
                 "      \\@*@*@/\n" +
                 "      {_____}");
