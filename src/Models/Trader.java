@@ -12,8 +12,8 @@ public class Trader {
     public ArrayList<Item> inventory = new ArrayList<Item>();
 
     public Trader(){
-        PotionHealth potienHealth = new PotionHealth("potion health","potion health give 50 pv",50,100);
-        PotionMana potionMana = new PotionMana("potion mana","potion give 25 mana ",25,70);
+        PotionHealth potienHealth = new PotionHealth("Morphine drugs","You get back 50hp",50,100);
+        PotionMana potionMana = new PotionMana("Mana potion","The mana potion restores 25 mana when used",25,70);
         inventory.add(potienHealth);
         inventory.add(potionMana);
     }
