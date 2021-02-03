@@ -45,5 +45,6 @@ public class Room {
 
         int desc = random.nextInt(descList.size());
         description = descList.get(desc);
+        description = description.replace("--n","\n");
     }
 }
