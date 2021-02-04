@@ -11,6 +11,8 @@ import Models.Items.PotionHealth;
 import Models.Player;
 import Models.Room.*;
 import Models.Stage;
+import View.GameUI;
+
 import java.lang.Math;
 import java.util.ArrayList;
 import java.util.Random;
@@ -26,24 +28,12 @@ public class Game {
         return instance;
     }
 
+    private String name;
     private Player player;
     private ArrayList<Stage> stagesNivel = new ArrayList<Stage>();
     private int stageCross;
     private int stageSize;
     private int difficulty = 1;
-
-
-
-    private String title = "\n" +
-            "   ___                                           _____                       __           \n" +
-            "  / _ \\ __ __  ___   ___ _ ___  ___   ___       / ___/  ____ ___ _ _    __  / / ___   ____\n" +
-            " / // // // / / _ \\ / _ `// -_)/ _ \\ / _ \\     / /__   / __// _ `/| |/|/ / / / / -_) / __/\n" +
-            "/____/ \\_,_/ /_//_/ \\_, / \\__/ \\___//_//_/     \\___/  /_/   \\_,_/ |__,__/ /_/  \\__/ /_/   \n" +
-            "                   /___/                                                                  \n";
-
-    public String getTitle(){
-        return title;
-    }
 
     public void addStageCross(){
         stageCross+=1;
@@ -59,22 +49,24 @@ public class Game {
         return difficulty;
     }
 
+    public String getName(){
+        return name;
+    }
+
     public Player createPlayer(){
         Scanner myObj = new Scanner(System.in);
-        String name;
         int classTypeInt;
-        // Enter username and press Enter
-        System.out.println("Enter your game name:");
-        name = myObj.nextLine();
 
-        System.out.println("Hello "+name+" nice to meet you. I'm Idony Miracle your playmaker and I will help you to find the holy graal"+"\n");
+        // Enter username and press Enter
+        GameUI.getInstance().displayName();
+        name = myObj.nextLine();
 
         int exit = 0;
         Character character = new Character();
 
         do {
             exit = 1;
-            System.out.println("Choose your class:\n-1: Warrior\n-2: Archer\n-3: Wizard\n");
+            GameUI.getInstance().displayClass();
             classTypeInt = myObj.nextInt();
 
             switch (classTypeInt) {
@@ -112,7 +104,10 @@ public class Game {
         int exit = 0;
         do {
             exit = 1;
-            System.out.println("Choose your difficulty:\n-1: Easy\n-2: Medium\n-3: Hard\n-4: Hardcore\n");
+
+            //affichage
+            GameUI.getInstance().displayDifficulty();
+
             difficultyname = myObj.nextInt();
 
             switch (difficultyname) {
@@ -134,7 +129,6 @@ public class Game {
             }
         }while(exit == 0);
 
-        System.out.println("Difficulty chosen: "+ difficulty);
         return difficulty;
 
     }
@@ -211,17 +205,6 @@ public class Game {
         }while (monster.getHealth() > 0);
     }
 
-
-    public void clearScreen() {
-        try {
-            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-        }
-        catch(Exception E)
-        {
-            System.out.println(E);
-        }
-    }
-
     public void inventory(){
         int choice = 0;
 
@@ -262,7 +245,6 @@ public class Game {
                             break;
                     }
                 }while (choice!=1);
-                clearScreen();
             }
         }while(stageCross != stagesNivel.size());
     }
@@ -276,27 +258,6 @@ public class Game {
     }
 
     public void win(){
-        System.out.println("      _.+._\n" +
-                "     (^\\/^\\/^)\n" +
-                "      \\@*@*@/\n" +
-                "      {_____}");
-        System.out.println("\n" +
-                "            /¯¯ \\\u0091                  /¯¯¯\\ '                    /\\ '                                             /\\'\u0082                              /\\\u0082                    /\\\u0082             \n" +
-                "           |\\      \\'               /         \\\u0082                 /    \\     '                                     /    \\               /\\'\u0082         /    \\\u0082                /    \\ \u0082          \n" +
-                "           |:|      |             /            '\\°              |\\      \\\u0082                                       |\\      \\'           /    \\      /      /|              /        \\\u0091         \n" +
-                "           |/      /|\u0091           |        |\\      \\°            |:|      |    /'\\\u0082                                |:|      |          |\\      \\°  |      |:'|             |\\          \\        \n" +
-                "          /      /::| /¯¯¯'/|  |        |::\\      \\ '\u0082         |/      /|  /    \\                               |/      /|          |:|      '|  |      |:'|           /\\|::\\         '\\  '    \n" +
-                "         |      |:::/      /::|  |\\       '\\:::\\      \\ '       /      /::| |\\      \\                            /      /::|          |/      /|  |\\      \\/         /    \\:::\\         \\\u0082    \n" +
-                "         |\\      \\/      /::::|\u0091 |::\\       '\\::|      |      /      /::::| |:|      '|                         /      /::::|         /      /::|\u0091 |::\\      \\      /        \\:::\\        '\\ ° \n" +
-                "         |::\\___/|    |::::/\u0091  |::::\\       '\\|      |    /      /:::::/  |/      /|                       /      /:::::/        /      /::::|' |:::|      |'    |\\          \\::|         |'  \n" +
-                "   /¯¯¯¯¯\\:::|/    /|::/      \\:::::\\            /|  /      /:::::/'  /      /::|'\u0082                    /      /:: /¯¯¯|    /      /:::::/ °\\:::|      |°   |:|       |\\  \\/        /|\u0091  \n" +
-                " /       /|\\   \\/    /::|/\u0091         \\:::::\\____ /::| |      |:::::/  /      /::::|'\u0082                   |      |:::/   /|  |  /      /:::::/°     \\/      /|    |/       /|::\\____ /::|'  \n" +
-                "|       |:'|::\\___/:::'|             \\::::|::::::|:::'| |\\      \\::/_/      (:::::/                     |\\      \\/   /::|  |/      /:::::/       /      /::|   /       /::|:::|::::::|:::|\u0091  \n" +
-                "|\\     /|:'|:::|::::|::::/               \\::|::::::|::/\u0091 '|::\\______/|\\    /|::/\u0091                      |::\\____/::::|____ /:::::/\u0091       |\\    /::::|° |\\     /::::|\\::|::::::|::/\u0091   \n" +
-                "|::\\ /::|'/ \\::|::::|::/\u0091                  \\|::::::|/\u0091   '|:::|:::::::::|:|::\\/::|/\u0091                        |:::|::::::|::::/|:::::::|::::/'         |::\\/:::::/   |::\\ /:::::/   \\|::::::|/  '   \n" +
-                "|:::|:::|    '\\|::::|/                       ¯¯¯'       \\::|:::::::::|:|::|:::|\u0091                          \\::|::::::|::/  |:::::::|::/'\u0082          |:::|::::/ '\u0082  |:::|::::/       ¯¯¯        \n" +
-                " \\::|::/       ¯¯                         \u0091              \\|:::::::::|/\\::|::/   °                         \\|::::::|/    |:::::::|/'\u0082             \\::|::/       \\::|::/                      \n" +
-                "   \\|/'                                                \u0091     ¯¯¯¯¯    \\|/                                 ¯¯¯       ¯¯¯¯                  \\|/           \\|/                        \n");
         System.exit(0);
     }
 

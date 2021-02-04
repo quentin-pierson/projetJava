@@ -1,5 +1,7 @@
 package Services;
 
+import View.GameUI;
+
 import java.util.Scanner;
 
 
@@ -9,16 +11,9 @@ public class Menu {
     public void menu(){
         Game game = Game.getInstance();
 
-        System.out.println(game.getTitle());
         int choice;
         do {
-            System.out.println("--------Menu-------- \n"+
-                    "1: Play \n"+
-                    "2: Settings\n"+
-                    "3. Exit \n"+
-                    "Choosing your choice :"
-            );
-
+            GameUI.getInstance().displayMenu();
             Scanner scanner = new Scanner(System.in);
             choice = scanner.nextInt();
 
@@ -27,7 +22,6 @@ public class Menu {
                     // Play
                     game.setDifficulty();
                     game.createPlayer();
-                    game.clearScreen();
                     game.playerSwitchingRoom();
                     choice=3;
                     break;
@@ -42,7 +36,6 @@ public class Menu {
                     break;
                 default:
                     // The user input an unexpected choice.
-                    System.out.println(("Wrong Choice. Enter again\n"));
                     break;
             }
         }while (choice!=3);
