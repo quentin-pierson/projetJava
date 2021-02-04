@@ -56,17 +56,13 @@ public class Trader {
         char result = ' ';
         ScannerSc scannerSc = new ScannerSc();
         result = scannerSc.scanner();
-        try {
-            int castResultInt = Character.getNumericValue(result);
-            if (castResultInt != 0) {
-                String newDesc = desc;
-                newDesc += buyItem(Game.getInstance().getPlayer(), castResultInt);
-                GameUI.getInstance().displayInventory(newDesc, text, Game.getInstance().getPlayer().getMenuText());
-            } else {
-                desc += "&&&nCharles David is disappointed that he didn't do business with you";
-                GameUI.getInstance().displayGame(desc, Game.getInstance().getPlayer().getMenuText());
-            }
-        } catch (Exception e) {
+
+        int castResultInt = Character.getNumericValue(result);
+        if (castResultInt != 0) {
+            String newDesc = desc;
+            newDesc += buyItem(Game.getInstance().getPlayer(), castResultInt);
+            GameUI.getInstance().displayGame(newDesc, Game.getInstance().getPlayer().getMenuText());
+        } else {
             desc += "&&&nCharles David is disappointed that he didn't do business with you";
             GameUI.getInstance().displayGame(desc, Game.getInstance().getPlayer().getMenuText());
         }

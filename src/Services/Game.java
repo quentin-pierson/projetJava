@@ -152,7 +152,7 @@ public class Game {
         int heath = 100*improveDifficulty;
         int armor = 10*improveDifficulty;
         int level = 1;
-        int rateAttack = 20*improveDifficulty;
+        int rateAttack = 10*improveDifficulty;
         int damage = 5*improveDifficulty;
         int lucky = 10*improveDifficulty;
         int mana = 100;
@@ -235,14 +235,13 @@ public class Game {
         do{
             Scanner scanner = new Scanner(System.in);
             choice = scanner.next().charAt(0);
-            try {
-                int castChoicetoInt = (int) choice;
-                if(castChoicetoInt> 0 && player.getInventorySize()>=castChoicetoInt){
-                    player.getInventory().get(castChoicetoInt-1).used(player.getCharacter());
-                    choice='0';
-                }
-            }catch (Exception e){
+
+            int castChoicetoInt = java.lang.Character.getNumericValue(choice);
+            if (castChoicetoInt > 0 && player.getInventorySize() >= castChoicetoInt) {
+                player.getInventory().get(castChoicetoInt - 1).used(player.getCharacter());
+                choice = '0';
             }
+
 
         }while (choice !='0');
     }
