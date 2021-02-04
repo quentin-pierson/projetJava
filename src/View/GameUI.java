@@ -2,6 +2,8 @@ package View;
 
 import Services.Game;
 
+import java.util.ArrayList;
+
 public class GameUI {
     private static GameUI instance;
 
@@ -100,14 +102,12 @@ public class GameUI {
         constructEnvironment("-- Enter your name --",5);
     }
 
-    public void displayGame(String description){
+    public void displayGame(String description, String[] choice){
         clearScreen();
         constructEnvironment(description, screenHeight/2);
-        constructEnvironment(constructBox(menuClass), screenHeight/4);
+        constructEnvironment(constructBoxGame(choice), screenHeight/4);
         constructEnvironment("-- Press a number do action--",5);
     }
-
-
 
     public void constructEnvironment(String message, int size){
 
@@ -134,7 +134,7 @@ public class GameUI {
         for (int i = 0; i < messageInfo.length; i++) {
             if(messageInfo[i].length() > sizeLength) sizeLength = messageInfo[i].length();
         }
-        sizeLength += 4;
+        sizeLength += 7;
         String text = "";
         int cnt = 0;
 
@@ -153,6 +153,40 @@ public class GameUI {
 
                 text+= " |&&&n";
                 cnt++;
+            }
+        }
+        return text;
+    }
+
+    public String constructBoxGame(String[] messageInfo) {
+        System.out.println(messageInfo.length);
+        int numberLine = (messageInfo.length/2)+2;
+        int sizeLength =  Game.getInstance().getGameInfo().length() + 4;
+
+        String text = "";
+        int cnt = 0;
+
+        for (int j = 0; j < sizeLength; j++) {
+            text+= "-";
+        }
+
+        text += "&&&n| " + Game.getInstance().getGameInfo()+ " |&&&n";
+
+        for (int i = 0; i < numberLine; i++){
+            if(i == 0 || i == numberLine-1){
+                for (int j = 0; j < sizeLength; j++) {
+                    text+= "-";
+                }
+                text+= "&&&n";
+            }else{
+                text+= "| " + messageInfo[cnt] + "   " + messageInfo[cnt+1];
+                int newSizeLength = sizeLength - 7 - messageInfo[cnt].length() - messageInfo[cnt+1].length();
+                for (int j = 0; j < newSizeLength; j++) {
+                    text+= " ";
+                }
+
+                text+= " |&&&n";
+                cnt+=2;
             }
         }
         return text;

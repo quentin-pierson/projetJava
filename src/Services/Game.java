@@ -45,6 +45,11 @@ public class Game {
         return player;
     }
 
+    public String getGameInfo(){
+        return "Name: "+ player.getName()+"   Type class: "+player.getCharacter().getTypeOfClass()
+                + "   Number life: "+player.getLife() + "   Gold: " + player.getGold();
+    }
+
     public int getDifficulty() {
         return difficulty;
     }
@@ -93,7 +98,6 @@ public class Game {
         character.setDeadListener(player);
         generateStage();
 
-        System.out.println("Name: "+ player.getName()+" | "+"Type class: "+player.getCharacter().getTypeOfClass()+"\n"+ "Number life "+player.getLife());
         return player;
     }
 
@@ -174,24 +178,26 @@ public class Game {
         do{
             if(!isTrap){
                 do{
-                    System.out.println("+--------------------------+\n" +
-                            "|Your choice:              |\n" +
-                            "|1: Attack          2: Bag |\n" +
-                            "+--------------------------+");
-                    System.out.println("Tell me your choice : ");
+                    GameUI.getInstance().displayGame("",player.getCharacter().getSpellName());
                     Scanner scanner = new Scanner(System.in);
                     choice = scanner.nextInt();
 
                     switch (choice) {
-                        case 1: // Attack
+                        case 1: // Attack 1
                             player.getCharacter().fight(monster);
                             choice=3;
                             break;
-                        case 2: // Bag
+                        case 2: // Attack 1
+                            player.getCharacter().fight(monster);
+                            choice=3;
+                        case 3: // Attack 1
+                            player.getCharacter().fight(monster);
+                            choice=3;
+                        case 4: // Bag
                             inventory();
                             break;
                         default:
-                            System.out.println(("Wrong Choice. Enter again\n"));
+
                             break;
                     }
                 }while (choice!=3);
@@ -232,6 +238,7 @@ public class Game {
         do{
             for (Room room : stagesNivel.get(stageCross).getRooms()) {
                 System.out.println(room.getName()+" "+room.getDescription());
+                GameUI.getInstance().displayGame("",player.getCharacter().getSpellName());
                 room.enterInRoom();
                 do{
                     System.out.println("Press 1 for change room");

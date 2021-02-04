@@ -3,6 +3,7 @@ package Models;
 import Models.Character.Character;
 import Models.Character.DeadEvent;
 import Models.Items.Item;
+import Services.Game;
 
 import java.util.ArrayList;
 
@@ -94,6 +95,7 @@ public class Player implements DeadEvent {
                 " ░ ░         ░ ░     ░           ░     ░     ░  ░   ░      ░    ░    ░  \n" +
                 " ░ ░                           ░                  ░        ░    ░    ░ ");
         life -= 1;
+        Game.getInstance().getGameInfo();
         if (life == -1) {
             gameOver();
         }
