@@ -52,7 +52,7 @@ public class Game {
     }
 
     public String getGameInfo(){
-        return "Name: "+ player.getName()+"   Type class: "+player.getCharacter().getTypeOfClass()
+        return "Name: "+ player.getName()+"   Type class: "+player.getCharacter().getTypeOfClass() +"   Health: "+player.getCharacter().getHealth()
                 + "   Number life: "+player.getLife() + "   Gold: " + player.getGold();
     }
 
@@ -232,14 +232,18 @@ public class Game {
         System.out.println("Choose your item : ");
         System.out.println("0 to skip");
 
-        Scanner scanner = new Scanner(System.in);
-        choice = scanner.next().charAt(0);
-
         do{
-            if(choice>'0' && player.getInventorySize()>=choice){
-                player.getInventory().get(choice-1).used(player.getCharacter());
-                choice='0';
+            Scanner scanner = new Scanner(System.in);
+            choice = scanner.next().charAt(0);
+            try {
+                int castChoicetoInt = (int) choice;
+                if(castChoicetoInt> 0 && player.getInventorySize()>=castChoicetoInt){
+                    player.getInventory().get(castChoicetoInt-1).used(player.getCharacter());
+                    choice='0';
+                }
+            }catch (Exception e){
             }
+
         }while (choice !='0');
     }
 
