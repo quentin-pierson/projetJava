@@ -67,14 +67,14 @@ public class DataServices {
         roomListTreasure = FileServices.getInstance().fileReader("/Data/Room/RoomTreasureData.txt"); // fait
 
         // Weapons
-        listWeaponSword = CSVServices.getInstance().csvParse("/Data/Weapon/WeaponSword.txt", WeaponSword.class);
-        listWeaponScepter = CSVServices.getInstance().csvParse("/Data/Weapon/WeaponScepter.txt", WeaponScepter.class);
-        listWeaponBow = CSVServices.getInstance().csvParse("/Data/Weapon/WeaponBow.txt", WeaponBow.class);
+        listWeaponSword = CSVServices.getInstance().csvParse(FileServices.getInstance().fileOpen("/Data/Weapon/WeaponSword.txt"), WeaponSword.class);
+        listWeaponScepter = CSVServices.getInstance().csvParse(FileServices.getInstance().fileOpen("/Data/Weapon/WeaponScepter.txt"), WeaponScepter.class);
+        listWeaponBow = CSVServices.getInstance().csvParse(FileServices.getInstance().fileOpen("/Data/Weapon/WeaponBow.txt"), WeaponBow.class);
 
-        listArmorCloth = CSVServices.getInstance().csvParse("/Data/Armor/ArmorCloth.txt", ArmorCloth.class);
-        listArmorIron = CSVServices.getInstance().csvParse("/Data/Armor/ArmorIron.txt", ArmorIron.class);
-        listArmorLeather = CSVServices.getInstance().csvParse("/Data/Armor/ArmorLeather.txt", ArmorLeather.class);
-        listArmorPlate = CSVServices.getInstance().csvParse("/Data/Armor/ArmorPlate.txt", ArmorPlate.class);
+        listArmorCloth = CSVServices.getInstance().csvParse(FileServices.getInstance().fileOpen("/Data/Armor/ArmorCloth.txt"), ArmorCloth.class);
+        listArmorIron = CSVServices.getInstance().csvParse(FileServices.getInstance().fileOpen("/Data/Armor/ArmorIron.txt"), ArmorIron.class);
+        listArmorLeather = CSVServices.getInstance().csvParse(FileServices.getInstance().fileOpen("/Data/Armor/ArmorLeather.txt"), ArmorLeather.class);
+        listArmorPlate = CSVServices.getInstance().csvParse(FileServices.getInstance().fileOpen("/Data/Armor/ArmorPlate.txt"), ArmorPlate.class);
 
 
     }

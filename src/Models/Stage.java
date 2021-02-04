@@ -27,7 +27,6 @@ public class Stage {
         Random randomRoom = new Random();
 
         numberRoom = randomRoom.nextInt(maxRoom - minRoom) + minRoom;
-        System.out.println(numberRoom);
     }
 
     public int getOrderStage() {
@@ -84,7 +83,6 @@ public class Stage {
             }
         }
         if ((orderStage % 5) == 0){
-            System.out.println(orderStage);
             Character boss = Game.getInstance().createBoss();
             RoomBoss roomBoss = new RoomBoss(numberRoom, false,boss);
             rooms.add(roomBoss);

@@ -31,10 +31,8 @@ public class CSVServices<E, V> {
                         ArrayList<Object> serializableList = new ArrayList<Object>();
 
                         for (int k = 0; k < values.length; k+=1){
-                            System.out.println(types[k]);
                             serializableList.add(convertStringToType(types[k], values[k]));
 
-                            //serializableList.add(values[k]);
                         }
                         objectList.add(ctr.newInstance(serializableList.toArray()));
                     }
