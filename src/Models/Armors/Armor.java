@@ -4,6 +4,7 @@ import Models.Abilities;
 
 public class Armor extends Abilities {
 
+
     private String name;
     private String description;
 

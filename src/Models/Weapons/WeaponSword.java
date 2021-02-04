@@ -1,7 +1,7 @@
 package Models.Weapons;
 
 public class WeaponSword extends Weapon{
-    public WeaponSword(int health, int armor, int level, int rateAttack, int damage, int lucky, int mana, int dodge, ListWeapon listWeapon, String name, String description, int price) {
-        super(health, armor, level, rateAttack, damage, lucky, mana, dodge, listWeapon, name, description, price);
+    public WeaponSword(int health, int armor, int level, int rateAttack, int damage, int lucky, int mana, int dodge,String name, String description, int price) {
+        super(health, armor, level, rateAttack, damage, lucky, mana, dodge, name, description, price);
     }
 }
