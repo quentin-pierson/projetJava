@@ -68,9 +68,12 @@ public class Game {
         Scanner myObj = new Scanner(System.in);
         char classTypeInt;
 
-        // Enter username and press Enter
-        GameUI.getInstance().displayName();
-        name = myObj.nextLine();
+        do{
+            // Enter username and press Enter
+            GameUI.getInstance().displayName();
+            name = myObj.nextLine();
+        }while(name.length()>10);
+
 
         int exit = 0;
         Character character = new Character();
