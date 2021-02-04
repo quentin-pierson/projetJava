@@ -4,6 +4,7 @@ import Models.Player;
 import Services.CSVServices;
 import Services.FileServices;
 import Services.Game;
+import View.GameUI;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -20,14 +21,6 @@ public class Room {
         this.isLocked = isLocked;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
     public void enterInRoom(){
 
     }
@@ -37,6 +30,6 @@ public class Room {
     }
 
     protected void setDescription(String description){
-       this.description = description.replace("--n","\n");
+       this.description = description;
     }
 }

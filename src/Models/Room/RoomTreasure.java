@@ -3,6 +3,7 @@ package Models.Room;
 import Models.Player;
 import Services.DataServices;
 import Services.Game;
+import View.GameUI;
 
 public class RoomTreasure extends Room{
 
@@ -22,7 +23,9 @@ public class RoomTreasure extends Room{
     @Override
     public void enterInRoom(){
         Game game = Game.getInstance();
-        System.out.println("You get " + getGold() + "gold");
+        description += "&&&nYou get " + getGold() + "gold";
+        String desc = name + ": &&&n" + description;
+        GameUI.getInstance().displayGame(desc,game.getPlayer().getCharacter().getSpellName());
         game.getPlayer().addGold(getGold());
     }
 

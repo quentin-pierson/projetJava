@@ -3,6 +3,7 @@ package Models.Room;
 import Models.Player;
 import Services.DataServices;
 import Services.Game;
+import View.GameUI;
 
 import java.util.Scanner;
 
@@ -21,13 +22,17 @@ public class RoomEnigma extends Room{
     @Override
     public void enterInRoom(){
         Game game = Game.getInstance();
+        String desc = name + ": &&&n" + description;
+        GameUI.getInstance().displayGame(desc,game.getPlayer().getCharacter().getSpellName());
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();
         if(choice == answer){
-            System.out.println("You right !\n");
+            desc = name +  ": &&&n" + "You right!&&&n" + "+" + gold +"gold&&&n";
             game.getPlayer().addGold(gold);
+            GameUI.getInstance().displayGame(desc,game.getPlayer().getCharacter().getSpellName());
         }else{
-            System.out.println("You failed...\n");
+            desc = name + ": &&&n" + "You failed!&&&n";
+            GameUI.getInstance().displayGame(desc,game.getPlayer().getCharacter().getSpellName());
         }
     }
 

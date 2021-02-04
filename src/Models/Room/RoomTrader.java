@@ -3,6 +3,7 @@ import Models.Player;
 import Models.Trader;
 import Services.DataServices;
 import Services.Game;
+import View.GameUI;
 
 public class RoomTrader extends Room{
 
@@ -18,6 +19,8 @@ public class RoomTrader extends Room{
     @Override
     public void enterInRoom(){
         Game game = Game.getInstance();
+        String desc = name + ": &&&n" + description;
+        GameUI.getInstance().displayGame(desc,game.getPlayer().getCharacter().getSpellName());
         trader.displayInventory(game);
     }
 }
