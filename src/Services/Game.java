@@ -66,7 +66,7 @@ public class Game {
 
     public Player createPlayer(){
         Scanner myObj = new Scanner(System.in);
-        int classTypeInt;
+        char classTypeInt;
 
         // Enter username and press Enter
         GameUI.getInstance().displayName();
@@ -78,16 +78,16 @@ public class Game {
         do {
             exit = 1;
             GameUI.getInstance().displayClass();
-            classTypeInt = myObj.nextInt();
+            classTypeInt = myObj.next().charAt(0);
 
             switch (classTypeInt) {
-                case 1:
+                case '1':
                     character = new CharacterWarrior(name);
                     break;
-                case 2:
+                case '2':
                     character = new CharacterArcher(name);
                     break;
-                case 3:
+                case '3':
                     character = new CharacterWizard(name);
                     break;
                 default:
@@ -109,7 +109,7 @@ public class Game {
 
     public int setDifficulty() {
         Scanner myObj = new Scanner(System.in);
-        int difficultyname;
+        char difficultyname;
 
         int exit = 0;
         do {
@@ -118,19 +118,19 @@ public class Game {
             //affichage
             GameUI.getInstance().displayDifficulty();
 
-            difficultyname = myObj.nextInt();
+            difficultyname = myObj.next().charAt(0);
 
             switch (difficultyname) {
-                case 1:
+                case '1':
                     difficulty = 1; //eazy
                     break;
-                case 2:
+                case '2':
                     difficulty = 2; // medium
                     break;
-                case 3:
+                case '3':
                     difficulty = 3; // Hard
                     break;
-                case 4:
+                case '4':
                     difficulty = 4; // hardocre
                     break;
                 default:
@@ -180,33 +180,33 @@ public class Game {
     }
 
     public void displayFight(boolean isTrap,Character monster){
-        int choice;
+        char choice;
         do{
             if(!isTrap){
                 do{
                     GameUI.getInstance().displayGame("",player.getCharacter().getSpellName());
                     Scanner scanner = new Scanner(System.in);
-                    choice = scanner.nextInt();
+                    choice = scanner.next().charAt(0);
 
                     switch (choice) {
-                        case 1: // Attack 1
+                        case '1': // Attack 1
                             player.getCharacter().fight(monster);
-                            choice=3;
+                            choice='3';
                             break;
-                        case 2: // Attack 1
+                        case '2': // Attack 1
                             player.getCharacter().fight(monster);
-                            choice=3;
-                        case 3: // Attack 1
+                            choice='3';
+                        case '3': // Attack 1
                             player.getCharacter().fight(monster);
-                            choice=3;
-                        case 4: // Bag
+                            choice='3';
+                        case '4': // Bag
                             inventory();
                             break;
                         default:
 
                             break;
                     }
-                }while (choice!=3);
+                }while (choice!='3');
                 isTrap = true;
             }
             else{
@@ -218,7 +218,7 @@ public class Game {
     }
 
     public void inventory(){
-        int choice = 0;
+        char choice = '0';
 
         for(Item item : player.getInventory()){
             System.out.println(item.getName()+"->"+item.getDescription());
@@ -228,33 +228,24 @@ public class Game {
         System.out.println("0 to skip");
 
         Scanner scanner = new Scanner(System.in);
-        choice = scanner.nextInt();
+        choice = scanner.next().charAt(0);
 
         do{
-            if(choice>0 && player.getInventorySize()>=choice){
+            if(choice>'0' && player.getInventorySize()>=choice){
                 player.getInventory().get(choice-1).used(player.getCharacter());
-                choice=0;
+                choice='0';
             }
-        }while (choice !=0);
+        }while (choice !='0');
     }
 
     public void playerSwitchingRoom(){
-        int choice=0;
+        char choice='0';
 
         do{
             for (Room room : stagesNivel.get(stageCross).getRooms()) {
                 room.enterInRoom();
-                do{
-                    Scanner scanner = new Scanner(System.in);
-                    choice = scanner.nextInt();
-                    switch (choice){
-                        case 0:
-                            break;
-                        default:
-                            System.out.println("error");
-                            break;
-                    }
-                }while (choice!=0);
+                Scanner scanner = new Scanner(System.in);
+                scanner.next();
             }
         }while(stageCross != stagesNivel.size());
     }
