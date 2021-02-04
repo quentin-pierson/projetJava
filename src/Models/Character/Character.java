@@ -1,6 +1,7 @@
 package Models.Character;
 
 import Models.*;
+import Models.Armors.Armor;
 import Models.Weapons.Weapon;
 
 import java.util.Random;
@@ -64,6 +65,14 @@ public class Character extends Abilities {
         if (health <= 0) {
             dead();
         }
+    }
+
+    public Armor getEquipment() {
+        return null;
+    }
+
+    public Weapon getWeapon(){
+        return null;
     }
 
     public String getTypeOfClass() {

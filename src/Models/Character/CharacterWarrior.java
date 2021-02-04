@@ -1,12 +1,33 @@
 package Models.Character;
 
+import Models.Armors.Armor;
+import Models.Armors.ArmorCloth;
+import Models.Armors.ArmorIron;
+import Models.Weapons.Weapon;
+import Models.Weapons.WeaponScepter;
+import Models.Weapons.WeaponSword;
+
 public class CharacterWarrior extends Character{
+
+    private ArmorIron armorIron;
+    private WeaponSword weaponSword;
+
+
     public CharacterWarrior(String name) {
         super(100,40 , 1, 90,30, 10, 100, 20, name);
 
     }
 
 
+    @Override
+    public Armor getEquipment() {
+        return armorIron;
+    }
+
+    @Override
+    public Weapon getWeapon() {
+        return weaponSword;
+    }
 
     @Override
     public String getTypeOfClass(){
