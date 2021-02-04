@@ -93,10 +93,7 @@ public class Game {
             }
         }while(exit == 0);
 
-        //double lifeCalcul = Math.ceil((double) 3 / (double) difficulty);
-        //System.out.println(lifeCalcul);
-
-        int life = 4/difficulty;
+        int life = 4-difficulty;
 
         PotionHealth potionHealth = new PotionHealth("potion health","health 100 pv",100);
         player = new Player(name,0,100, life,character);
