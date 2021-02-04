@@ -20,7 +20,6 @@ public class RoomTrader extends Room{
     public void enterInRoom(){
         Game game = Game.getInstance();
         String desc = name + ": &&&n" + description;
-        GameUI.getInstance().displayGame(desc,game.getPlayer().getCharacter().getSpellName());
-        trader.displayInventory(game);
+        trader.displayInventory(desc);
     }
 }

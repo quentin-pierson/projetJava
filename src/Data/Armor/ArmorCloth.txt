@@ -1,4 +1,4 @@
-25;3;1;0;0;0;0;1;Used cloth;Cloth marked by traces of adventurers;5
+125;3;1;0;0;0;0;1;Used cloth;Cloth marked by traces of adventurers;5
 50;7;2;0;0;0;0;1;Training cloth;Very simple cloth;10
 75;10;3;0;0;0;0;1;Long cloth;Privileged cloth for traveler;25
 100;13;4;0;0;0;0;1;Superior cloth;Cloth made with good fabrics;35

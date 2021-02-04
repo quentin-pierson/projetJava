@@ -91,7 +91,7 @@ public class GameUI {
         constructEnvironment(titleText, screenHeight/2);
         constructEnvironment(message, screenHeight/4);
         constructEnvironment(constructBox(menuClass), screenHeight/4);
-        constructEnvironment("-- Enter your name --",5);
+        constructEnvironment("-- Enter a number --",5);
     }
 
 
@@ -105,6 +105,14 @@ public class GameUI {
     public void displayGame(String description, String[] choice){
         clearScreen();
         constructEnvironment(description, screenHeight/2);
+        constructEnvironment(constructBoxGame(choice), screenHeight/4);
+        constructEnvironment("-- Press a number or 0 change room--",5);
+    }
+
+    public void displayInventory(String description, String[] shop, String[] choice){
+        clearScreen();
+        constructEnvironment(description, screenHeight/2);
+        constructEnvironment(constructBox(shop), screenHeight/2);
         constructEnvironment(constructBoxGame(choice), screenHeight/4);
         constructEnvironment("-- Press a number or 0 change room--",5);
     }

@@ -17,6 +17,8 @@ public class Player implements DeadEvent {
     private Character character;
 
     private int inventoryCapacity;
+    protected String[] menuText = {"1: ---", "2: ---","3: ---","4: ---"};
+
 
     public Player(String name, float experience, int gold, int life,Character character) {
         this.name = name;
@@ -27,6 +29,10 @@ public class Player implements DeadEvent {
         inventory = new ArrayList<Item>();
 
         inventoryCapacity= 4;
+    }
+
+    public String[] getMenuText(){
+        return menuText;
     }
 
     public String getName(){

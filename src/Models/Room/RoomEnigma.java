@@ -23,16 +23,16 @@ public class RoomEnigma extends Room{
     public void enterInRoom(){
         Game game = Game.getInstance();
         String desc = name + ": &&&n" + description;
-        GameUI.getInstance().displayGame(desc,game.getPlayer().getCharacter().getSpellName());
+        GameUI.getInstance().displayGame(desc,game.getPlayer().getMenuText());
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();
         if(choice == answer){
             desc = name +  ": &&&n" + "You right!&&&n" + "+" + gold +"gold&&&n";
             game.getPlayer().addGold(gold);
-            GameUI.getInstance().displayGame(desc,game.getPlayer().getCharacter().getSpellName());
+            GameUI.getInstance().displayGame(desc,game.getPlayer().getMenuText());
         }else{
             desc = name + ": &&&n" + "You failed!&&&n";
-            GameUI.getInstance().displayGame(desc,game.getPlayer().getCharacter().getSpellName());
+            GameUI.getInstance().displayGame(desc,game.getPlayer().getMenuText());
         }
     }
 

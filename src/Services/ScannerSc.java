@@ -13,7 +13,7 @@ public class ScannerSc {
         return instance;
     }
 
-    public int scanner(){
+    public char scanner(){
         char choice = '0';
         Scanner scanner = new Scanner(System.in);
         choice = scanner.next().charAt(0);

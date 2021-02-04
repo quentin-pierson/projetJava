@@ -16,6 +16,6 @@ public class RoomTransition extends Room{
     public void enterInRoom(){
         Game game = Game.getInstance();
         String desc = name + ": &&&n" + description;
-        GameUI.getInstance().displayGame(desc,game.getPlayer().getCharacter().getSpellName());
+        GameUI.getInstance().displayGame(desc,game.getPlayer().getMenuText());
     }
 }

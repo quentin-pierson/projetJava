@@ -5,6 +5,7 @@ import Models.Items.PotionHealth;
 import Models.Items.PotionMana;
 import Services.Game;
 import Services.ScannerSc;
+import View.GameUI;
 
 import java.util.ArrayList;
 
@@ -40,20 +41,21 @@ public class Trader {
 
     }
 
-    public void displayInventory(Game game){
-        System.out.println("+-----------------------------+\n" +
-                "| Charles David: Hello traveler! |\n" +
-                "+-----------------------------+");
+    public void displayInventory(String desc){
+
+        desc= "&&&nCharles David: Hello traveler!&&&n";
+        String[] text = new String[inventory.size()];
+
         for(int i=0;i<inventory.size();i++){
-            System.out.println(inventory.get(i).toString(i+1));
+            text[i] = inventory.get(i).toString(i+1);
         }
-        System.out.println("Make your choice | 0 to skip \n"+
-                "You have "+game.getPlayer().getGold() + " golds");
+
+        GameUI.getInstance().displayInventory(desc,text,Game.getInstance().getPlayer().getMenuText());
 
         ScannerSc scannerSc = new ScannerSc();
-        int result = scannerSc.scanner();
-        if(result != 0){
-            buyItem(game.getPlayer(),result);
+        char result = scannerSc.scanner();
+        if(result != '0'){
+            buyItem(Game.getInstance().getPlayer(),result);
         }
         else{
             System.out.println("Charles David is disappointed that he didn't do business with you");

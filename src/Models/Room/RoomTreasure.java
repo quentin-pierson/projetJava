@@ -25,7 +25,7 @@ public class RoomTreasure extends Room{
         Game game = Game.getInstance();
         description += "&&&nYou get " + getGold() + "gold";
         String desc = name + ": &&&n" + description;
-        GameUI.getInstance().displayGame(desc,game.getPlayer().getCharacter().getSpellName());
+        GameUI.getInstance().displayGame(desc,game.getPlayer().getMenuText());
         game.getPlayer().addGold(getGold());
     }
 
