@@ -32,4 +32,8 @@ public class Room {
     protected void setDescription(String description){
        this.description = description;
     }
+
+    protected String getDescriptionAndName(){
+        return name + ": &&&n" + description;
+    }
 }

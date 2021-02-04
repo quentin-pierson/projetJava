@@ -199,9 +199,11 @@ public class Game {
                         case '2': // Attack 1
                             player.getCharacter().fight(monster);
                             choice='3';
+                            break;
                         case '3': // Attack 1
                             player.getCharacter().fight(monster);
                             choice='3';
+                            break;
                         case '4': // Bag
                             inventory();
                             break;

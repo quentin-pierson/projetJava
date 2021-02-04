@@ -111,9 +111,9 @@ public class GameUI {
 
     public void displayInventory(String description, String[] shop, String[] choice){
         clearScreen();
-        constructEnvironment(description, screenHeight/2);
-        constructEnvironment(constructBox(shop), screenHeight/2);
-        constructEnvironment(constructBoxGame(choice), screenHeight/4);
+        constructEnvironment(description, screenHeight/5);
+        constructEnvironment(constructBox(shop), screenHeight/5);
+        constructEnvironment(constructBoxGame(choice), screenHeight/5);
         constructEnvironment("-- Press a number or 0 change room--",5);
     }
 

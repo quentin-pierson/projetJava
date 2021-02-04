@@ -19,7 +19,6 @@ public class RoomTrader extends Room{
     @Override
     public void enterInRoom(){
         Game game = Game.getInstance();
-        String desc = name + ": &&&n" + description;
-        trader.displayInventory(desc);
+        trader.displayInventory(getDescriptionAndName());
     }
 }

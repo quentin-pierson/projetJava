@@ -16,7 +16,7 @@ public class RoomStair extends Room{
     @Override
     public void enterInRoom(){
         Game game = Game.getInstance();
-        String desc = name + ": &&&n" + description;
+        String desc = getDescriptionAndName();
         int stage = game.getStageCross()+1;
         desc += "YOU CHANGE FLOORS &&&n"+ "YOU ARE IN floor "+stage+"/"+game.getStageSize()+ " &&&n";
         GameUI.getInstance().displayGame(desc,game.getPlayer().getMenuText());

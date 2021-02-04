@@ -22,7 +22,7 @@ public class RoomEnigma extends Room{
     @Override
     public void enterInRoom(){
         Game game = Game.getInstance();
-        String desc = name + ": &&&n" + description;
+        String desc = getDescriptionAndName();
         GameUI.getInstance().displayGame(desc,game.getPlayer().getMenuText());
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();
