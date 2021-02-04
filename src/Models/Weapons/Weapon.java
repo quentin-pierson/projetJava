@@ -1,4 +1,7 @@
-package Models;
+package Models.Weapons;
+
+import Models.Abilities;
+import Models.ListWeapon;
 
 public class Weapon extends Abilities {
     private ListWeapon listWeapon;

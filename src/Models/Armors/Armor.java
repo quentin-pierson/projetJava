@@ -1,4 +1,7 @@
-package Models;
+package Models.Armors;
+
+import Models.Abilities;
+import Models.ArmorType;
 
 public class Armor extends Abilities {
     private ArmorType armorType;

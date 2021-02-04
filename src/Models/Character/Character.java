@@ -1,7 +1,7 @@
 package Models.Character;
 
 import Models.*;
-import Services.Game;
+import Models.Weapons.Weapon;
 
 import java.util.Random;
 
@@ -77,6 +77,7 @@ public class Character extends Abilities {
         public String getTypeOfClass(){
             return "";
         }
+
         public void firstSpell(){
 
         }
