@@ -1,5 +1,5 @@
-3;0;0;100;10;0;1;Used cloth;Cloth marked by traces of adventurers;5
-7;0;0;100;10;0;1;Training cloth;Very simple cloth;10
-10;0;0;100;10;0;1;Long cloth;Privileged cloth for traveler;25
-13;0;0;100;10;0;1;Superior cloth;Cloth made with good fabrics;35
-17;0;0;100;10;0;1;Higher cloth;Cloth made with the most prestigious fabrics;45
+25;3;1;0;0;0;0;1;Used cloth;Cloth marked by traces of adventurers;5
+50;7;2;0;0;0;0;1;Training cloth;Very simple cloth;10
+75;10;3;0;0;0;0;1;Long cloth;Privileged cloth for traveler;25
+100;13;4;0;0;0;0;1;Superior cloth;Cloth made with good fabrics;35
+200;17;5;0;0;0;0;1;Higher cloth;Cloth made with the most prestigious fabrics;45
