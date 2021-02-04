@@ -3,7 +3,9 @@ package Models.Character;
 import Models.Armors.Armor;
 import Models.Armors.ArmorCloth;
 import Models.Armors.ArmorIron;
+import Models.Armors.ArmorLeather;
 import Models.Weapons.Weapon;
+import Models.Weapons.WeaponBow;
 import Models.Weapons.WeaponScepter;
 import Models.Weapons.WeaponSword;
 
@@ -49,5 +51,15 @@ public class CharacterWarrior extends Character{
     @Override
     public void thirdSpell(){
 
+    }
+
+    @Override
+    public void setWeapon(Weapon weapon) {
+        this.weaponSword = (WeaponSword) weapon;
+    }
+
+    @Override
+    public void setArmor(Armor armor) {
+        this.armorIron = (ArmorIron) armor;
     }
 }

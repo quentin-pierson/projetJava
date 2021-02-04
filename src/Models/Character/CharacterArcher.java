@@ -47,4 +47,14 @@ public class CharacterArcher extends Character{
     public void thirdSpell(){
 
     }
+
+    @Override
+    public void setWeapon(Weapon weapon) {
+        this.weaponBow = (WeaponBow) weapon;
+    }
+
+    @Override
+    public void setArmor(Armor armor) {
+        this.armorLeather = (ArmorLeather) armor;
+    }
 }

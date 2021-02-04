@@ -52,8 +52,6 @@ public class CSVServices<E, V> {
                 return Float.parseFloat(value);
             case "boolean":
                 return Boolean.parseBoolean(value);
-            case "class Models.ListWeapon":
-                return ListWeapon.valueOf(value);
         }
 
         return null;

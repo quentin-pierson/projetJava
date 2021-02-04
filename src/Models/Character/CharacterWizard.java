@@ -3,13 +3,15 @@ package Models.Character;
 import Models.Armors.Armor;
 import Models.Armors.ArmorCloth;
 import Models.Armors.ArmorIron;
+import Models.Armors.ArmorLeather;
 import Models.Weapons.Weapon;
+import Models.Weapons.WeaponBow;
 import Models.Weapons.WeaponScepter;
 import Models.Weapons.WeaponSword;
 
 public class CharacterWizard extends Character{
 
-    private ArmorCloth armorClothr;
+    private ArmorCloth armorCloth;
     private WeaponScepter weaponScepter;
 
 
@@ -24,7 +26,7 @@ public class CharacterWizard extends Character{
 
     @Override
     public Armor getEquipment() {
-        return armorClothr;
+        return armorCloth;
     }
 
     @Override
@@ -50,5 +52,15 @@ public class CharacterWizard extends Character{
     @Override
     public void thirdSpell(){
 
+    }
+
+    @Override
+    public void setWeapon(Weapon weapon) {
+        this.weaponScepter = (WeaponScepter) weapon;
+    }
+
+    @Override
+    public void setArmor(Armor armor) {
+        this.armorCloth = (ArmorCloth) armor;
     }
 }

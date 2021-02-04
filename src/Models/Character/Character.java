@@ -132,4 +132,13 @@ public class Character extends Abilities {
         return dodge+getEquipment().getDodge()+getWeapon().getDodge();
     }
 
+    public void setWeapon(Weapon weapon) {
+
+    }
+
+    public void setArmor(Armor armor) {
+
+    }
+
+
 }

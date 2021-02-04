@@ -48,4 +48,14 @@ public class CharacterHealer extends Character{
     public void thirdSpell(){
 
     }
+
+    @Override
+    public void setWeapon(Weapon weapon) {
+        this.weaponScepter = (WeaponScepter) weapon;
+    }
+
+    @Override
+    public void setArmor(Armor armor) {
+        this.armorCloth = (ArmorCloth) armor;
+    }
 }
