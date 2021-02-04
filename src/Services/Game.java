@@ -150,13 +150,13 @@ public class Game {
         int improveDifficulty = 1+(difficulty/10);
 
         int heath = 100*improveDifficulty;
-        int armor = 50*improveDifficulty;
+        int armor = 10*improveDifficulty;
         int level = 1;
-        int rateAttack = 50*improveDifficulty;
-        int damage = 50*improveDifficulty;
-        int lucky = 50*improveDifficulty;
+        int rateAttack = 20*improveDifficulty;
+        int damage = 5*improveDifficulty;
+        int lucky = 10*improveDifficulty;
         int mana = 100;
-        int dodge = 50*improveDifficulty;
+        int dodge = 20*improveDifficulty;
 
         String name = DataServices.getInstance().getNameMonster();
 
@@ -168,13 +168,13 @@ public class Game {
        int improveDifficulty = 1+(difficulty/5);
 
        int heath = 100*improveDifficulty;
-       int armor = 10*improveDifficulty;
+       int armor = 15*improveDifficulty;
        int level = 1;
-       int rateAttack = 50*improveDifficulty;
-       int damage = 50*improveDifficulty;
-       int lucky = 50*improveDifficulty;
+       int rateAttack = 30*improveDifficulty;
+       int damage = 10*improveDifficulty;
+       int lucky = 5*improveDifficulty;
        int mana = 100;
-       int dodge = 50*improveDifficulty;
+       int dodge = 2*improveDifficulty;
 
        String name = DataServices.getInstance().getNameBoss();
 
