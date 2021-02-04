@@ -206,7 +206,7 @@ public class Game {
                             choice='3';
                             break;
                         case '4': // Bag
-                            inventory();
+                            inventory(description);
                             break;
                         default:
 
@@ -230,18 +230,19 @@ public class Game {
         }while (!monster.isDead());
         description = desc + "&&&n"+ monster.getName() + " is dead";
         GameUI.getInstance().displayGame(description,player.getMenuText());
-        scanner.next().charAt(0);
     }
 
-    public void inventory(){
+    public void inventory(String description){
         char choice = '0';
+        String[] text = new String[player.getInventory().size()];
 
-        for(Item item : player.getInventory()){
-            System.out.println(item.getName()+"->"+item.getDescription());
+        for (int i = 0; i < player.getInventory().size(); i++) {
+            text[i] = player.getInventory().get(i).toString(i + 1);
         }
 
-        System.out.println("Choose your item : ");
-        System.out.println("0 to skip");
+        String desc = description + "&&&n Choose your item :";
+
+        GameUI.getInstance().displayInventory(description,text,player.getMenuText());
 
         do{
             Scanner scanner = new Scanner(System.in);
@@ -249,7 +250,9 @@ public class Game {
 
             int castChoicetoInt = java.lang.Character.getNumericValue(choice);
             if (castChoicetoInt > 0 && player.getInventorySize() >= castChoicetoInt) {
-                player.getInventory().get(castChoicetoInt - 1).used(player.getCharacter());
+                player.getInventory().get(castChoicetoInt - 1).used(player,description);
+                choice = '0';
+            }else{
                 choice = '0';
             }
 
@@ -278,6 +281,7 @@ public class Game {
     }
 
     public void win(){
+        GameUI.getInstance().displayWin();
         System.exit(0);
     }
 

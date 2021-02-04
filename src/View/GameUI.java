@@ -117,6 +117,11 @@ public class GameUI {
         constructEnvironment("-- Press a number or 0 change room--",5);
     }
 
+    public void displayWin(){
+        clearScreen();
+        constructEnvironment(winText, screenHeight/5);
+    }
+
     public void constructEnvironment(String message, int size){
 
         String[] listMessage = message.split("&&&n");

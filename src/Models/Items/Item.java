@@ -1,6 +1,7 @@
 package Models.Items;
 
 import Models.Character.Character;
+import Models.Player;
 
 public class Item {
     private String name;
@@ -23,7 +24,7 @@ public class Item {
         return name;
     }
 
-    public void used(Character character){
+    public void used(Player player, String descriptio){
         System.out.println("Well done you used the item "+getName()+"\n");
     }
 
@@ -37,4 +38,5 @@ public class Item {
     public String toString(int position) {
         return position+ ": " + name + " " +description + " " + price + " gold" + " ";
     }
+
 }

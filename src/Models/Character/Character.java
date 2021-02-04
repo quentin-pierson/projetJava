@@ -38,7 +38,6 @@ public class Character extends Abilities {
 
         if (diceAttack <= this.getRateattack()) {
             if (diceAttack <= 5) {
-                System.out.println("Critical success!");
                 int dmg =damage + 10;
                 character.takeDamage(dmg, character.getName());
                 return "Critical success!&&&n" + character.getName() + " take " + dmg + " damage";
@@ -105,7 +104,7 @@ public class Character extends Abilities {
 
     @Override
     public int getHealth() {
-        return health+getEquipment().getHealth()+getWeapon().getHealth();
+        return health;
     }
 
     @Override

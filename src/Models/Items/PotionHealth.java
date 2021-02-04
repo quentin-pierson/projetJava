@@ -1,6 +1,10 @@
 package Models.Items;
 
 import Models.Character.Character;
+import Models.Player;
+import View.GameUI;
+
+import java.util.Scanner;
 
 public class PotionHealth extends Item{
     private int increasePv;
@@ -17,17 +21,25 @@ public class PotionHealth extends Item{
     }
 
     @Override
-    public void used(Character character){
-        if(character.getHealth() < 100){
-            if(character.getHealth() + increasePv > 100){ // it's ok you can use potion of health
-                character.setHealth(100);
+    public void used(Player player, String description){
+        String desc = description;
+        Scanner scanner = new Scanner(System.in);
+        if(player.getCharacter().getHealth() < 100){
+            if(player.getCharacter().getHealth() + increasePv > 100){ // it's ok you can use potion of health
+                desc += "&&&nYour life increase !";
+                player.getCharacter().setHealth(100);
+                player.getInventory().remove(this);
             }
             else{
-                character.setHealth(character.getHealth()+increasePv);
+                desc += "&&&nYour life increase !";
+                player.getCharacter().setHealth(player.getCharacter().getHealth()+increasePv);
+                player.getInventory().remove(this);
             }
         }
         else{
-            System.out.println("Your life is at maximum");
+            desc += "&&&nYour life is at maximum";
         }
+        GameUI.getInstance().displayGame(desc,player.getMenuText());
+        scanner.next();
     }
 }
