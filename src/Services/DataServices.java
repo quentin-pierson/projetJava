@@ -1,5 +1,13 @@
 package Services;
 
+import Models.Armors.ArmorCloth;
+import Models.Armors.ArmorIron;
+import Models.Armors.ArmorLeather;
+import Models.Armors.ArmorPlate;
+import Models.Weapons.WeaponBow;
+import Models.Weapons.WeaponScepter;
+import Models.Weapons.WeaponSword;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
@@ -8,8 +16,8 @@ public class DataServices {
 
     private static DataServices instance;
 
-    public static DataServices getInstance(){
-        if(DataServices.instance == null){
+    public static DataServices getInstance() {
+        if (DataServices.instance == null) {
             DataServices.instance = new DataServices();
         }
         return instance;
@@ -27,8 +35,17 @@ public class DataServices {
     private ArrayList<String> roomListTrap;
     private ArrayList<String> roomListTreasure;
 
+    private ArrayList<WeaponSword> listWeaponSword;
+    private ArrayList<WeaponScepter> listWeaponScepter;
+    private ArrayList<WeaponBow> listWeaponBow;
 
-    public DataServices(){
+    private ArrayList<ArmorCloth> listArmorCloth;
+    private ArrayList<ArmorIron> listArmorIron;
+    private ArrayList<ArmorLeather> listArmorLeather;
+    private ArrayList<ArmorPlate> listArmorPlate;
+
+
+    public DataServices() {
         nameListMonster = FileServices.getInstance().fileReader("/Data/Enemie/EnemieStage.txt"); // fait
 
         nameListBoss = FileServices.getInstance().fileReader("/Data/Enemie/EnemieBoss.txt"); // fait
@@ -49,9 +66,20 @@ public class DataServices {
 
         roomListTreasure = FileServices.getInstance().fileReader("/Data/Room/RoomTreasureData.txt"); // fait
 
+        // Weapons
+        listWeaponSword = CSVServices.getInstance().csvParse("/Data/Weapon/WeaponSword.txt", WeaponSword.class);
+        listWeaponScepter = CSVServices.getInstance().csvParse("/Data/Weapon/WeaponScepter.txt", WeaponScepter.class);
+        listWeaponBow = CSVServices.getInstance().csvParse("/Data/Weapon/WeaponBow.txt", WeaponBow.class);
+
+        listArmorCloth = CSVServices.getInstance().csvParse("/Data/Armor/ArmorCloth.txt", ArmorCloth.class);
+        listArmorIron = CSVServices.getInstance().csvParse("/Data/Armor/ArmorIron.txt", ArmorIron.class);
+        listArmorLeather = CSVServices.getInstance().csvParse("/Data/Armor/ArmorLeather.txt", ArmorLeather.class);
+        listArmorPlate = CSVServices.getInstance().csvParse("/Data/Armor/ArmorPlate.txt", ArmorPlate.class);
+
+
     }
 
-    private int randome(int size){
+    private int randome(int size) {
         Random random = new Random();
         return random.nextInt(size);
 
@@ -98,6 +126,32 @@ public class DataServices {
         return roomListTreasure.get(randome(roomListTreasure.size()));
     }
 
+    public WeaponBow getWeaponBow(int i) {
+        return listWeaponBow.get(i);
+    }
 
+    public WeaponScepter getWeaponScepter(int i) {
+        return listWeaponScepter.get(i);
+    }
+
+    public WeaponSword getWeaponSword(int i) {
+        return listWeaponSword.get(i);
+    }
+
+    public ArmorIron getArmorIron(int i) {
+        return listArmorIron.get(i);
+    }
+
+    public ArmorPlate getArmorPlate(int i) {
+        return listArmorPlate.get(i);
+    }
+
+    public ArmorLeather getArmorLeather(int i) {
+        return listArmorLeather.get(i);
+    }
+
+    public ArmorCloth getArmorCloth(int i) {
+        return listArmorCloth.get(i);
+    }
 
 }

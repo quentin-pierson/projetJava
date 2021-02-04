@@ -6,6 +6,15 @@ import java.util.ArrayList;
 
 public class CSVServices<E, V> {
 
+    private static CSVServices instance;
+
+    public static CSVServices getInstance(){
+        if(CSVServices.instance == null){
+            CSVServices.instance = new CSVServices();
+        }
+        return instance;
+    }
+
     public ArrayList<E> csvParse(String csvFile, Class<E> genericClass){
         String[] listObj = csvFile.split("\n");
         ArrayList<E> objectList = new ArrayList<E>();

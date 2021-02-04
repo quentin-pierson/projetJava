@@ -8,6 +8,7 @@ import Models.Weapons.Weapon;
 import Models.Weapons.WeaponBow;
 import Models.Weapons.WeaponScepter;
 import Models.Weapons.WeaponSword;
+import Services.DataServices;
 
 public class CharacterWizard extends Character{
 
@@ -21,8 +22,15 @@ public class CharacterWizard extends Character{
         spellName[0] = "1: Fire Spell";
         spellName[1] = "2: Ice Spell";
         spellName[2] = "3: Punch";
+        weaponScepter = DataServices.getInstance().getWeaponScepter(0);
+        armorCloth = DataServices.getInstance().getArmorCloth(0);
     }
 
+    public CharacterWizard(int health,int armor,int level,int rateAttack , int damage,int lucky ,int mana, int dodge,String name){
+        super(health,armor , level, rateAttack,damage, lucky, mana, dodge, name);
+        weaponScepter = DataServices.getInstance().getWeaponScepter(0);
+        armorCloth = DataServices.getInstance().getArmorCloth(0);
+    }
 
     @Override
     public Armor getEquipment() {

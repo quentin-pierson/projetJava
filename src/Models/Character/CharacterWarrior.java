@@ -8,6 +8,8 @@ import Models.Weapons.Weapon;
 import Models.Weapons.WeaponBow;
 import Models.Weapons.WeaponScepter;
 import Models.Weapons.WeaponSword;
+import Services.CSVServices;
+import Services.DataServices;
 
 public class CharacterWarrior extends Character{
 
@@ -20,8 +22,15 @@ public class CharacterWarrior extends Character{
         spellName[0] = "1: Charge";
         spellName[1] = "2: Punch";
         spellName[2] = "3: Break Knee";
+        weaponSword = DataServices.getInstance().getWeaponSword(0);
+        armorIron = DataServices.getInstance().getArmorIron(0);
     }
 
+    public CharacterWarrior(int health,int armor,int level,int rateAttack , int damage,int lucky ,int mana, int dodge,String name){
+        super(health,armor , level, rateAttack,damage, lucky, mana, dodge, name);
+        weaponSword = DataServices.getInstance().getWeaponSword(0);
+        armorIron = DataServices.getInstance().getArmorIron(0);
+    }
 
     @Override
     public Armor getEquipment() {

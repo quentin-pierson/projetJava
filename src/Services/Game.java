@@ -157,7 +157,7 @@ public class Game {
 
         String name = DataServices.getInstance().getNameMonster();
 
-        Character monsterCreation = new Character(heath,armor,level,rateAttack,damage,lucky,mana,dodge,name);
+        CharacterWarrior monsterCreation = new CharacterWarrior(heath,armor,level,rateAttack,damage,lucky,mana,dodge,name);
         return monsterCreation;
     }
 
@@ -175,7 +175,7 @@ public class Game {
 
        String name = DataServices.getInstance().getNameBoss();
 
-       Character monsterCreation = new Character(heath,armor,level,rateAttack,damage,lucky,mana,dodge,name);
+       CharacterWarrior monsterCreation = new CharacterWarrior(heath,armor,level,rateAttack,damage,lucky,mana,dodge,name);
        return monsterCreation;
     }
 

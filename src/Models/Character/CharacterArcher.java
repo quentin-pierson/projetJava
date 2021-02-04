@@ -5,6 +5,7 @@ import Models.Armors.Armor;
 import Models.Armors.ArmorLeather;
 import Models.Weapons.Weapon;
 import Models.Weapons.WeaponBow;
+import Services.DataServices;
 
 public class CharacterArcher extends Character{
     private ArmorLeather armorLeather;
@@ -16,7 +17,16 @@ public class CharacterArcher extends Character{
         spellName[0] = "1: Bow shot";
         spellName[1] = "2: Bow multiple shot";
         spellName[2] = "3: Punch";
+        weaponBow = DataServices.getInstance().getWeaponBow(0);
+        armorLeather = DataServices.getInstance().getArmorLeather(0);
     }
+
+    public CharacterArcher(int health,int armor,int level,int rateAttack , int damage,int lucky ,int mana, int dodge,String name){
+        super(health,armor , level, rateAttack,damage, lucky, mana, dodge, name);
+        weaponBow = DataServices.getInstance().getWeaponBow(0);
+        armorLeather = DataServices.getInstance().getArmorLeather(0);
+    }
+
 
     @Override
     public Armor getEquipment() {
