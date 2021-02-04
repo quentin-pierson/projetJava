@@ -35,6 +35,6 @@ public class Item {
 
 
     public String toString(int position) {
-        return position+ ": " + name + "&&&n" +description + "&&&n" + price + " gold" + "&&&n";
+        return position+ ": " + name + " " +description + " " + price + " gold" + " ";
     }
 }

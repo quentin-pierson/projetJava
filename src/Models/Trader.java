@@ -43,7 +43,7 @@ public class Trader {
 
     public void displayInventory(String desc){
 
-        desc= "&&&nCharles David: Hello traveler!&&&n";
+        desc += "&&&nCharles David: Hello traveler!&&&n";
         String[] text = new String[inventory.size()];
 
         for(int i=0;i<inventory.size();i++){
