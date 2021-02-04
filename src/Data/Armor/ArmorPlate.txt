@@ -1,0 +1,5 @@
+3;0;0;100;10;0;1;Used plate armor;Armor marked by traces of adventurers;5
+7;0;0;100;10;0;1;Training plate armor;Very simple armor;10
+10;0;0;100;10;0;1;Long plate armor;Privileged Armor for traveler;25
+13;0;0;100;10;0;1;Superior plate armor;Armor made with good materials;35
+17;0;0;100;10;0;1;Higher plate armor;Armor made with the most prestigious materials;45

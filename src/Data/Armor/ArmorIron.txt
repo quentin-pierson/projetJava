@@ -1,0 +1,5 @@
+3;0;0;100;10;0;1;Used iron armor;Armor marked by traces of adventurers;5
+7;0;0;100;10;0;1;Training iron armor;Very simple armor;10
+10;0;0;100;10;0;1;Long iron armor;Privileged Armor for traveler;25
+13;0;0;100;10;0;1;Superior iron armor;Armor made with good materials;35
+17;0;0;100;10;0;1;Higher iron armor;Armor made with the most prestigious materials;45
