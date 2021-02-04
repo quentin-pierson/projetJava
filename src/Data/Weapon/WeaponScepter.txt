@@ -1,16 +1,16 @@
-3;0;0;100;10;0;1;Used scepter;Scepter marked by traces of adventurers;5
-7;0;0;100;10;0;1;Training Scepter;Very simple scepter;10
-10;0;0;100;10;0;1;Long scepter;Privileged weapon of the hunters of the middle step;25
-13;0;0;100;10;0;1;Oak scepter;Scepter containing the strength of the oak it was designed with;35
-17;0;0;100;10;0;1;Maple scepter;Scepter containing the life-essence of the maple it was made of;45
-20;0;0;100;10;0;1;Yew scepter;Scepter containing the power of the yew tree of which it was designed;50
-33;0;0;100;10;0;1;Iron scepter;Scepter made of iron;55
-37;0;0;100;10;0;1;Steal scepter;Scepter made of steal;60
-40;0;0;100;10;0;1;Refine scepter;Scepter used by the best practitioner;75
-43;0;0;100;10;0;1;Scepter of fire;Scepter made in the fire of a volcano it transmits its force to its handler.;85
-47;0;0;100;10;0;1;Electric scepter;Planted at the highest peaks in the world, it was struck by powerful lightning.;95
-50;0;0;100;10;0;1;Royal Guard scepter;Used by the elite of the royal guard it would be simpler to count its weaknesses than its qualities.;100
-75;0;0;100;10;0;10;Imperial scepter;Scepter used for sacred.;350
-85;0;0;100;10;0;10;Ancient scepter;Contains the strength of all its previous handlers;780
-95;0;0;100;10;0;10;Scepter of disaster;A single blow takes the life out of the living creatures in the surroundings;1230
-100;0;0;100;10;0;10;White Scepter;Previously old by an powerful white mage;2300
+0;0;1;1;3;0;1;1;Used scepter;Scepter marked by traces of adventurers;5
+0;0;2;2;7;0;2;1;Training Scepter;Very simple scepter;10
+0;0;3;3;10;0;3;1;Long scepter;Privileged weapon of the hunters of the middle step;25
+0;0;4;4;13;0;4;1;Oak scepter;Scepter containing the strength of the oak it was designed with;35
+0;0;5;5;17;0;5;1;Maple scepter;Scepter containing the life-essence of the maple it was made of;45
+0;0;6;6;20;0;6;1;Yew scepter;Scepter containing the power of the yew tree of which it was designed;50
+0;0;7;7;33;0;7;1;Iron scepter;Scepter made of iron;55
+0;0;8;8;37;0;8;1;Steal scepter;Scepter made of steal;60
+0;0;9;9;40;0;9;1;Refine scepter;Scepter used by the best practitioner;75
+0;0;10;10;43;0;10;1;Scepter of fire;Scepter made in the fire of a volcano it transmits its force to its handler.;85
+0;0;11;11;47;0;0;1;Electric scepter;Planted at the highest peaks in the world, it was struck by powerful lightning.;95
+0;0;12;12;50;0;0;1;Royal Guard scepter;Used by the elite of the royal guard it would be simpler to count its weaknesses than its qualities.;100
+0;0;13;13;75;0;0;10;Imperial scepter;Scepter used for sacred.;350
+0;0;14;14;85;0;0;10;Ancient scepter;Contains the strength of all its previous handlers;780
+0;0;15;15;95;0;0;10;Scepter of disaster;A single blow takes the life out of the living creatures in the surroundings;1230
+0;0;16;16;100;0;0;10;White Scepter;Previously old by an powerful white mage;2300

@@ -8,14 +8,12 @@ public class Armor extends Abilities {
     private String name;
     private String description;
 
-    private int durability;
     private int price;
 
-    public Armor(int health, int armor, int level, int rateAttack, int damage, int lucky, int mana, int dodge, String name, String description, int durability, int price) {
+    public Armor(int health, int armor, int level, int rateAttack, int damage, int lucky, int mana, int dodge, String name, String description, int price) {
         super(health, armor, level, rateAttack, damage, lucky, mana, dodge);
         this.name = name;
         this.description = description;
-        this.durability = durability;
         this.price = price;
     }
 
@@ -32,7 +30,6 @@ public class Armor extends Abilities {
                 ", lucky='" + getLucky() +
                 ", mana='" + getMana() +
                 ", dodge='" + getDodge() +
-                ", durability=" + durability +
                 ", price=" + price +
                 '}';
     }
