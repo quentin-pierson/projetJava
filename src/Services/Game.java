@@ -182,26 +182,27 @@ public class Game {
        return monsterCreation;
     }
 
-    public void displayFight(boolean isTrap,Character monster){
+    public void displayFight(boolean isTrap,Character monster,String desc){
         char choice;
+        Scanner scanner = new Scanner(System.in);
+        String description = "";
         do{
             if(!isTrap){
+                description = desc + "&&&n";
                 do{
-                    GameUI.getInstance().displayGame("",player.getCharacter().getSpellName());
-                    Scanner scanner = new Scanner(System.in);
+                    GameUI.getInstance().displayGame(desc,player.getCharacter().getSpellName());
                     choice = scanner.next().charAt(0);
-
                     switch (choice) {
                         case '1': // Attack 1
-                            player.getCharacter().fight(monster);
+                            description += player.getCharacter().fight(monster);
                             choice='3';
                             break;
                         case '2': // Attack 1
-                            player.getCharacter().fight(monster);
+                            description += player.getCharacter().fight(monster);
                             choice='3';
                             break;
                         case '3': // Attack 1
-                            player.getCharacter().fight(monster);
+                            description += player.getCharacter().fight(monster);
                             choice='3';
                             break;
                         case '4': // Bag
@@ -212,14 +213,24 @@ public class Game {
                             break;
                     }
                 }while (choice!='3');
+                GameUI.getInstance().displayGame(description,player.getMenuText());
+                scanner.next().charAt(0);
                 isTrap = true;
             }
             else{
-                monster.fight(player.getCharacter());
-                choice=0;
-                isTrap = false;
+                if(!monster.isDead()){
+                    description = desc + "&&&n"+ monster.fight(player.getCharacter());
+                    choice=0;
+                    isTrap = false;
+                    GameUI.getInstance().displayGame(description,player.getMenuText());
+
+                    scanner.next().charAt(0);
+                }
             }
-        }while (monster.getHealth() > 0);
+        }while (!monster.isDead());
+        description = desc + "&&&n"+ monster.getName() + " is dead";
+        GameUI.getInstance().displayGame(description,player.getMenuText());
+        scanner.next().charAt(0);
     }
 
     public void inventory(){

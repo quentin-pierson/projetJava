@@ -19,7 +19,7 @@ public class RoomBoss extends Room{
     @Override
     public void enterInRoom(){
         Game game = Game.getInstance();
-        game.displayFight(false, character);
+        game.displayFight(false, character,getDescriptionAndName());
         game.win();
     }
 

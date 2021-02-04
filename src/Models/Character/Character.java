@@ -11,6 +11,7 @@ public class Character extends Abilities {
     private boolean isDefend;
     private DeadEvent deadEventListener;
     protected String[] spellName = new String[4];
+    private boolean dead;
 
     public Character(){
         super(0,0,0,0,0,0,0,0);
@@ -31,29 +32,30 @@ public class Character extends Abilities {
         this.deadEventListener = deadEventListener;
     }
 
-    public void fight(Character character) {
+    public String fight(Character character) {
         Random rnd = new Random();
         int diceAttack = rnd.nextInt(100);
 
         if (diceAttack <= this.getRateattack()) {
             if (diceAttack <= 5) {
                 System.out.println("Critical success!");
-                character.takeDamage(damage + 10, character.getName());
+                int dmg =damage + 10;
+                character.takeDamage(dmg, character.getName());
+                return "Critical success!&&&n" + character.getName() + " take " + dmg + " damage";
             } else {
-                System.out.println("Success!");
                 character.takeDamage(damage, character.getName());
+                return "Success !&&&n" + character.getName() + " take " + damage + " damage";
             }
         } else {
             if (diceAttack >= 95) {
-                System.out.println("Critical failure!");
+                return "Critical failure !&&&n" + getName() + " missed " + character.getName();
             } else {
-                System.out.println("Failure!");
+                return "Failure !&&&n" + getName() + " missed " + character.getName();
             }
         }
     }
 
-    private void dead() {
-        System.out.println(name + " is dead");
+    private void death() {
         if (deadEventListener != null) deadEventListener.dead();
     }
 
@@ -63,10 +65,14 @@ public class Character extends Abilities {
 
     public void takeDamage(int damage, String name) {
         health = health - damage;
-        System.out.println(name + " take " + damage);
         if (health <= 0) {
-            dead();
+            death();
+            dead = true;
         }
+    }
+
+    public boolean isDead() {
+        return dead;
     }
 
     public Armor getEquipment() {

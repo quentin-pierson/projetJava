@@ -19,8 +19,7 @@ public class RoomTrap extends Room{
     @Override
     public void enterInRoom(){
         Game game = Game.getInstance();
-        game.displayFight(true, character);
-        GameUI.getInstance().displayGame(getDescriptionAndName(),game.getPlayer().getCharacter().getSpellName());
+        game.displayFight(true, character,getDescriptionAndName());
     }
 
 }
