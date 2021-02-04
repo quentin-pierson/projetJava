@@ -5,15 +5,13 @@ import Models.Character.Character;
 import Models.Character.CharacterArcher;
 import Models.Character.CharacterWarrior;
 import Models.Character.CharacterWizard;
-import Models.ChooseDifficulty;
 import Models.Items.Item;
 import Models.Items.PotionHealth;
 import Models.Player;
 import Models.Room.*;
 import Models.Stage;
-import java.lang.Math;
+
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Game {

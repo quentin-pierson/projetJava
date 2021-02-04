@@ -1,0 +1,16 @@
+3;0;0;100;10;0;1;Used sword;Sword marked by traces of adventurers;5
+7;0;0;100;10;0;1;Training sword;Very simple and practical sword;10
+10;0;0;100;10;0;1;Long sword;Privileged weapon of the hunters of the northern step;25
+13;0;0;100;10;0;1;Steel sword;Sword made of steel, very useful;35
+17;0;0;100;10;0;1;Refined steel sword;Sword forged with refined steel, it has been subjected to high temperature;45
+20;0;0;100;10;0;1;Silver sword;Equipped with a more traditional sword, it was handled by a man with silver hair.;50
+33;0;0;100;10;0;1;Long range sword;Used to slaughter large monsters;55
+37;0;0;100;10;0;1;Stealth sword;Never lose sight of this sword or it will be the last thing you see.;60
+40;0;0;100;10;0;1;Rider sword;Sword used by the best knight in history;75
+43;0;0;100;10;0;1;Sword of fire;Sword made in the fire of a volcano it transmits its force to its blade.;85
+47;0;0;100;10;0;1;Electric sword;Planted at the highest peaks in the world, it was struck by powerful lightning.;95
+50;0;0;100;10;0;1;Royal Guard sword;Used by the elite of the royal guard it would be simpler to count its weaknesses than its qualities.;100
+75;0;0;100;10;0;10;Joyeuse;Used for induction ceremonies. Drawing this sword is a declaration of war.;350
+85;0;0;100;10;0;10;Sword of disaster;Previously held by a dark wizard, it's power is immeasurable;780
+95;0;0;100;10;0;10;Durandal;A single blow would have cut a mountain in half.;1230
+100;0;0;100;10;0;10;Excalibur;Its simple brilliance makes any monster flee.;2300

@@ -1,0 +1,16 @@
+3;0;0;100;10;0;1;Used bow;Bow marked by traces of adventurers;5
+7;0;0;100;10;0;1;Training bow;Very simple and flexible bow;10
+10;0;0;100;10;0;1;Long bow;Privileged weapon of the hunters of the southern step;25
+13;0;0;100;10;0;1;Oak bow;Bow containing the strength of the oak it was designed with;35
+17;0;0;100;10;0;1;Maple bow;Bow containing the accuracy of the maple it was made of;45
+20;0;0;100;10;0;1;Yew bow;Bow containing the flexibility of the yew tree of which it was designed;50
+33;0;0;100;10;0;1;Long range bow;Bow with a range of 500m;55
+37;0;0;100;10;0;1;Stealth bow;Bow that you will never hear an arrow;60
+40;0;0;100;10;0;1;Rider bow;Bow used by the best riders in history;75
+43;0;0;100;10;0;1;Bow of fire;Bow made in the fire of a volcano it transmits its force to its arrows.;85
+47;0;0;100;10;0;1;Electric Bow;Planted at the highest peaks in the world, it was struck by powerful lightning.;95
+50;0;0;100;10;0;1;Royal Guard bow;Used by the elite of the royal guard it would be simpler to count its weaknesses than its qualities.;100
+75;0;0;100;10;0;10;Imperial bow;Bow used for induction ceremonies. Shooting one of his arrows is a declaration of war.;350
+85;0;0;100;10;0;10;Perforating Bow;A certain person would have cut an apple in the middle 3km away with this bow.;780
+95;0;0;100;10;0;10;Bow of calamities;The simple vibration of the rope would cause tornadoes.;1230
+100;0;0;100;10;0;10;Celestian arc;It is said that his arrows can touch the stars;2300
