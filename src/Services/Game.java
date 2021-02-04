@@ -5,7 +5,6 @@ import Models.Character.Character;
 import Models.Character.CharacterArcher;
 import Models.Character.CharacterWarrior;
 import Models.Character.CharacterWizard;
-import Models.ChooseDifficulty;
 import Models.Items.Item;
 import Models.Items.PotionHealth;
 import Models.Player;
@@ -31,14 +30,21 @@ public class Game {
     private String name;
     private Player player;
     private ArrayList<Stage> stagesNivel = new ArrayList<Stage>();
+
     private int stageCross;
     private int stageSize;
     private int difficulty = 1;
 
     public void addStageCross(){
         stageCross+=1;
-        System.out.println("YOU CHANGE FLOORS \n"+ "YOU ARE IN floor "+stageCross+"/"+stageSize+ " \n");
+    }
 
+    public int getStageCross() {
+        return stageCross;
+    }
+
+    public int getStageSize() {
+        return stageSize;
     }
 
     public Player getPlayer(){
@@ -237,21 +243,18 @@ public class Game {
 
         do{
             for (Room room : stagesNivel.get(stageCross).getRooms()) {
-                System.out.println(room.getName()+" "+room.getDescription());
-                GameUI.getInstance().displayGame("",player.getCharacter().getSpellName());
                 room.enterInRoom();
                 do{
-                    System.out.println("Press 1 for change room");
                     Scanner scanner = new Scanner(System.in);
                     choice = scanner.nextInt();
                     switch (choice){
-                        case 1:
+                        case 0:
                             break;
                         default:
                             System.out.println("error");
                             break;
                     }
-                }while (choice!=1);
+                }while (choice!=0);
             }
         }while(stageCross != stagesNivel.size());
     }

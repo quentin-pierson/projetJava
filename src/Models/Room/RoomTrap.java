@@ -3,6 +3,7 @@ import Models.Character.Character;
 import Models.Player;
 import Services.DataServices;
 import Services.Game;
+import View.GameUI;
 
 public class RoomTrap extends Room{
 
@@ -19,6 +20,8 @@ public class RoomTrap extends Room{
     public void enterInRoom(){
         Game game = Game.getInstance();
         game.displayFight(true, character);
+        String desc = name + ": &&&n" + description;
+        GameUI.getInstance().displayGame(desc,game.getPlayer().getCharacter().getSpellName());
     }
 
 }

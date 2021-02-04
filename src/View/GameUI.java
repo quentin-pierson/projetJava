@@ -106,7 +106,7 @@ public class GameUI {
         clearScreen();
         constructEnvironment(description, screenHeight/2);
         constructEnvironment(constructBoxGame(choice), screenHeight/4);
-        constructEnvironment("-- Press a number do action--",5);
+        constructEnvironment("-- Press a number or 0 change room--",5);
     }
 
     public void constructEnvironment(String message, int size){
@@ -115,7 +115,7 @@ public class GameUI {
         for (int i = 0; i < size ;i++){
             if(i == size/5) {
                 for (int j = 0; j < listMessage.length; j++) {
-                    for (int y = 0; y < (screenLength - listMessage[0].length()) / 2; y++) {
+                    for (int y = 0; y < (screenLength - listMessage[j].length()) / 2; y++) {
                         System.out.print(" ");
                     }
                     System.out.println(listMessage[j]);
