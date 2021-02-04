@@ -96,4 +96,40 @@ public class Character extends Abilities {
     public String[] getSpellName(){
         return spellName;
     }
+
+    @Override
+    public int getHealth() {
+        return health+getEquipment().getHealth()+getWeapon().getHealth();
+    }
+
+    @Override
+    public int getArmor() {
+        return armor+getEquipment().getArmor()+getWeapon().getArmor();
+    }
+
+    @Override
+    public int getRateattack() {
+        return rateAttack+getEquipment().getRateattack()+getWeapon().getRateattack();
+    }
+
+    @Override
+    public int getDamage() {
+        return damage+getEquipment().getDamage()+getWeapon().getDamage();
+    }
+
+    @Override
+    public int getLucky() {
+        return lucky+getEquipment().getLucky()+getWeapon().getLucky();
+    }
+
+    @Override
+    public int getMana() {
+        return mana+getEquipment().getMana()+getWeapon().getMana();
+    }
+
+    @Override
+    public int getDodge() {
+        return dodge+getEquipment().getDodge()+getWeapon().getDodge();
+    }
+
 }
