@@ -7,7 +7,6 @@ import java.util.Random;
 
 public class Character extends Abilities {
     private String name;
-    private Weapon weapon;
     private boolean isDefend;
     private DeadEvent deadEventListener;
 
@@ -19,73 +18,67 @@ public class Character extends Abilities {
         super(health, armor, level, rateAttack, damage, lucky, mana, dodge);
         this.name = name;
     }
+
     public String getName(){
             return name;
         }
-        public void setWeapon(Weapon weapon) {
-            this.weapon= weapon;
-        }
 
-        public Weapon getWeapon() {
-            return weapon;
-        }
 
-        public void setDeadListener(DeadEvent deadEventListener){
-            this.deadEventListener = deadEventListener;
-        }
+    public void setDeadListener(DeadEvent deadEventListener) {
+        this.deadEventListener = deadEventListener;
+    }
 
-        public void fight(Character character){
-            Random rnd = new Random();
-            int diceAttack = rnd.nextInt(100);
+    public void fight(Character character) {
+        Random rnd = new Random();
+        int diceAttack = rnd.nextInt(100);
 
-            if(diceAttack <= this.getRateattack()) {
-                if(diceAttack <= 5){
-                    System.out.println("Critical success!");
-                    character.takeDamage(damage + 10,character.getName());
-                }
-                else{
-                    System.out.println("Success!");
-                    character.takeDamage(damage,character.getName());
-                }
-            }else{
-                if(diceAttack >= 95){
-                    System.out.println("Critical failure!");
-                }
-                else{
-                    System.out.println("Failure!");
-                }
+        if (diceAttack <= this.getRateattack()) {
+            if (diceAttack <= 5) {
+                System.out.println("Critical success!");
+                character.takeDamage(damage + 10, character.getName());
+            } else {
+                System.out.println("Success!");
+                character.takeDamage(damage, character.getName());
+            }
+        } else {
+            if (diceAttack >= 95) {
+                System.out.println("Critical failure!");
+            } else {
+                System.out.println("Failure!");
             }
         }
+    }
 
-        private void dead() {
-            System.out.println(name + " is dead");
-            if(deadEventListener != null) deadEventListener.dead();
-        }
+    private void dead() {
+        System.out.println(name + " is dead");
+        if (deadEventListener != null) deadEventListener.dead();
+    }
 
-        public void defence () {
+    public void defence() {
         isDefend = true;
     }
 
-        public void takeDamage(int damage, String name){
-            health = health - damage;
-            System.out.println(name + " take " + damage);
-            if(health <= 0){
-                dead();
-            }
+    public void takeDamage(int damage, String name) {
+        health = health - damage;
+        System.out.println(name + " take " + damage);
+        if (health <= 0) {
+            dead();
         }
+    }
 
-        public String getTypeOfClass(){
-            return "";
-        }
+    public String getTypeOfClass() {
+        return "";
+    }
 
-        public void firstSpell(){
+    public void firstSpell() {
 
-        }
+    }
 
-        public void secondSpell(){
+    public void secondSpell() {
 
-        }
-        public void thirdSpell(){
+    }
 
-        }
+    public void thirdSpell() {
+
+    }
 }
