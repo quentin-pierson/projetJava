@@ -10,16 +10,16 @@ public class Character extends Abilities {
     private String name;
     private boolean isDefend;
     private DeadEvent deadEventListener;
-    protected String[] spellName = new String[3];
+    protected String[] spellName = new String[4];
 
     public Character(){
         super(0,0,0,0,0,0,0,0);
-        //spellName[3] = "4: Bag";
     }
 
     public Character(int health, int armor, int level, int rateAttack, int damage, int lucky, int mana, int dodge,String name) {
         super(health, armor, level, rateAttack, damage, lucky, mana, dodge);
         this.name = name;
+        spellName[3] = "4: Bag";
     }
 
     public String getName(){

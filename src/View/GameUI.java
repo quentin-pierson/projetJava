@@ -140,16 +140,15 @@ public class GameUI {
 
         for (int i = 0; i < numberLine; i++){
             if(i == 0 || i == numberLine-1){
-                for (int j = 0; j < sizeLength; j++) {
-                    text+= "-";
-                }
+
+                text = repeatChar(text,sizeLength,'-');
+
                 text+= "&&&n";
             }else{
                 text+= "| " + messageInfo[cnt];
                 int newSizeLength = sizeLength - 4 - messageInfo[cnt].length();
-                for (int j = 0; j < newSizeLength; j++) {
-                    text+= " ";
-                }
+
+                text = repeatChar(text,newSizeLength,' ');
 
                 text+= " |&&&n";
                 cnt++;
@@ -159,35 +158,43 @@ public class GameUI {
     }
 
     public String constructBoxGame(String[] messageInfo) {
-        System.out.println(messageInfo.length);
         int numberLine = (messageInfo.length/2)+2;
         int sizeLength =  Game.getInstance().getGameInfo().length() + 4;
 
         String text = "";
         int cnt = 0;
 
-        for (int j = 0; j < sizeLength; j++) {
-            text+= "-";
-        }
+        text = repeatChar(text,sizeLength,'-');
 
         text += "&&&n| " + Game.getInstance().getGameInfo()+ " |&&&n";
 
         for (int i = 0; i < numberLine; i++){
             if(i == 0 || i == numberLine-1){
-                for (int j = 0; j < sizeLength; j++) {
-                    text+= "-";
-                }
+
+                text = repeatChar(text,sizeLength,'-');
+
                 text+= "&&&n";
             }else{
-                text+= "| " + messageInfo[cnt] + "   " + messageInfo[cnt+1];
-                int newSizeLength = sizeLength - 7 - messageInfo[cnt].length() - messageInfo[cnt+1].length();
-                for (int j = 0; j < newSizeLength; j++) {
-                    text+= " ";
-                }
+                text+= "| " + messageInfo[cnt];
 
+                int newSizeLength = (sizeLength/2) - 2 - messageInfo[cnt].length();
+
+                text = repeatChar(text,newSizeLength,' ');
+                text += messageInfo[cnt+1];
+
+                newSizeLength = sizeLength - 4 - messageInfo[cnt].length() - messageInfo[cnt+1].length() - newSizeLength;
+
+                text = repeatChar(text,newSizeLength,' ');
                 text+= " |&&&n";
                 cnt+=2;
             }
+        }
+        return text;
+    }
+
+    private String repeatChar(String text, int size, char character){
+        for (int j = 0; j < size; j++) {
+            text+= character;
         }
         return text;
     }
