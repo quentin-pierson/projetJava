@@ -1,6 +1,8 @@
 package Services;
 
 
+import Models.Player;
+
 import java.io.File;
 import java.io.FileWriter;
 
@@ -14,10 +16,12 @@ public class SaveServices {
         return instance;
     }
 
+    private Player player;
+
+   /*
     private String nameFile;
     private String descriptionFile;
 
-    /*
     public SaveServices(String nameFile, String descriptionFile) {
         this.nameFile = nameFile;
         this.descriptionFile = descriptionFile;
@@ -54,7 +58,7 @@ public class SaveServices {
     public void writeFileSave(){
         try{
             FileWriter filePartyWrite = new FileWriter("src\\Data\\SaveFile\\"+Game.getInstance().getName()+".txt");
-            filePartyWrite.write("Name: "+ "quentin");
+            filePartyWrite.write(Game.getInstance().getGameInfo());
             filePartyWrite.close();
         }catch (Exception e){
             System.out.println(e);

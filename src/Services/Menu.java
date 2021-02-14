@@ -25,6 +25,7 @@ public class Menu {
                     game.setDifficulty();
                     game.createPlayer();
                     saveServices.createFileSave();
+                    saveServices.writeFileSave();
                     game.playerSwitchingRoom();
                     choice=3;
                     break;
