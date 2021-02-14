@@ -10,6 +10,7 @@ public class Menu {
 
     public void menu(){
         Game game = Game.getInstance();
+        SaveServices saveServices = SaveServices.getInstance();
 
         char choice;
         do {
@@ -20,8 +21,10 @@ public class Menu {
             switch (choice) {
                 case '1':
                     // Play
+                    //lunch function who create file save
                     game.setDifficulty();
                     game.createPlayer();
+                    saveServices.createFileSave();
                     game.playerSwitchingRoom();
                     choice=3;
                     break;

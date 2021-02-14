@@ -107,6 +107,7 @@ public class GameUI {
         constructEnvironment(description, screenHeight/2);
         constructEnvironment(constructBoxGame(choice), screenHeight/4);
         constructEnvironment("-- Press a number or 0 change room--",5);
+        constructEnvironment("-- Press s for save--",5);
     }
 
     public void displayInventory(String description, String[] shop, String[] choice){
@@ -115,6 +116,8 @@ public class GameUI {
         constructEnvironment(constructBox(shop), screenHeight/5);
         constructEnvironment(constructBoxGame(choice), screenHeight/5);
         constructEnvironment("-- Press a number or 0 change room--",5);
+        constructEnvironment("-- Press s for save--",5);
+
     }
 
     public void displayWin(){

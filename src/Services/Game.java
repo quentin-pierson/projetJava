@@ -261,7 +261,6 @@ public class Game {
     }
 
     public void playerSwitchingRoom(){
-        char choice='0';
 
         do{
             for (Room room : stagesNivel.get(stageCross).getRooms()) {
